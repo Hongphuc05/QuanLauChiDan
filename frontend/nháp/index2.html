@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <title>Quản lí nhà hàng</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div data-layer="Trang chủ" class="TrangCh"
+    style="width: 1512px; height: 3308.29px; position: relative; background: #FAF9FF">
+    <!--popup login giao diện
+    <div data-layer="Login" class="Login"
+      style="width: 1141px; height: 655px; justify-content: center; align-items: center; display: inline-flex">
+      <div data-layer="login" class="Login" style="width: 1141px; height: 655px; position: relative">
+        <div data-layer="Rectangle 229" class="Rectangle229"
+          style="width: 1134px; height: 655px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 35px">
+        </div>
+        <div data-layer="đang nhập" class="AngNhP"
+          style="width: 240.96px; height: 91.63px; left: 151.65px; top: 176px; position: absolute">
+          <div data-layer="Đăng Nhập" class="NgNhP"
+            style="width: 176.16px; height: 40.50px; left: 32.35px; top: 0px; position: absolute; color: black; font-size: 32px; font-family: Quicksand; font-weight: 700; word-wrap: break-word">
+            Đăng Nhập
+          </div>
+          <div data-layer="Số điện thoại" class="SINThoI"
+            style="width: 82.01px; height: 16.20px; left: 0px; top: 69.35px; position: absolute; color: black; font-size: 13px; font-family: Quicksand; font-weight: 600; word-wrap: break-word">
+            Số điện thoại
+          </div>
+          <div data-layer="Email" class="Email"
+            style="width: 36px; height: 16px; left: 192.35px; top: 66px; position: absolute; color: #BDBDBD; font-size: 13px; font-family: Quicksand; font-weight: 600; word-wrap: break-word">
+            Email
+          </div>
+          <div data-layer="signup" class="signup"
+            style="width: 240.96px; height: 3.04px; left: 0px; top: 88.59px; position: absolute">
+            <div data-layer="Rectangle 11" class="Rectangle11"
+              style="width: 240.96px; height: 3.04px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9px">
+            </div>
+            <div data-layer="Rectangle 12" class="Rectangle12"
+              style="width: 120.48px; height: 3.04px; left: 0px; top: 0px; position: absolute; background: #A6372D; border-radius: 9px">
+            </div>
+          </div>
+        </div>
+        <div data-layer="acp đang nhập" class="AcpAngNhP"
+          style="width: 254.12px; height: 33.41px; left: 145px; top: 429.47px; position: absolute">
+          <div data-layer="Rectangle 15" class="Rectangle15"
+            style="width: 254.12px; height: 33.41px; left: 0px; top: 0px; position: absolute; background: #A6372D; border-radius: 10px; border: 1.50px #D9D9D9 solid">
+          </div>
+          <div data-layer="Đăng nhập" class="NgNhP"
+            style="width: 64px; height: 15px; left: 105px; top: 9.68px; position: absolute; color: white; font-size: 11px; font-family: Quicksand; font-weight: 600; word-wrap: break-word">
+            Đăng nhập</div>
+        </div>
+        <div data-layer="mkau" class="Mkau"
+          style="width: 254.12px; height: 33.41px; left: 145px; top: 369.73px; position: absolute">
+          <div data-layer="Rectangle 14" class="Rectangle14"
+            style="width: 254.12px; height: 33.41px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 10px; border: 1.50px #D9D9D9 solid">
+          </div>
+          <div data-layer="Mật khẩu" class="MTKhU"
+            style="width: 48.60px; height: 14.17px; left: 16.20px; top: 10.12px; position: absolute; color: black; font-size: 11px; font-family: Quicksand; font-weight: 400; word-wrap: break-word">
+            Mật khẩu</div>
+          <div data-svg-wrapper data-layer="33. Privacy" class="Privacy"
+            style="left: 229px; top: 12.27px; position: absolute">
+            <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.5753 2.4503L12.8416 0.70613C12.9402 0.627546 12.9948 0.522295 12.9936 0.413046C12.9923 0.303797 12.9354 0.199292 12.835 0.122039C12.7346 0.0447855 12.5988 0.000965092 12.4569 1.57511e-05C12.3149 -0.00093359 12.1782 0.0410641 12.0761 0.116963L9.68092 1.9603C8.72759 1.50115 7.62801 1.25358 6.50345 1.24488C3.52575 1.24488 1.12031 3.04113 0.0559202 4.82071C0.0235412 4.87539 0.00678595 4.93479 0.00678595 4.99488C0.00678595 5.05497 0.0235412 5.11436 0.0559202 5.16905C0.610422 6.08461 1.42178 6.89417 2.43158 7.53946L0.165283 9.28363C0.113574 9.32207 0.0723287 9.36804 0.0439545 9.41888C0.0155803 9.46971 0.000645117 9.52439 2.04415e-05 9.57971C-0.000604234 9.63504 0.0130941 9.6899 0.0403161 9.74111C0.0675382 9.79232 0.107739 9.83884 0.158572 9.87796C0.209406 9.91708 0.269854 9.94802 0.33639 9.96897C0.402926 9.98992 0.474217 10.0005 0.546104 9.99998C0.617991 9.9995 0.689033 9.98801 0.755086 9.96617C0.821139 9.94433 0.880879 9.91259 0.930822 9.8728L3.32597 8.02946C4.27927 8.48867 5.37888 8.73625 6.50345 8.74488C9.48114 8.74488 11.886 6.94863 12.9504 5.16905C12.9831 5.11442 13 5.05501 13 4.99488C13 4.93475 12.9831 4.87534 12.9504 4.82071C12.3959 3.90527 11.5848 3.09574 10.5753 2.4503ZM1.14901 4.99488C2.09321 3.55821 4.11533 2.07821 6.50345 2.07821C7.33825 2.08616 8.15678 2.25706 8.88236 2.57488L7.99392 3.25863C7.47414 2.99305 6.85098 2.87404 6.23017 2.92182C5.60936 2.96959 5.02914 3.18119 4.58798 3.52071C4.14681 3.86024 3.87186 4.30678 3.80979 4.78456C3.74772 5.26234 3.90235 5.74194 4.24744 6.14196L3.20687 6.9428C2.35106 6.4117 1.64994 5.74803 1.14901 4.99488ZM8.12765 4.99488C8.12765 5.3264 7.95653 5.64434 7.65193 5.87876C7.34733 6.11318 6.93421 6.24488 6.50345 6.24488C6.26226 6.24416 6.02442 6.20143 5.80775 6.11988L7.96523 4.45946C8.07118 4.62621 8.12671 4.80926 8.12765 4.99488ZM4.87925 4.99488C4.87925 4.66336 5.05037 4.34542 5.35497 4.111C5.65956 3.87658 6.07268 3.74488 6.50345 3.74488C6.74463 3.7456 6.98248 3.78833 7.19915 3.86988L5.04167 5.5303C4.93571 5.36355 4.88018 5.1805 4.87925 4.99488ZM6.50345 7.91155C5.66863 7.90365 4.85009 7.73275 4.12454 7.41488L5.01297 6.73113C5.53275 6.99671 6.15592 7.11571 6.77673 7.06794C7.39754 7.02017 7.97775 6.80857 8.41892 6.46905C8.86008 6.12952 9.13503 5.68298 9.1971 5.2052C9.25917 4.72742 9.10455 4.24782 8.75946 3.8478L9.80003 3.04696C10.6558 3.57806 11.357 4.24173 11.8579 4.99488C10.9137 6.43155 8.89102 7.91155 6.50345 7.91155Z"
+                fill="black" />
+            </svg>
+          </div>
+        </div>
+        <div data-layer="Rectangle 230" class="Rectangle230"
+          style="width: 567px; height: 655px; left: 574px; top: 0px; position: absolute; background: linear-gradient(91deg, #7F3229 0%, #892F4A 100%); border-top-left-radius: 200px; border-top-right-radius: 35px; border-bottom-right-radius: 35px; border-bottom-left-radius: 200px">
+        </div>
+        <div data-layer="sđt" class="ST"
+          style="width: 254.12px; height: 33.41px; left: 145px; top: 310px; position: absolute">
+          <div data-layer="Rectangle 13" class="Rectangle13"
+            style="width: 254.12px; height: 33.41px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 10px; border: 1.50px #D9D9D9 solid">
+          </div>
+          <div data-layer="Số điện thoại" class="SINThoI"
+            style="width: 67.83px; height: 14.17px; left: 16.20px; top: 10.12px; position: absolute; color: black; font-size: 11px; font-family: Quicksand; font-weight: 400; word-wrap: break-word">
+            Số điện thoại</div>
+        </div>
+        <div data-layer="Hãy đăng kí thành viên để nhận nhiều chương trình khuyến mãi hơn từ Chi Dân chúng tôi"
+          class="slogan"
+          style="width: 393px; height: 53px; left: 698px; top: 284px; position: absolute; text-align: center; color: white; font-size: 16px; font-family: Quicksand; font-weight: 600; word-wrap: break-word">
+          Hãy đăng kí thành viên để nhận nhiều chương trình<br />khuyến mãi hơn từ Chi Dân chúng tôi
+        </div>
+        <div data-layer="hello" class="hello"
+          style="left: 737px; top: 211px; position: absolute; color: white; font-size: 32px; font-family: Quicksand; font-weight: 700; word-wrap: break-word">
+          Xin chào quý khách!
+        </div>
+
+        <div data-layer="last" class="Last"
+          style="width: 230.50px; height: 34px; left: 155.50px; top: 489px; position: absolute">
+          <div data-layer="Ghi nhớ mật khẩu" class="GhiNhMTKhU"
+            style="width: 74.06px; height: 10px; left: 9.52px; top: 24px; position: absolute; color: #5C5858; font-size: 8px; font-family: Quicksand; font-weight: 500; word-wrap: break-word">
+            Ghi nhớ mật khẩu</div>
+          <div data-layer="Quên mật khẩu?" class="QuNMTKhU"
+            style="width: 65.52px; height: 10px; left: 164.50px; top: 24px; position: absolute; color: #5C5858; font-size: 8px; font-family: Quicksand; font-weight: 500; word-wrap: break-word">
+            Quên mật khẩu?</div>
+          <div data-layer="Rectangle 16" class="Rectangle16"
+            style="width: 6.50px; height: 6.85px; left: 0.50px; top: 24.76px; position: absolute; background: white; border-radius: 2px; border: 0.50px #5C5858 solid">
+          </div>
+          <div data-svg-wrapper data-layer="Line 4" class="Line4" style="left: 0px; top: 0px; position: absolute">
+            <svg width="231" height="2" viewBox="0 0 231 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.5 1H230.997" stroke="#5C5858" stroke-width="0.5" />
+            </svg>
+          </div>
+        </div>
+
+        <div data-layer="acp đang kí" class="AcpAngK"
+          style="width: 188px; height: 37.58px; left: 798px; top: 349px; position: absolute">
+          <div data-layer="Đăng kí" class="NgK"
+            style="width: 107px; height: 25px; left: 61px; top: 6px; position: absolute; color: #D9D9D9; font-size: 20px; font-family: Quicksand; font-weight: 600; word-wrap: break-word">
+            Đăng kí<br /></div>
+          <div data-layer="Rectangle 15" class="Rectangle15"
+            style="width: 188px; height: 37.58px; left: 0px; top: 0px; position: absolute; border-radius: 10px; border: 1.50px #D9D9D9 solid">
+          </div>
+        </div>
+      </div>
+    </div>
+    popup login giao diện-->
+    <div data-layer="top" class="Top" style="width: 1512px; height: 130.11px; position: relative">
+      <div id="login" data-layer="button login" class="login_box"
+        style="width: 242.55px; height: 43.31px; left: 1184px; top: 43px; position: absolute">
+        <div data-svg-wrapper data-layer="Rectangle 29" class="login_box"
+          style="left: 0px; top: 0px; position: absolute" onclick="openLoginPopup()">
+          <svg width="243" height="44" viewBox="0 0 243 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0 21.6563C0 9.69583 9.69583 0 21.6563 0H220.894C232.854 0 242.55 9.69583 242.55 21.6563V21.6563C242.55 33.6167 232.854 43.3125 220.894 43.3125H21.6563C9.69585 43.3125 0 33.6167 0 21.6563V21.6563Z"
+              fill="#D75F52" />
+          </svg>
+        </div>
+        <div id="open_popup" data-layer="Đăng nhập / Đăng kí" class="login_link"
+          style="width: 207.11px; height: 24.92px; left: 17.32px; top: 6.55px; position: absolute; font-size: 19.69px; font-family: Poppins; font-weight: 500; word-wrap: break-word">
+          Đăng nhập / Đăng kí
+          </button>
+
+        </div>
+        <!-- start login -->
+        <div id="login-container">
+          
+          <div id="login">
+            <div id="login-top">
+              <h3>Đăng nhập</h3>
+              <button> <i class="fa-solid fa-xmark"></i> </button>
+            </div>
+            <div id="login-body">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corrupti sed et recusandae est nostrum
+                alias quod consequatur maxime! Repellendus necessitatibus odit reprehenderit dolor porro dolorem illo
+                est quaerat voluptatibus.</p>
+            </div>
+          </div>
+        </div>
+        <!-- end login -->
+      </div>
+      <div data-layer="Trang chủ" class="menu_item"
+        style="width: 154.35px; height: 129.94px; left: 452.81px; top: 0.17px; position: absolute">
+        <a href="#" data-layer="Trang chủ" class="menu_link"
+          style="width: 99.22px; height: 22.55px; left: 25.99px; top: 53.99px; position: absolute; font-size: 19.69px; font-weight: 400; word-wrap: break-word">Trang
+          chủ
+        </a>
+      </div>
+      <div class="menu_item" style="width: 154.35px; height: 129.94px; left: 607.16px; top: 0.17px; position: absolute">
+        <a href="#" class="menu_link"
+          style="width: 99.22px; height: 22.55px; left: 30.71px; top: 54.20px; position: absolute; font-size: 19.69px; font-weight: 400; word-wrap: break-word">
+          Đặt món
+        </a>
+      </div>
+      <div data-layer="About us" class="menu_item"
+        style="width: 154.35px; height: 129.94px; left: 761.51px; top: 0.17px; position: absolute">
+        <a href="#" data-layer="Về chúng tôi" class="menu_link"
+          style="width: 126.79px; height: 22.27px; left: 13.39px; top: 54.20px; position: absolute; font-size: 19.69px; font-weight: 400; word-wrap: break-word">Về
+          chúng tôi
+        </a>
+      </div>
+      <div data-layer="Feed back" class="menu_item"
+        style="width: 154.35px; height: 129.94px; left: 915.86px; top: 0.17px; position: absolute">
+        <a href="#" data-layer="Đánh giá" class="menu_link"
+          style="width: 126.79px; height: 22.27px; left: 27.56px; top: 54.20px; position: absolute; font-size: 19.69px; font-weight: 400; word-wrap: break-word">Đánh
+          giá
+        </a>
+      </div>
+      <div data-layer="LOGO" class="Logo"
+        style="width: 235.32px; height: 130px; left: 58px; top: 0px; position: absolute">
+        <div data-layer="CHI DÂN" class="ChiDN"
+          style="width: 78.61px; height: 25.33px; left: 124px; top: 59.85px; position: absolute; color: #D75F52; font-size: 23.62px; font-family: Salsa; font-weight: 400; word-wrap: break-word">
+          CHI DÂN</div>
+        <div data-layer="Lẩu" class="LU"
+          style="width: 111px; height: 40px; left: 124.32px; top: 18px; position: absolute; color: #D75F52; font-size: 39.38px; font-family: Salsa; font-weight: 400; word-wrap: break-word">
+          Lẩu</div>
+        <img data-layer="Logo_chidan_chữ đen 1" class="LogoChidanChEn1"
+          style="width: 130px; height: 130px; left: 0px; top: 0px; position: absolute"
+          src="/frontend/assets/Logo_chidan_chữ đen.png" />
+      </div>
+    </div>
+
+    <div data-layer="Ngăn cách" class="NgNCCh"
+      style="width: 1203.32px; left: 154.34px; top: 707.17px; position: absolute">
+      <div data-layer="Line 22" class="Line22"
+        style="width: 504.80px; height: 0px; left: 0px; top: 14.57px; position: absolute; border: 0.79px black solid">
+      </div>
+      <div data-layer="Line 23" class="Line23"
+        style="width: 504.80px; height: 0px; left: 698.52px; top: 14.96px; position: absolute; border: 0.79px black solid">
+      </div>
+      <div data-layer="Thương hiệu" class="ThNgHiU"
+        style="left: 533.93px; top: -0px; position: absolute; color: black; font-size: 22.05px; font-family: Prata; font-weight: 400; word-wrap: break-word">
+        Thương hiệu</div>
+    </div>
+
+    <div data-layer="Ngăn cách2" class="NgNCCh2"
+      style="width: 1203.32px; left: 154.35px; top: 1962.45px; position: absolute">
+      <div data-layer="Line 22" class="Line22"
+        style="width: 504.80px; height: 0px; left: -0px; top: 14.57px; position: absolute; border: 0.79px black solid">
+      </div>
+      <div data-layer="Line 23" class="Line23"
+        style="width: 504.80px; height: 0px; left: 698.52px; top: 14.96px; position: absolute; border: 0.79px black solid">
+      </div>
+      <div data-layer="Thực đơn" class="ThCN"
+        style="left: 550.46px; top: -0px; position: absolute; color: black; font-size: 22.05px; font-family: Prata; font-weight: 400; word-wrap: break-word">
+        Thực đơn </div>
+    </div>
+
+    <div data-layer="in4 1" class="In41"
+      style="width: 1204.87px; height: 347.29px; left: 154.35px; top: 793.01px; position: absolute">
+      <div data-layer="Rectangle 234" class="Rectangle234"
+        style="width: 592.20px; height: 347.29px; left: 0px; top: 0px; position: absolute; background: #F1F0F0; border-radius: 31.50px; border: 1px black solid">
+      </div>
+      <div
+        data-layer="Lẩu Chi Dân - Hương vị Đài Loan Sau hàng trăm năm tốn tại trong cuộc sống người Đài, lẩu Đài Loan không chỉ đơn thuấn là sự kết hợp của các nguyên liệu quen thuộc, mà liên tục được cải tiến và hoàn thiện, từ thế hệ này sang thế hệ khác. Thực khách đến Chi Dân sẽ được tự minh khám phá hành trình ẩm thực đặc sắc với nước lầu ngọt vị tự nhiên, kết hợp hầm cùng các loại gia vị dậy mùi thơm đặc trưng của Đài Loan. Nét đặc sắc không chỉ đến từ nước lầu, mà còn đến tử cả những món nhúng kiểu Đài - bạn sẽ tim thấy nhiếu hơn là chỉ thịt bò và các loại rau thơm. Chính sự kết hợp các nguyên liệu, món ăn hải hòa sẽ tạo nên hương vị lấu Đài Loan tỉ mỉ và tinh tế."
+        class="LUChiDNHNgVILoanSauHNgTrMNMTNTITrongCuCSNgNgIILUILoanKhNgChNThuNLSKTHPCACCNguyNLiUQuenThuCMLiNTCCCITiNVHoNThiNTThHNYSangThHKhCThCKhChNChiDNSCTMinhKhMPhHNhTrNhMThCCSCVINCLUNgTVTNhiNKTHPHMCNgCCLoIGiaVDYMIThMCTrNgCAILoanNTCSCKhNgChNTNCLUMCNNTCNhNgMNNhNgKiUIBNSTimThYNhiUHNLChThTBVCCLoIRauThMChNhSKTHPCCNguyNLiUMNNHIHASTONNHNgVLUILoanTMVTinhT"
+        style="width: 512px; height: 262px; left: 47.65px; top: 42.99px; position: absolute"><span
+          style="color: black; font-size: 23.62px; font-family: Prompt; font-weight: 500; word-wrap: break-word">Lẩu Chi
+          Dân - Hương vị Đài Loan <br /></span><span
+          style="color: black; font-size: 7.88px; font-family: Prompt; font-weight: 500; word-wrap: break-word"><br /></span><span
+          style="color: black; font-size: 16px; font-family: Quicksand; font-weight: 400; word-wrap: break-word">Sau
+          hàng
+          trăm năm tốn tại trong cuộc sống người Đài, lẩu Đài Loan không chỉ đơn thuấn là sự kết hợp của các nguyên liệu
+          quen thuộc, mà liên tục được cải tiến và hoàn thiện, từ thế hệ này sang thế hệ khác. Thực khách đến Chi Dân sẽ
+          được tự minh khám phá hành trình ẩm thực đặc sắc với nước lầu ngọt vị tự nhiên, kết hợp hầm cùng các loại gia
+          vị
+          dậy mùi thơm đặc trưng của Đài Loan. Nét đặc sắc không chỉ đến từ nước lầu, mà còn đến tử cả những món nhúng
+          kiểu Đài - bạn sẽ tim thấy nhiếu hơn là chỉ thịt bò và các loại rau thơm. Chính sự kết hợp các nguyên liệu,
+          món
+          ăn hải hòa sẽ tạo nên hương vị lấu Đài Loan tỉ mỉ và tinh tế.</span></div>
+      <img data-layer="Hình ảnh ở trang chủ 1" class="HNhNhTrangCh1"
+        style="width: 286.65px; height: 347.29px; left: 611.89px; top: 0px; position: absolute; border-radius: 25.99px"
+        src="/frontend/assets/in4_1_1.jpg" />
+      <img data-layer="lẩu 1" class="LU1"
+        style="width: 286.65px; height: 347.29px; left: 918.22px; top: 0px; position: absolute; background: linear-gradient(0deg, #461313 0%, #461313 100%); border-radius: 25.99px"
+        src="/frontend/assets/in4_1_2.jpg" />
+    </div>
+
+    <div data-layer="in4 2" class="In42"
+      style="width: 1204.88px; height: 348.08px; left: 154.35px; top: 1170.22px; position: absolute">
+      <div data-layer="Rectangle 233" class="Rectangle233"
+        style="width: 592.99px; height: 347.29px; left: 611.89px; top: -0px; position: absolute; background: #F1F0F0; border-radius: 31.50px; border: 1px black solid">
+      </div>
+      <div
+        data-layer="Lẩu Ngon - Tươi Tạo nên trải nghiệm độc đáo! Chúng tôi tin rằng một nồi lẩu ngon bắt đầu từ những nguyên liệu tốt nhất. Bởi vậy, tất cả các nguyên liệu tại Chi Dân đều được chọn lọc kỹ càng:      - Nước lẩu đậm đà nấu từ xương hầm suốt nhiều giờ      - Thịt bò Mỹ, hải sản tươi sống nhập mới mỗi ngày      - Rau xanh, nấm, topping phong phú, đảm bảo chất lượng cao     Đến với Chi Dân, thực khách sẽ được thưởng thức một nồi lẩu chuẩn vị Đài, nóng hổi và ngon khó cưỡng!"
+        class="LUNgonTITONNTrINghiMCOChNgTITinRNgMTNILUNgonBTUTNhNgNguyNLiUTTNhTBIVYTTCCCNguyNLiUTIChiDNUCChNLCKCNgNCLUMNUTXNgHMSuTNhiUGiThTBMHISNTISNgNhPMIMINgYRauXanhNMToppingPhongPhMBOChTLNgCaoNVIChiDNThCKhChSCThNgThCMTNILUChuNVINNgHIVNgonKhCNg"
+        style="width: 525px; height: 265px; left: 655.65px; top: 41.77px; position: absolute"><span
+          style="color: black; font-size: 23.62px; font-family: Prompt; font-weight: 500; word-wrap: break-word">Lẩu
+          Ngon
+          - Tươi <br />Tạo nên trải nghiệm độc đáo!</span><span
+          style="color: black; font-size: 23.62px; font-family: Prompt; font-weight: 400; word-wrap: break-word">
+          <br /></span><span
+          style="color: black; font-size: 11.81px; font-family: Prompt; font-weight: 400; word-wrap: break-word"><br /></span><span
+          style="color: black; font-size: 7.88px; font-family: Prompt; font-weight: 400; word-wrap: break-word"><br /></span><span
+          style="color: black; font-size: 16px; font-family: Quicksand; font-weight: 400; word-wrap: break-word">Chúng
+          tôi
+          tin rằng một nồi lẩu ngon bắt đầu từ những nguyên liệu tốt nhất. Bởi vậy, tất cả các nguyên liệu tại Chi Dân
+          đều
+          được chọn lọc kỹ càng:  - Nước lẩu đậm đà nấu từ xương hầm suốt nhiều giờ  - Thịt bò Mỹ, hải sản tươi sống
+          nhập
+          mới mỗi ngày  - Rau xanh, nấm, topping phong phú, đảm bảo chất lượng cao  Đến với Chi Dân, thực khách sẽ được
+          thưởng thức một nồi lẩu chuẩn vị Đài, nóng hổi và ngon khó cưỡng!</span></div>
+      <img data-layer="Nồi lẩu 4 ngăn 1" class="NILU4NgN1"
+        style="width: 592.20px; height: 347.29px; left: -0px; top: 0.79px; position: absolute; background: linear-gradient(0deg, #621A1A 0%, #621A1A 100%); border-radius: 29.14px"
+        src="/frontend/assets/in4_2.jpg" />
+    </div>
+    <div data-layer="in4 3" class="In43"
+      style="width: 1204.88px; height: 349.65px; left: 154.35px; top: 1548.23px; position: absolute">
+      <div data-layer="Rectangle 233" class="Rectangle233"
+        style="width: 592.20px; height: 347.29px; left: 0px; top: 0px; position: absolute; background: #F1F0F0; border-radius: 31.50px; border: 1px black solid">
+      </div>
+      <div
+        data-layer="Ở đây, chúng tôi không chỉ bán lẩu? Chúng tôi Không Chỉ Bán Lẩu – Chúng Tôi Mang Đến Trải Nghiệm!     Sứ mệnh của chúng tôi không chỉ là mang đến những nồi lẩu ngon, mà còn tạo ra một không gian vui vẻ, thư giãn, nơi mọi người có thể tận hưởng những khoảnh khắc đáng nhớ bên nhau. Hãy đến ngay Chi Dân và cùng chúng tôi thưởng thức hương vị tuyệt hảo của lẩu!"
+        class="YChNgTIKhNgChBNLUChNgTIKhNgChBNLUChNgTIMangNTrINghiMSMNhCAChNgTIKhNgChLMangNNhNgNILUNgonMCNTORaMTKhNgGianVuiVThGiNNIMINgICThTNHNgNhNgKhoNhKhCNgNhBNNhauHYNNgayChiDNVCNgChNgTIThNgThCHNgVTuyTHOCALU"
+        style="width: 460px; height: 221px; left: 69.65px; top: 66.77px; position: absolute"><span
+          style="color: black; font-size: 23.62px; font-family: Prompt; font-weight: 500; word-wrap: break-word">Ở đây,
+          chúng tôi không chỉ bán lẩu?<br /></span><span
+          style="color: black; font-size: 11.81px; font-family: Prompt; font-weight: 500; word-wrap: break-word"><br /></span><span
+          style="color: black; font-size: 7.88px; font-family: Prompt; font-weight: 300; word-wrap: break-word"><br /></span><span
+          style="color: black; font-size: 16px; font-family: Quicksand; font-weight: 400; word-wrap: break-word">Chúng
+          tôi
+          Không Chỉ Bán Lẩu – Chúng Tôi Mang Đến Trải Nghiệm!  Sứ mệnh của chúng tôi không chỉ là mang đến những nồi lẩu
+          ngon, mà còn tạo ra một không gian vui vẻ, thư giãn, nơi mọi người có thể tận hưởng những khoảnh khắc đáng nhớ
+          bên nhau. Hãy đến ngay Chi Dân và cùng chúng tôi thưởng thức hương vị tuyệt hảo của lẩu!</span></div>
+      <div data-layer="ảnh" class="Nh"
+        style="width: 592.20px; height: 347.29px; left: 612.67px; top: 2.36px; position: absolute">
+        <img data-layer="image 2" class="Image2"
+          style="width: 592.20px; height: 347.29px; left: 0px; top: 0px; position: absolute; border-radius: 28.35px"
+          src="/frontend/assets/in4_3" />
+        <div data-layer="Rectangle 235" class="Rectangle235"
+          style="width: 240.26px; height: 63.79px; left: 0px; top: 116.55px; position: absolute; background: #BE2327">
+        </div>
+        <div data-layer="Chi Dân" class="ChiDN"
+          style="width: 172.46px; height: 50.40px; left: 31.50px; top: 121.28px; position: absolute; color: #E4C499; font-size: 63px; font-family: Qwigley; font-weight: 400; word-wrap: break-word">
+          Chi Dân</div>
+      </div>
+    </div>
+    <div data-layer="Banner" class="Banner"
+      style="width: 1512px; height: 513.45px; left: -0px; top: 129.94px; position: absolute">
+      <img data-layer="image 3" class="Image3"
+        style="width: 1512px; height: 513.45px; left: 0px; top: 0px; position: absolute"
+        src="/frontend/assets/Banner1.jpg" />
+      <div data-layer="Thương hiệu lẩu đến từ Đài Loan Đậm đà - tươi ngon - trọn vẹn"
+        class="ThNgHiULUNTILoanMTINgonTrNVN"
+        style="width: 685.12px; height: 86.63px; left: 137.81px; top: 17.33px; position: absolute; text-align: center">
+        <span
+          style="color: rgba(196.26, 196.99, 40.55, 0.92); font-size: 39.38px; font-family: Sarpanch; font-weight: 900; word-wrap: break-word">Thương
+          hiệu lẩu đến từ Đài Loan<br /></span><span
+          style="color: rgba(196.26, 196.99, 40.55, 0.92); font-size: 35.44px; font-family: Sarpanch; font-weight: 500; word-wrap: break-word">Đậm
+          đà - tươi ngon - trọn vẹn</span>
+      </div>
+    </div>
+    <div data-layer="in4 4" class="In44"
+      style="width: 1205px; height: 667px; left: 153px; top: 2056px; position: absolute">
+      <div data-layer="ảnh 2" class="Nh2"
+        style="width: 330px; height: 667px; left: 436px; top: -0px; position: absolute">
+        <div data-layer="Rectangle 241" class="Rectangle241"
+          style="width: 329px; height: 72px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 14.17px; border: 1px black solid">
+        </div>
+        <div data-layer="Buffet Topping Ăn Thả Ga, Không Lo Về Giá!" class="BuffetToppingNThGaKhNgLoVGi"
+          style="width: 305.55px; left: 10.24px; top: 3.31px; position: absolute"><span
+            style="color: black; font-size: 22.05px; font-family: Prompt; font-style: italic; font-weight: 600; word-wrap: break-word">
+            Buffet Topping<br /></span><span
+            style="color: black; font-size: 14.17px; font-family: Prompt; font-style: italic; font-weight: 275; word-wrap: break-word">
+            Ăn Thả Ga, Không Lo Về Giá! </span></div>
+        <div data-layer="Rectangle 239" class="Rectangle239"
+          style="width: 330px; height: 246px; left: 0px; top: 421px; position: absolute; background: #D9D9D9; border-top-left-radius: 14.17px; border-top-right-radius: 14.17px; border: 1px black solid">
+        </div>
+        <div
+          data-layer="Buffet lẩu tại Lẩu Chi Dân mang đến hàng chục lựa chọn hấp dẫn với đủ loại thịt, hải sản, rau củ,.... Tất cả nguyên liệu đều được tuyển chọn kỹ lưỡng, đảm bảo tươi ngon và chất lượng. Chỉ cần chọn nước lẩu yêu thích, phần còn lại cứ để buffet lo nhúng thả ga, ăn không giới hạn!"
+          class="BuffetLUTILUChiDNMangNHNgChCLAChNHPDNVILoIThTHISNRauCTTCNguyNLiUUCTuyNChNKLNgMBOTINgonVChTLNgChCNChNNCLUYUThChPhNCNLICBuffetLoNhNgThGaNKhNgGiIHN"
+          style="width: 291.37px; left: 19.69px; top: 447.46px; position: absolute; color: black; font-size: 15.75px; font-family: Prompt; font-style: italic; font-weight: 300; word-wrap: break-word">
+          Buffet lẩu tại Lẩu Chi Dân mang đến hàng chục lựa chọn hấp dẫn với đủ loại thịt, hải sản, rau củ,.... Tất cả
+          nguyên liệu đều được tuyển chọn kỹ lưỡng, đảm bảo tươi ngon và chất lượng. Chỉ cần chọn nước lẩu yêu thích,
+          phần
+          còn lại cứ để buffet lo nhúng thả ga, ăn không giới hạn!</div>
+        <img data-layer="Thực đơn 1" class="ThCN1"
+          style="width: 330px; height: 377px; left: 0px; top: 54px; position: absolute; border: 1px black solid"
+          src="/frontend/assets/in4_4_2.jpg" />
+      </div>
+      <div data-layer="ảnh1" class="Nh1" style="width: 330px; height: 667px; left: 0px; top: 0px; position: absolute">
+        <div data-layer="Rectangle 241" class="Rectangle241"
+          style="width: 329.96px; height: 71.66px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 14.17px; border: 1px black solid">
+        </div>
+        <div data-layer="Nước Lẩu Đậm Đà, Chuẩn Vị" class="NCLUMChuNV"
+          style="width: 181.12px; left: 23.98px; top: 2.52px; position: absolute"><span
+            style="color: black; font-size: 22.05px; font-family: Prompt; font-style: italic; font-weight: 600; word-wrap: break-word">Nước
+            Lẩu</span><span
+            style="color: black; font-size: 19.69px; font-family: Prompt; font-style: italic; font-weight: 600; word-wrap: break-word">
+            <br /></span><span
+            style="color: black; font-size: 14.17px; font-family: Prompt; font-style: italic; font-weight: 275; word-wrap: break-word">Đậm
+            Đà, Chuẩn Vị</span></div>
+        <div data-layer="Rectangle 239" class="Rectangle239"
+          style="width: 330px; height: 246px; left: 0px; top: 421px; position: absolute; background: #D9D9D9; border-top-left-radius: 14.17px; border-top-right-radius: 14.17px; border: 1px black solid">
+        </div>
+        <div
+          data-layer="Tại Lẩu Chi Dân, nước lẩu được chế biến theo công thức đặc biệt, mang đến hương vị đậm đà, thơm ngon, phù hợp với mọi sở thích. Từ vị cay tê kích thích vị giác đến vị thanh ngọt bổ dưỡng, mỗi loại nước lẩu đều được nấu từ nguyên liệu tươi ngon, đảm bảo trải nghiệm ẩm thực trọn vẹn."
+          class="TILUChiDNNCLUCChBiNTheoCNgThCCBiTMangNHNgVMThMNgonPhHPVIMISThChTVCayTKChThChVGiCNVThanhNgTBDNgMILoINCLUUCNUTNguyNLiUTINgonMBOTrINghiMMThCTrNVN"
+          style="width: 307.91px; left: 11.38px; top: 447.46px; position: absolute; color: black; font-size: 15.75px; font-family: Prompt; font-style: italic; font-weight: 300; word-wrap: break-word">
+          Tại Lẩu Chi Dân, nước lẩu được chế biến theo công thức đặc biệt, mang đến hương vị đậm đà, thơm ngon, phù hợp
+          với mọi sở thích. Từ vị cay tê kích thích vị giác đến vị thanh ngọt bổ dưỡng, mỗi loại nước lẩu đều được nấu
+          từ
+          nguyên liệu tươi ngon, đảm bảo trải nghiệm ẩm thực trọn vẹn.</div>
+        <div
+          data-layer="Tại Lẩu Chi Dân, nước lẩu được chế biến theo công thức đặc biệt, mang đến hương vị đậm đà, thơm ngon, phù hợp với mọi sở thích. Từ vị cay tê kích thích vị giác đến vị thanh ngọt bổ dưỡng, mỗi loại nước lẩu đều được nấu từ nguyên liệu tươi ngon, đảm bảo trải nghiệm ẩm thực trọn vẹn."
+          class="TILUChiDNNCLUCChBiNTheoCNgThCCBiTMangNHNgVMThMNgonPhHPVIMISThChTVCayTKChThChVGiCNVThanhNgTBDNgMILoINCLUUCNUTNguyNLiUTINgonMBOTrINghiMMThCTrNVN"
+          style="width: 307.91px; left: 11.38px; top: 447.46px; position: absolute; color: black; font-size: 15.75px; font-family: Prompt; font-style: italic; font-weight: 300; word-wrap: break-word">
+          Tại Lẩu Chi Dân, nước lẩu được chế biến theo công thức đặc biệt, mang đến hương vị đậm đà, thơm ngon, phù hợp
+          với mọi sở thích. Từ vị cay tê kích thích vị giác đến vị thanh ngọt bổ dưỡng, mỗi loại nước lẩu đều được nấu
+          từ
+          nguyên liệu tươi ngon, đảm bảo trải nghiệm ẩm thực trọn vẹn.</div>
+        <img data-layer="Buffet 1" class="Buffet1"
+          style="width: 330px; height: 377px; left: 0px; top: 54px; position: absolute; border: 1px black solid"
+          src="/frontend/assets/in4_4_1.jpg" />
+        <div data-layer="Rectangle 236" class="Rectangle236"
+          style="width: 67.19px; height: 20.33px; left: 0.35px; top: 71.82px; position: absolute; background: #990F1C">
+        </div>
+        <div data-svg-wrapper data-layer="Rectangle 237" class="Rectangle237"
+          style="left: 1px; top: 394px; position: absolute">
+          <svg width="80" height="37" viewBox="0 0 80 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0H80V37H0V0Z" fill="#97101E" />
+          </svg>
+        </div>
+        <div data-layer="Rectangle 238" class="Rectangle238"
+          style="width: 90.32px; height: 84.26px; left: 0.35px; top: 130.89px; position: absolute; background: #990F1C">
+        </div>
+        <div data-layer="Menu Nước lẩu" class="MenuNCLU" style="left: 12.95px; top: 131.67px; position: absolute"><span
+            style="color: rgba(196.26, 196.99, 40.55, 0.92); font-size: 29.92px; font-family: Qwigley; font-weight: 400; word-wrap: break-word">Menu<br /></span><span
+            style="color: rgba(196.26, 196.99, 40.55, 0.92); font-size: 23.62px; font-family: Qwigley; font-weight: 400; word-wrap: break-word">Nước
+            lẩu</span></div>
+        <img data-layer="Logo_chidan_chữ đen 2" class="LogoChidanChEn2"
+          style="width: 35.44px; height: 35.44px; left: 0.35px; top: 53.71px; position: absolute"
+          src="/frontend/assets/Logo_chidan_chữ đen.png" />
+      </div>
+      <div data-layer="ảnh 3" class="Nh3"
+        style="width: 331px; height: 667px; left: 874px; top: 0px; position: absolute">
+        <div data-layer="Rectangle 241" class="Rectangle241"
+          style="width: 331px; height: 72px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 14.17px; border: 1px black solid">
+        </div>
+        <div data-layer="Món Gọi Riêng Đậm Chất Riêng Biệt" class="MNGIRiNgMChTRiNgBiT"
+          style="width: 288.23px; left: 21px; top: 3px; position: absolute"><span
+            style="color: black; font-size: 22.05px; font-family: Prompt; font-style: italic; font-weight: 600; word-wrap: break-word">Món
+            Gọi Riêng<br /></span><span
+            style="color: black; font-size: 14.17px; font-family: Prompt; font-style: italic; font-weight: 275; word-wrap: break-word">Đậm
+            Chất Riêng Biệt</span></div>
+        <div data-layer="Rectangle 239" class="Rectangle239"
+          style="width: 330px; height: 246px; left: 0px; top: 421px; position: absolute; background: #D9D9D9; border-top-left-radius: 14.17px; border-top-right-radius: 14.17px; border: 1px black solid">
+        </div>
+        <div
+          data-layer="Nếu muốn một bữa ăn tinh gọn, thưởng thức những món đặc trưng, menu món gọi riêng của quán luôn sẵn sàng phục vụ. Những phần thịt bò thượng hạng, hải sản tươi ngon các món ăn kèm hấp dẫn, tất cả đều được chế biến theo phong cách chuẩn vị, giúp bữa lẩu thêm phong phú và trọn vẹn."
+          class="NUMuNMTBANTinhGNThNgThCNhNgMNCTrNgMenuMNGIRiNgCAQuNLuNSNSNgPhCVNhNgPhNThTBThNgHNgHISNTINgonCCMNNKMHPDNTTCUCChBiNTheoPhongCChChuNVGiPBALUThMPhongPhVTrNVN"
+          style="width: 302.40px; left: 14.65px; top: 447.46px; position: absolute; color: black; font-size: 15.75px; font-family: Prompt; font-style: italic; font-weight: 300; word-wrap: break-word">
+          Nếu muốn một bữa ăn tinh gọn, thưởng thức những món đặc trưng, menu món gọi riêng của quán luôn sẵn sàng phục
+          vụ. Những phần thịt bò thượng hạng, hải sản tươi ngon các món ăn kèm hấp dẫn, tất cả đều được chế biến theo
+          phong cách chuẩn vị, giúp bữa lẩu thêm phong phú và trọn vẹn.</div>
+        <img data-layer="image 1" class="Image1"
+          style="width: 330px; height: 377px; left: 0px; top: 54px; position: absolute; border: 1px black solid"
+          src="/frontend/assets/in4_4_3.webp" />
+      </div>
+    </div>
+    <div data-layer="bottom" class="Bottom"
+      style="width: 1512px; height: 269.33px; left: -0px; top: 3038.96px; position: absolute">
+      <div data-layer="Rectangle 242" class="Rectangle242"
+        style="width: 1512px; height: 269.33px; left: 0px; top: 0px; position: absolute; background: #353535"></div>
+      <div data-layer="contact" class="Contact"
+        style="width: 238.61px; height: 148.84px; left: 1115.10px; top: 28.35px; position: absolute">
+        <div
+          data-layer="Trụ sở chính: Số 144, đường Xuân Thủy, quận Cầu Giấy, Hà Nội email: laudailoanchidan@gmail.com phone: 0943914498"
+          class="TrSChNhS144NgXuNThYQuNCUGiYHNIEmailLaudailoanchidanGmailComPhone0943914498"
+          style="width: 238.61px; height: 99.22px; left: 0px; top: 49.61px; position: absolute; color: white; font-size: 13.39px; font-family: Quicksand; font-weight: 500; word-wrap: break-word">
+          Trụ sở chính: Số 144, đường Xuân Thủy, quận Cầu Giấy, Hà Nội<br /><br />email:
+          laudailoanchidan@gmail.com<br />phone: 0943914498<br /></div>
+        <div data-layer="Liên hệ" class="LiNH"
+          style="left: 0px; top: 0px; position: absolute; color: white; font-size: 17.33px; font-family: Prompt; font-weight: 700; word-wrap: break-word">
+          Liên hệ</div>
+      </div>
+      <img data-layer="Logo_chidan_chữ trắng 1" class="LogoChidanChTrNg1"
+        style="width: 69.12px; height: 56.06px; left: 64.58px; top: 16.54px; position: absolute"
+        src="/frontend/assets/Logo_chidan_chữ trắng.png" />
+      <div
+        data-layer="Lẩu Chi Dân ra đời với mong muốn mang đến trải nghiệm ẩm thực đậm đà hương vị Đài Loan, kết hợp cùng không gian ấm cúng, hiện đại, phù hợp cho mọi buổi họp mặt. Tại đây, mỗi nồi lẩu không chỉ là món ăn, mà còn là sự kết nối – nơi bạn bè, gia đình cùng quây quần bên nhau, chia sẻ những khoảnh khắc đáng nhớ."
+        class="LUChiDNRaIVIMongMuNMangNTrINghiMMThCMHNgVILoanKTHPCNgKhNgGianMCNgHiNIPhHPChoMIBuIHPMTTIYMINILUKhNgChLMNNMCNLSKTNINIBNBGiaNhCNgQuYQuNBNNhauChiaSNhNgKhoNhKhCNgNh"
+        style="width: 607.95px; left: 65.36px; top: 101.59px; position: absolute; color: white; font-size: 11.81px; font-family: Quicksand; font-weight: 400; word-wrap: break-word">
+        Lẩu Chi Dân ra đời với mong muốn mang đến trải nghiệm ẩm thực đậm đà hương vị Đài Loan, kết hợp cùng không gian
+        ấm
+        cúng, hiện đại, phù hợp cho mọi buổi họp mặt. Tại đây, mỗi nồi lẩu không chỉ là món ăn, mà còn là sự kết nối –
+        nơi
+        bạn bè, gia đình cùng quây quần bên nhau, chia sẻ những khoảnh khắc đáng nhớ.</div>
+      <div data-svg-wrapper data-layer="Line 3" class="Line3" style="left: 50.40px; top: 206.32px; position: absolute">
+        <svg width="1420" height="1" viewBox="0 0 1420 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.400024 0.287109L1419.47 0.287109" stroke="white" stroke-width="0.39375" />
+        </svg>
+      </div>
+      <div data-layer="quick link" class="QuickLink"
+        style="width: 139px; height: 159.08px; left: 766.24px; top: 28.35px; position: absolute">
+        <div data-layer="Support" class="Support"
+          style="width: 114.97px; height: 20.85px; left: -0px; top: 138.23px; position: absolute; color: white; font-size: 13.39px; font-family: Quicksand; font-weight: 500; word-wrap: break-word">
+          Support</div>
+        <div data-layer="About" class="About"
+          style="width: 88.20px; height: 19.55px; left: -0px; top: 79.58px; position: absolute; color: white; font-size: 13.39px; font-family: Quicksand; font-weight: 500; word-wrap: break-word">
+          About</div>
+        <div data-layer="Youtube" class="Youtube"
+          style="width: 122.06px; height: 20.85px; left: -0px; top: 108.25px; position: absolute; color: white; font-size: 13.39px; font-family: Quicksand; font-weight: 500; word-wrap: break-word">
+          Youtube</div>
+        <div data-layer="Home" class="Home"
+          style="width: 83.47px; height: 20.85px; left: -0px; top: 49.61px; position: absolute; color: white; font-size: 13.39px; font-family: Quicksand; font-weight: 500; word-wrap: break-word">
+          Home</div>
+        <div data-layer="Truy cập nhanh" class="TruyCPNhanh"
+          style="left: 0px; top: 0px; position: absolute; color: white; font-size: 17.33px; font-family: Prompt; font-weight: 700; word-wrap: break-word">
+          Truy cập nhanh</div>
+      </div>
+      <div data-svg-wrapper data-layer="Vector" class="Vector" style="left: 66.94px; top: 180.34px; position: absolute">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M6.84375 0.299805C3.58693 0.299805 0.9375 2.94929 0.9375 6.20595C0.9375 9.46271 3.58693 12.1123 6.84375 12.1123C10.1004 12.1123 12.75 9.46271 12.75 6.20595C12.75 2.94929 10.1004 0.299805 6.84375 0.299805ZM8.51302 4.02824C8.51302 4.0562 8.50191 4.08302 8.48214 4.1028C8.46236 4.12257 8.43554 4.13368 8.40757 4.13368L7.73617 4.13411C7.29318 4.13411 7.21219 4.30662 7.21219 4.64637V5.35119H8.36371C8.39397 5.35119 8.42286 5.36426 8.44279 5.38704C8.46272 5.40982 8.472 5.44008 8.46831 5.47013L8.30434 6.73899C8.30106 6.76441 8.28863 6.78777 8.26937 6.80469C8.25012 6.82161 8.22536 6.83095 8.19973 6.83094H7.21219V9.98162C7.21219 10.0096 7.20108 10.0364 7.18131 10.0562C7.16153 10.076 7.13471 10.0871 7.10674 10.0871H5.79663C5.76867 10.0871 5.74184 10.076 5.72207 10.0562C5.70229 10.0364 5.69118 10.0096 5.69118 9.98162V6.83094H4.70048C4.67251 6.83094 4.64569 6.81983 4.62592 6.80006C4.60614 6.78028 4.59503 6.75346 4.59503 6.72549V5.45664C4.59503 5.42867 4.60614 5.40185 4.62592 5.38207C4.64569 5.3623 4.67251 5.35119 4.70048 5.35119H5.69118V4.52078C5.69118 3.42096 6.35678 2.73787 7.42847 2.73787C7.88918 2.73787 8.29632 2.77214 8.42139 2.78869C8.44673 2.79204 8.47 2.80449 8.48686 2.82371C8.50371 2.84293 8.51301 2.86763 8.51302 2.89319V4.02824Z"
+            fill="white" />
+        </svg>
+      </div>
+      <div data-svg-wrapper data-layer="Vector" class="Vector" style="left: 94.50px; top: 180.34px; position: absolute">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9.56019 2.34337C9.42001 2.34337 9.28298 2.38493 9.16643 2.46281C9.04987 2.54069 8.95903 2.65138 8.90539 2.78089C8.85174 2.9104 8.83771 3.0529 8.86506 3.19039C8.8924 3.32787 8.95991 3.45416 9.05903 3.55328C9.15815 3.6524 9.28443 3.7199 9.42192 3.74725C9.5594 3.7746 9.70191 3.76056 9.83141 3.70692C9.96092 3.65327 10.0716 3.56243 10.1495 3.44588C10.2274 3.32932 10.2689 3.19229 10.2689 3.05212C10.2689 2.86414 10.1943 2.68387 10.0613 2.55096C9.92843 2.41804 9.74816 2.34337 9.56019 2.34337ZM12.2771 3.77268C12.2656 3.28264 12.1738 2.7978 12.0054 2.33746C11.8552 1.94359 11.6215 1.58694 11.3202 1.29205C11.0278 0.989316 10.6703 0.757053 10.2748 0.612836C9.81572 0.439287 9.33034 0.345407 8.83963 0.335242C8.21356 0.299805 8.01275 0.299805 6.40625 0.299805C4.79975 0.299805 4.59894 0.299805 3.97287 0.335242C3.48216 0.345407 2.99677 0.439287 2.53766 0.612836C2.14293 0.758513 1.78575 0.990576 1.49225 1.29205C1.18951 1.58452 0.957248 1.942 0.813031 2.33746C0.639482 2.79658 0.545602 3.28196 0.535437 3.77268C0.5 4.39874 0.5 4.59955 0.5 6.20605C0.5 7.81255 0.5 8.01337 0.535437 8.63943C0.545602 9.13015 0.639482 9.61553 0.813031 10.0746C0.957248 10.4701 1.18951 10.8276 1.49225 11.1201C1.78575 11.4215 2.14293 11.6536 2.53766 11.7993C2.99677 11.9728 3.48216 12.0667 3.97287 12.0769C4.59894 12.1123 4.79975 12.1123 6.40625 12.1123C8.01275 12.1123 8.21356 12.1123 8.83963 12.0769C9.33034 12.0667 9.81572 11.9728 10.2748 11.7993C10.6703 11.6551 11.0278 11.4228 11.3202 11.1201C11.6228 10.8263 11.8567 10.4693 12.0054 10.0746C12.1738 9.61431 12.2656 9.12947 12.2771 8.63943C12.2771 8.01337 12.3125 7.81255 12.3125 6.20605C12.3125 4.59955 12.3125 4.39874 12.2771 3.77268ZM11.2139 8.56855C11.2096 8.94347 11.1417 9.31493 11.0131 9.66712C10.9188 9.92415 10.7674 10.1564 10.5702 10.3463C10.3786 10.5415 10.1468 10.6927 9.89094 10.7893C9.53875 10.9179 9.16729 10.9858 8.79238 10.9901C8.20175 11.0196 7.98322 11.0256 6.42987 11.0256C4.87653 11.0256 4.658 11.0256 4.06737 10.9901C3.67809 10.9974 3.29046 10.9375 2.92156 10.8129C2.67691 10.7114 2.45577 10.5606 2.27187 10.37C2.07584 10.1802 1.92627 9.94778 1.83481 9.69074C1.69062 9.3335 1.61064 8.95361 1.59856 8.56855C1.59856 7.97793 1.56312 7.7594 1.56312 6.20605C1.56312 4.65271 1.56312 4.43418 1.59856 3.84355C1.60121 3.46027 1.67118 3.08043 1.80528 2.72137C1.90926 2.47207 2.06886 2.24985 2.27187 2.07168C2.45131 1.8686 2.67308 1.70732 2.92156 1.59918C3.28158 1.46927 3.66102 1.40137 4.04375 1.39837C4.63437 1.39837 4.85291 1.36293 6.40625 1.36293C7.95959 1.36293 8.17812 1.36293 8.76875 1.39837C9.14366 1.40267 9.51512 1.47057 9.86731 1.59918C10.1357 1.69879 10.3766 1.86074 10.5702 2.07168C10.7637 2.25311 10.9149 2.47492 11.0131 2.72137C11.1444 3.08102 11.2123 3.4607 11.2139 3.84355C11.2435 4.43418 11.2494 4.65271 11.2494 6.20605C11.2494 7.7594 11.2435 7.97793 11.2139 8.56855ZM6.40625 3.17615C5.80724 3.17732 5.22202 3.35601 4.72454 3.68965C4.22705 4.02329 3.83962 4.4969 3.6112 5.05065C3.38278 5.60439 3.32362 6.21342 3.44119 6.80077C3.55877 7.38813 3.8478 7.92745 4.27178 8.3506C4.69575 8.77375 5.23564 9.06174 5.82322 9.17817C6.4108 9.2946 7.01971 9.23425 7.57301 9.00475C8.12631 8.77525 8.59917 8.3869 8.93184 7.88876C9.26451 7.39063 9.44206 6.80506 9.44206 6.20605C9.44284 5.80744 9.36481 5.41261 9.21245 5.04427C9.06009 4.67593 8.83641 4.34134 8.55428 4.05975C8.27214 3.77817 7.93712 3.55514 7.56848 3.4035C7.19984 3.25185 6.80486 3.17459 6.40625 3.17615ZM6.40625 8.17284C6.01726 8.17284 5.637 8.05749 5.31356 7.84137C4.99013 7.62526 4.73804 7.31809 4.58918 6.95871C4.44032 6.59933 4.40137 6.20387 4.47726 5.82235C4.55315 5.44084 4.74047 5.09039 5.01553 4.81533C5.29058 4.54027 5.64103 4.35295 6.02255 4.27706C6.40407 4.20118 6.79952 4.24012 7.1589 4.38899C7.51829 4.53785 7.82546 4.78993 8.04157 5.11337C8.25768 5.4368 8.37303 5.81706 8.37303 6.20605C8.37303 6.46434 8.32216 6.72009 8.22332 6.95871C8.12448 7.19733 7.97961 7.41415 7.79697 7.59678C7.61434 7.77941 7.39753 7.92428 7.1589 8.02312C6.92028 8.12196 6.66453 8.17284 6.40625 8.17284Z"
+            fill="white" />
+        </svg>
+      </div>
+      <div data-svg-wrapper data-layer="Vector" class="Vector"
+        style="left: 118.91px; top: 180.34px; position: absolute">
+        <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.7767 1.72446C15.218 1.96262 14.6272 2.12007 14.0227 2.19189C14.6605 1.81745 15.1384 1.22838 15.3679 0.53396C14.7685 0.884582 14.1125 1.13162 13.4281 1.26433C12.9707 0.776859 12.3616 0.452376 11.6963 0.341765C11.031 0.231155 10.3472 0.340675 9.7521 0.653148C9.15698 0.965621 8.68422 1.46337 8.40798 2.06834C8.13174 2.6733 8.06763 3.35126 8.22572 3.99589C7.01387 3.93566 5.82847 3.62556 4.74653 3.08576C3.66458 2.54595 2.71029 1.7885 1.94565 0.862625C1.67746 1.32288 1.53653 1.84411 1.53689 2.37448C1.53594 2.86703 1.65893 3.35216 1.89493 3.78669C2.13093 4.22122 2.47259 4.59166 2.88952 4.86503C2.40493 4.85207 1.9307 4.72429 1.50716 4.49254V4.52906C1.51079 5.21918 1.75687 5.88688 2.20378 6.41922C2.65068 6.95157 3.27097 7.31587 3.95973 7.45052C3.6946 7.52982 3.41933 7.57162 3.14221 7.57469C2.95038 7.57248 2.75903 7.55539 2.56994 7.52356C2.76608 8.11721 3.14564 8.63601 3.65582 9.00778C4.16599 9.37955 4.7814 9.58578 5.41641 9.5978C4.34412 10.427 3.02023 10.8795 1.6558 10.8832C1.40737 10.884 1.15914 10.8694 0.912598 10.8394C2.30568 11.7233 3.92912 12.1926 5.58734 12.1906C6.73165 12.2023 7.86685 11.9898 8.92664 11.5655C9.98643 11.1412 10.9496 10.5136 11.7598 9.7194C12.57 8.92521 13.2111 7.98032 13.6456 6.93993C14.08 5.89953 14.2992 4.78449 14.2903 3.65992C14.2903 3.53576 14.2903 3.4043 14.2903 3.27283C14.8734 2.84543 15.3764 2.32148 15.7767 1.72446Z"
+            fill="white" />
+        </svg>
+      </div>
+    </div>
+    <div data-layer="top" class="Top" style="width: 1512px; height: 130.11px; left: 0px; top: 0px; position: absolute">
+      <div data-layer="Rectangle 28" class="Rectangle28"
+        style="width: 1512px; height: 129.94px; left: 0px; top: 0.17px; position: absolute; background: #CCCCCC; border-bottom: 0.79px #A89797 solid">
+      </div>
+      <div data-layer="button login" class="ButtonLogin"
+        style="width: 242.55px; height: 43.31px; left: 1184px; top: 43px; position: absolute">
+        <div data-svg-wrapper data-layer="Rectangle 29" class="Rectangle29"
+          style="left: 0px; top: 0px; position: absolute">
+          <svg width="243" height="44" viewBox="0 0 243 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0 21.6563C0 9.69583 9.69583 0 21.6563 0H220.894C232.854 0 242.55 9.69583 242.55 21.6563V21.6563C242.55 33.6167 232.854 43.3125 220.894 43.3125H21.6563C9.69585 43.3125 0 33.6167 0 21.6563V21.6563Z"
+              fill="#D75F52" />
+          </svg>
+        </div>
+        <div data-layer="Đăng nhập / Đăng kí" class="NgNhPNgK"
+          style="width: 207.11px; height: 24.92px; left: 17.32px; top: 6.55px; position: absolute; color: white; font-size: 19.69px; font-family: Poppins; font-weight: 500; word-wrap: break-word">
+          Đăng nhập / Đăng kí</div>
+      </div>
+      <div data-layer="Trang chủ" class="TrangCh"
+        style="width: 154.35px; height: 129.94px; left: 452.81px; top: 0.17px; position: absolute">
+        <div data-layer="Rectangle 30" class="Rectangle30"
+          style="width: 154.35px; height: 129.94px; left: 0px; top: 0px; position: absolute; background: #CCCCCC"></div>
+        <div data-layer="Trang chủ" class="TrangCh"
+          style="width: 99.22px; height: 22.55px; left: 25.99px; top: 53.99px; position: absolute; color: black; font-size: 19.69px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
+          Trang chủ</div>
+      </div>
+      <div data-layer="đặt hàng" class="THNg"
+        style="width: 154.35px; height: 129.94px; left: 607.16px; top: 0.17px; position: absolute">
+        <div data-layer="Rectangle 30" class="Rectangle30"
+          style="width: 154.35px; height: 129.94px; left: 0px; top: 0px; position: absolute; background: #CCCCCC"></div>
+        <div data-layer="Đặt món" class="TMN"
+          style="width: 99.22px; height: 22.55px; left: 30.71px; top: 54.20px; position: absolute; color: #505F64; font-size: 19.69px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
+          Đặt món</div>
+      </div>
+      <div data-layer="About us" class="AboutUs"
+        style="width: 154.35px; height: 129.94px; left: 761.51px; top: 0.17px; position: absolute">
+        <div data-layer="Rectangle 30" class="Rectangle30"
+          style="width: 154.35px; height: 129.94px; left: 0px; top: 0px; position: absolute; background: #CCCCCC"></div>
+        <div data-layer="Về chúng tôi" class="VChNgTI"
+          style="width: 126.79px; height: 22.27px; left: 13.39px; top: 54.20px; position: absolute; color: #505F64; font-size: 19.69px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
+          Về chúng tôi</div>
+      </div>
+      <div data-layer="Feed back" class="FeedBack"
+        style="width: 154.35px; height: 129.94px; left: 915.86px; top: 0.17px; position: absolute">
+        <div data-layer="Rectangle 30" class="Rectangle30"
+          style="width: 154.35px; height: 129.94px; left: 0px; top: 0px; position: absolute; background: #CCCCCC"></div>
+        <div data-layer="Đánh giá" class="NhGi"
+          style="width: 126.79px; height: 22.27px; left: 27.56px; top: 54.20px; position: absolute; color: #505F64; font-size: 19.69px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
+          Đánh giá</div>
+      </div>
+      <div data-layer="LOGO" class="Logo"
+        style="width: 235.32px; height: 130px; left: 58px; top: 0px; position: absolute">
+        <div data-layer="CHI DÂN" class="ChiDN"
+          style="width: 78.61px; height: 25.33px; left: 124px; top: 59.85px; position: absolute; color: #D75F52; font-size: 23.62px; font-family: Salsa; font-weight: 400; word-wrap: break-word">
+          CHI DÂN</div>
+        <div data-layer="Lẩu" class="LU"
+          style="width: 111px; height: 40px; left: 124.32px; top: 18px; position: absolute; color: #D75F52; font-size: 39.38px; font-family: Salsa; font-weight: 400; word-wrap: break-word">
+          Lẩu</div>
+        <img data-layer="Logo_chidan_chữ đen 1" class="LogoChidanChEn1"
+          style="width: 130px; height: 130px; left: 0px; top: 0px; position: absolute"
+          src="https://placehold.co/130x130" />
+      </div>
+    </div>
+
+  </div>

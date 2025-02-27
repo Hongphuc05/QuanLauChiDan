@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Prata&family=Poppins:wght@300;400;500;700&family=Salsa&family=Sarpanch:wght@400;700&family=Qwigley&family=Quicksand:wght@300;400;500;700&display=swap');
+/* Reset mặc định */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+    background: #FAF9FF;
+}
+
+
+
+/* Đổi con trỏ chuột khi di vào */
+.change_cursor {
+    cursor: pointer;  /* Hiển thị bàn tay khi rê chuột */
+}
+
+
+/* Nút đăng nhập - chứa cả chữ và nền */
+.login_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 242.55px;
+    height: 43.31px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 22px;
+
+}
+
+/* SVG Rectangle (Nền của nút) */
+.login_rect path {
+    fill: #B04033; /* Màu nền mặc định */
+    transition: fill 0.3s ease;
+}
+
+/* Chữ bên trong nút */
+.login_link {
+    position: absolute;
+    font-size: 19.69px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+/* Hover: đổi màu cả nền và chữ */
+.login_box:hover .login_rect path {
+    fill: white; /* Đổi màu nền thành trắng */
+}
+
+.login_box:hover .login_link {
+    color: #444645; /* Đổi màu chữ thành đỏ */
+}
+
+
+/*giao diện popup*/
+
+.login-container {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+
+/* Định dạng menu để trông như nút */
+.menu_item {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+/* Định dạng nút */
+.menu_link {
+    font-size: 19.69px;
+    font-family: Prompts, sans-serif;
+    font-weight: 400;
+    color: #505F64;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer; /* Biến con trỏ chuột thành bàn tay khi di vào */
+}
+
+
+/* Hiệu ứng hover khi rê chuột vào */
+.menu_link:hover {
+    color: #d7661b; /* Đổi màu chữ khi di chuột vào */
+}
+
+/*login start*/
+.Login {
+    width: 1134px; 
+    height: 655px; 
+    transform: translate(-50%, -50%); /* Canh giữa màn hình */
+    position: fixed; 
+    background: rgb(255, 255, 255); 
+    border-radius: 35px;
+    transform: translate(-50%, -50%); /* Canh giữa màn hình */
+    z-index: 999; /* Chỉ số cao nhất để đè lên các phần khác */
+    left: 50%;
+    top: 50%;
+    border: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+}
+/*show login popup */
+#Login.login_box {
+    opacity: 1;
+    pointer-events: all;
+}
+/*
+.overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 997; 
+}
+*/
+    /*chỉnh nút close */
+    .close {
+        position: absolute;  /* Định vị tuyệt đối so với popup */
+        top: 15px;  /* Cách mép trên 10px */
+        right: 15px; /* Cách mép phải 10px */
+        background: none; /* Xóa nền mặc định của button */
+        border: none; /* Xóa viền */
+        font-size: 25px; /* Kích thước icon */
+        cursor: pointer; /* Hiển thị kiểu trỏ chuột */
+        color: #fefefe; /* Màu của dấu X */
+    }
+.close:hover {
+    color: rgb(0, 0, 0); /* Khi di chuột vào, đổi màu */
+}
+
+.login-popup{
+    color: #ffffff;
+}
+.login-popup:hover{
+    cursor: pointer;
+    color: #000000;
+}
+
+
+/*login end*/
+
+.Top {
+    position: fixed !important; /* Cố định trên màn hình */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 148.84px; /* Giữ nguyên chiều cao */
+    background: #f0f0f0;
+    padding: 10px 20px;
+    z-index: 900; /* Đảm bảo nằm trên tất cả các phần khác */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Thêm padding-top cho body để tránh bị che nội dung */
+body {
+    padding-top: 160px; /* Điều chỉnh theo chiều cao của header */
+}
+
+
+
+
+
+/* Căn giữa trang */
+.container {
+    max-width: 1200px; /* Giới hạn chiều rộng */
+    margin: auto; /* Căn giữa */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Hình ảnh tự co giãn phù hợp */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tiêu đề phần */
+.section-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.section-title .line {
+    width: 100%;
+    max-width: 641px;
+    border: 1px solid black;
+}
+
+.section-title .title {
+    color: black;
+    font-size: 28px;
+    font-family: Prata, sans-serif;
+    font-weight: 400;
+    padding: 0 20px;
+}
+
+/* Banner */
+.header-banner {
+    width: 100%;
+    max-width: 1920px;
+    height: 652px;
+    top: 0;
+    left: 0;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ảnh phủ toàn bộ banner */
+}
+
+.header-banner .headline {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 870px;
+    text-align: center;
+    font-family: Sarpanch, sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    color: rgba(196, 196, 40, 0.92);
+}
+
+/* Hộp thông tin */
+.info-box {
+    width: 100%;
+    max-width: 1530px;
+    height: auto;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap; /* Nếu thiếu chỗ thì tự xuống dòng */
+}
+
+.info-box .text-box {
+    flex: 1;
+    min-width: 350px;
+    background: #EFE6E6;
+    border-radius: 40px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    font-family: Prompt, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.info-box .image {
+    flex: 1;
+    min-width: 350px;
+    border-radius: 33px;
+    object-fit: cover;
+}
+
+
