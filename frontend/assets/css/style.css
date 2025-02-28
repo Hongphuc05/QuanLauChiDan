@@ -23,11 +23,11 @@ a {
 }
 
 .main-content {
-    width: 1350px;
+    width: 1305px;
     max-width: calc(100%-30px);
     margin-left: auto;
     margin-right: auto;
-    /* background-color: #000000; */
+     background-color: #d9abab; 
 }
 
 .btn {
@@ -52,6 +52,7 @@ a {
 .header.fixed {
     position: sticky;
     top: -22px;
+    z-index: 1000;
 }
 .header .body {
     display: flex;
@@ -59,10 +60,14 @@ a {
     /* background-color: rgb(304, 204, 204, 1); */
     padding-top: 30px;
     padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .nav {
-    margin-left: auto;
+    /* margin: auto; */
+    margin-right: auto;
+    margin-left: 300px;
 }
 
 .nav .ul {
@@ -75,12 +80,11 @@ a {
     color: #505F64;
     font-size: 19.688px;
     /* background-color: rgb(0, 255, 166); */
-    margin:auto;
-    margin-right: 10px;
+    /* margin-right: 30px; */
     padding-top: 21px;
     padding-bottom: 21px;
-    padding-right: 21px;
-    padding-left: 21px;
+    padding-right: 25px;
+    padding-left: 25px;
 
 }
 
@@ -93,7 +97,7 @@ a {
 /* gạch chân */
 .nav li.active a::after {
     position: absolute;
-    left: 23px;
+    left: 26.5px;
     bottom: 21px;
     display: block;
     content: "";
@@ -114,4 +118,67 @@ a {
 
 .header .action {
     margin-left: 20px;
+}
+
+
+/* =========================banner========================= */
+
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+}
+.text-banner {
+    position: absolute;
+    width: 685.125px;
+    height: 86.625px;
+    flex-shrink: 0;
+    
+    color: rgba(196, 197, 41, 0.92);
+    text-align: center;
+    -webkit-text-stroke-width: 1.18px;
+    -webkit-text-stroke-color: #000;
+    font-family: Sarpanch;
+    font-size: 39.375px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+
+    top: 18px;
+    left: 180px;
+}
+
+
+/* =========================info1========================= */
+
+
+.info_1 {
+    display: flex !important;
+    margin-top: 250px;
+}
+
+
+.info_1 .rec1 {
+    position: relative;
+    width: 590px;
+    height: 350px;
+    flex-shrink: 0;
+    border-radius: 31.5px;
+    border: 1px solid #000;
+    background: #F1F0F0;
+    margin-right: 19.69px;
+
+}
+.info_1 .text {
+    
+    position: absolute;
+    width: 512px;
+    height: 262px;
+    flex-shrink: 0;
+    background: #b11e1e;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
