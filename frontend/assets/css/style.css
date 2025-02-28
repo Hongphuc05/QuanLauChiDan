@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Prata&family=Poppins:wght@300;400;500;700&family=Salsa&family=Sarpanch:wght@400;700&family=Qwigley&family=Quicksand:wght@300;400;500;700&display=swap');
 
-*{
+* {
     box-sizing: border-box;
 }
+
 html {
     font-size: 62.5%;
 }
@@ -22,37 +23,95 @@ a {
 }
 
 .main-content {
-    width: 1250px;
-    max-width: calc(100% - 30px);
+    width: 1350px;
+    max-width: calc(100%-30px);
     margin-left: auto;
     margin-right: auto;
+    /* background-color: #000000; */
+}
+
+.btn {
+    display: inline-block;
+    min-width: 240px;
+    padding: 0px 16px;
+    line-height: 45px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 19.688px;
+    /* font-style: normal; */
+    border: 1px #000000;
+    border-radius: 35px;
+    font-weight: 600;
+    background: #a91f10;
 }
 
 /* =========================header========================= */
+.header {
+    background-color: rgb(204, 204, 204, 1);
+}
+.header.fixed {
+    position: sticky;
+    top: -22px;
+}
 .header .body {
     display: flex;
+    align-items: center;
+    /* background-color: rgb(304, 204, 204, 1); */
+    padding-top: 30px;
+    padding-bottom: 8px;
 }
 
 .nav {
     margin-left: auto;
 }
 
-.nav .ul{
+.nav .ul {
     display: flex;
 
 }
 
-.nav a{
+.nav a {
+    position: relative;
     color: #505F64;
     font-size: 19.688px;
-    /* background-color: aqua; */
-    margin: 53.7px 24.41px ;
+    /* background-color: rgb(0, 255, 166); */
+    margin:auto;
+    margin-right: 10px;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    padding-right: 21px;
+    padding-left: 21px;
+
 }
+
+.nav li.active a,
 .nav a:hover {
     color: #000;
-    font-family: Poppins;
-    font-size: 19.688px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    /* font-weight: 400; */
+}
+
+/* gạch chân */
+.nav li.active a::after {
+    position: absolute;
+    left: 23px;
+    bottom: 21px;
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    border-radius: 1px;
+    background: #000;
+
+}
+/* btn login */
+.header .btn-login {
+    min-width: 144px;
+}
+
+.header .btn-login:hover {
+    color: #000;
+}
+
+.header .action {
+    margin-left: 20px;
 }
