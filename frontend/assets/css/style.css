@@ -27,7 +27,7 @@ a {
     max-width: calc(100%-30px);
     margin-left: auto;
     margin-right: auto;
-     background-color: #d9abab; 
+    background-color: #d9abab; 
 }
 
 .btn {
@@ -152,33 +152,143 @@ a {
 
 /* =========================info1========================= */
 
-
-.info_1 {
-    display: flex !important;
-    margin-top: 250px;
+/* Ngăn cách1 */
+.ngan-cach {
+    display: flex;
+    /* background: #505F64; */
+    margin-top: 65px;
+    margin-bottom: 65px;
+}
+hr {
+    border: 2px;
+    width: 504.803px;
+    height: 0.787px;
+    background: #000;
 }
 
 
-.info_1 .rec1 {
+.text-ngancach {
+    color: #000;
+    font-family: Prata;
+    font-size: 22.05px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* info thương hiệu */
+.info_1 {
+    display: flex !important;
+}
+.info_2 {
+    display: flex !important;
+}
+.info_3 {
+    display: flex !important;
+}
+.rec {
     position: relative;
-    width: 590px;
+    width: 632.2px;
     height: 350px;
     flex-shrink: 0;
     border-radius: 31.5px;
     border: 1px solid #000;
     background: #F1F0F0;
-    margin-right: 19.69px;
+    /* margin-right: 19.69px; */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 
 }
-.info_1 .text {
+.text {
     
     position: absolute;
     width: 512px;
     height: 262px;
     flex-shrink: 0;
-    background: #b11e1e;
+    /* background: #b11e1e; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
 }
+
+.info_1 {
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+.info_2 {
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+.info_3 {
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+
+/* in4 thực đơn */
+
+.info_4 {
+    display: flex;
+    justify-content: space-between;;
+}
+
+/* Trên */
+.rec-top {
+    position: relative;
+    width: 329.962px;
+    height: 54px;
+    flex-shrink: 0;
+    border-top-left-radius: 14.175px;
+    border-top-right-radius: 14.175px;
+    border: 1px solid #000;
+    background: #D9D9D9;
+}
+.font1 {
+    position: absolute;
+    color: #000;
+    font-family: Prompt;
+    font-size: 22.05px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: normal;
+    left: 15px;
+
+}
+.font2 {
+    position: absolute;
+    color: #000;
+    font-family: Prompt;
+    font-size: 14.175px;
+    font-style: italic;
+    font-weight: 275;
+    line-height: normal;
+    top: 30px;
+    left: 15px;
+}
+
+/* Dưới */
+.rec-bottom {
+    position: relative;
+    width: 330px;
+    height: 246px;
+    flex-shrink: 0;
+    border-radius: 0px 0px 14.175px 14.175px;
+    border: 1px solid #000;
+    background: #D9D9D9;
+    top: -3px;
+}
+
+.font3 {
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 307.912px;
+    color: #000;
+    font-family: Prompt;
+    font-size: 15.75px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+}
+
+
