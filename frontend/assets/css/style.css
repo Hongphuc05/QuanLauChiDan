@@ -23,11 +23,11 @@ a {
 }
 
 .main-content {
-    width: 1305px;
+    width: 1105px;
     max-width: calc(100%-30px);
     margin-left: auto;
     margin-right: auto;
-    background-color: #d9abab; 
+    /* background-color: #d9abab;  */
 }
 
 .btn {
@@ -44,7 +44,6 @@ a {
     font-weight: 600;
     background: #a91f10;
 }
-
 /* =========================header========================= */
 .header {
     background-color: rgb(204, 204, 204, 1);
@@ -66,8 +65,10 @@ a {
 
 .nav {
     /* margin: auto; */
-    margin-right: auto;
-    margin-left: 300px;
+    margin-right: 200px;
+    margin-left: auto;
+    /* background-color: aqua; */
+    white-space: nowrap;
 }
 
 .nav .ul {
@@ -85,7 +86,7 @@ a {
     padding-bottom: 21px;
     padding-right: 25px;
     padding-left: 25px;
-
+    
 }
 
 .nav li.active a,
@@ -110,6 +111,7 @@ a {
 /* btn login */
 .header .btn-login {
     min-width: 144px;
+    white-space: nowrap;
 }
 
 .header .btn-login:hover {
@@ -119,7 +121,6 @@ a {
 .header .action {
     margin-left: 20px;
 }
-
 
 /* =========================banner========================= */
 
@@ -150,7 +151,7 @@ a {
 }
 
 
-/* =========================info1========================= */
+/* =========================main========================= */
 
 /* Ngăn cách1 */
 .ngan-cach {
@@ -161,7 +162,7 @@ a {
 }
 hr {
     border: 2px;
-    width: 504.803px;
+    width: 404.803px;
     height: 0.787px;
     background: #000;
 }
@@ -170,7 +171,7 @@ hr {
 .text-ngancach {
     color: #000;
     font-family: Prata;
-    font-size: 22.05px;
+    font-size: 20.05px;
     font-weight: 400;
     line-height: normal;
 }
@@ -187,8 +188,8 @@ hr {
 }
 .rec {
     position: relative;
-    width: 632.2px;
-    height: 350px;
+    width: 532.2px;
+    height: 330px;
     flex-shrink: 0;
     border-radius: 31.5px;
     border: 1px solid #000;
@@ -200,7 +201,7 @@ hr {
 .text {
     
     position: absolute;
-    width: 512px;
+    width: 412px;
     height: 262px;
     flex-shrink: 0;
     /* background: #b11e1e; */
@@ -212,22 +213,23 @@ hr {
 
 .info_1 {
     justify-content: space-between;
-    padding-bottom: 25px;
+    padding-bottom: 35px;
 }
 .info_2 {
     justify-content: space-between;
-    padding-bottom: 25px;
+    padding-bottom: 35px;
 }
 .info_3 {
     justify-content: space-between;
-    padding-bottom: 25px;
+    padding-bottom: 35px;
 }
 
 /* in4 thực đơn */
 
 .info_4 {
     display: flex;
-    justify-content: space-between;;
+    justify-content: space-between;
+    margin-bottom: 300px;
 }
 
 /* Trên */
@@ -240,6 +242,7 @@ hr {
     border-top-right-radius: 14.175px;
     border: 1px solid #000;
     background: #D9D9D9;
+    top: 1px;
 }
 .font1 {
     position: absolute;
@@ -292,3 +295,73 @@ hr {
 }
 
 
+/* =========================footer========================= */
+
+
+footer {
+    background-color: #353535;
+    padding: 50px 50px;
+    padding-bottom: 35px;
+}
+.footer .row {
+    display: flex;
+    margin-bottom: 0px;
+    border-bottom: 0.6px solid #b2b0b0;
+    padding-bottom: 20px;
+}
+
+.footer .row .column:first-child {
+    width: 50%;
+}
+.footer .row .column {
+    width: 25%;
+}
+
+.footer .desc {
+    color: #FFF;
+    max-width: 600px;
+    font-family: Quicksand;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.footer .title {
+    padding-bottom: 10px;
+    padding-right: 40px;
+    display: inline-block;
+    border-bottom: 0.6px solid #b2b0b0;
+    color: #FFF;
+    font-family: Prompt;
+    font-size: 20px;
+
+}
+
+.footer .list {
+    margin-top: 20px;
+}
+
+a strong {
+    font-weight: bold !important;
+}
+
+.footer .list a {
+    display: inline-block;
+    color: #FFF;
+    font-family: Quicksand;
+    font-size: 13.388px;
+    margin-bottom: 15px;
+}
+
+.footer .list li:last-child a{
+    margin-bottom: 25px;
+}
+
+.footer .copyright {
+    padding-top: 35px;
+    color:#FFF;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 100;
+}
