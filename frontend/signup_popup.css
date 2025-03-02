@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Prata&family=Poppins:wght@300;400;500;700&family=Salsa&family=Sarpanch:wght@400;700&family=Qwigley&family=Quicksand:wght@300;400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background: #000;
+}
+.body {
+    display: flex;
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    width: 1134px;
+    height: 655px;
+    flex-shrink: 0;
+    border-radius: 35px;
+    background: #ffffff;
+}
+.left {
+    position: relative;
+    width: 567px; 
+    height: 655px; 
+    border-top-right-radius: 35px; 
+    border-bottom-right-radius: 35px;
+    background: #ffffff;
+}
+.dvi {
+    
+    margin: auto;
+    margin-bottom: 20px;
+    
+}
+.dvi2 {
+    
+    margin: auto;
+    margin-bottom: 40px;
+    
+}
+.right {
+    position: relative;
+    width: 567px; 
+    height: 655px; 
+    border-top-right-radius: 35px; 
+    border-bottom-right-radius: 35px;
+    border-radius: 35px 200px 200px 35px;
+    background: linear-gradient(91deg, #7F3229 0.88%, #892F4A 98.82%);
+}
+.right .top {
+    width: 380px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 195px;
+    color: #ffffff;
+    font-family: Quicksand;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}
+.right .center {
+    width: 270px;
+    height: 53px;
+    /* background: #D9D9D9; */
+    color: #FFF;
+    text-align: center;
+    font-family: Quicksand;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.right .bot {
+    width: 188px;
+    height: 37.578px;
+    border-radius: 10px;
+    background: linear-gradient(91deg, #7F3229 0.88%, #892F4A 98.82%);;
+    border: 2px solid #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #D9D9D9;
+    font-family: Quicksand;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.right .bot:hover {
+    cursor: pointer;
+    color: #000;
+    border: 2px solid #000000;
+}
+.left .top {
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 195px;
+    color: #000;
+    font-family: Quicksand;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.left .center {
+    position: relative;
+    width: 254px;
+    height: 220px;
+    /* width: 1000px;
+    height: 1000px; */
+    display: flex;
+    justify-content: center;
+}
+.left .bot {
+    width: 250px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ================== left =============== */
+.left .top {
+    background: #ffffff;
+}
+.left .center {
+    background: #ffffff;
+}
+.left .bot {
+    background: #ffffff;
+}
+
+.form {
+    position: absolute;
+
+}
+.input {
+    /* position: absolute; */
+    width: 254px;
+    height: 34px;
+    /* text-align: left; */
+    border-radius: 10px;
+    border: 1.5px solid #D9D9D9;
+    background: #D9D9D9;
+}
+
+
+
+.name {
+    padding-left: 10px;
+    color: #000;
+    font-family: Quicksand;
+    font-size: 11px;
+    font-weight: 400;
+}
+.sdt {
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #000;
+    font-family: Quicksand;
+    font-size: 11px;
+    font-weight: 400;
+}
+.mk {
+    padding-left: 10px;
+    top: 80px;
+    color: #000;
+    font-family: Quicksand;
+    font-size: 11px;
+    font-weight: 400;
+}
+.btn {
+    display: inline-block;
+    position: absolute;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1.5px solid #D9D9D9;
+    background: #A6372D;
+    color: #FFF;
+    font-family: Quicksand;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.left .btn:hover {
+    color: #000;
+    cursor: pointer;
+}
+.bot {
+    position: relative;
+    width: 230px;
+    height: 30px;
+}
+
+.bot-text1 {
+    position: absolute;
+    display: flex;
+    left: 0;
+    color: #5C5858;
+    font-family: Quicksand;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: #ffffff;
+}
+.bot-text2 {
+    position: absolute;
+    right: 0;
+    color: #5C5858;
+    font-family: Quicksand;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: #ffffff;
+    text-decoration: none;
+}
+
+
+
+input[type="checkbox"] {
+    margin-top: 1px;
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    background: #FFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
