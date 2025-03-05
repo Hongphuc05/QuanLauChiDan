@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- reset css -->
     <link rel="stylesheet" href="/frontend/assets/css/reset.css">
-
+    <!-- thư viện font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <!-- Nhúng phông -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,11 +36,17 @@
                 <!-- nav(thongtin) -->
                 <nav class="nav">
                     <ul class="ul">
-                        <li>
+                        <li class="cha">
                             <a href="#!">Trang chủ</a>
                         </li>
-                        <li class="active">
+                        <li class="active has-child">
                             <a href="menu.html">Đặt món</a>
+                            <ul class="sub-menu">
+                                <li class="1"><a href="#!">Đặt bàn</a>
+                                </li>
+                                <li class="1"><a href="#!">Đặt mang về</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#!">Về chúng tôi</a>
@@ -70,10 +77,10 @@
                     <li>
                         <a href="#!">Combo</a>
                     </li>
-                    <li>
+                    <li class="has-child">
                         <a href="#!">Món lẻ</a>
                         <ul class="sub-menu">
-                            <li><a href="#!">Loại lẩu</a></li>
+                            <li class="active3"><a href="#!">Loại lẩu</a></li>
                             <li><a href="#!">Bò</a></li>
                             <li><a href="#!">Heo - Cừu</a></li>
                             <li><a href="#!">Hải sản</a></li>
@@ -92,12 +99,15 @@
         <!-- Phải chứa menu đồ ăn -->
         <div class="right">
             <div class="top">
-                <div class="title">
-                    <a href="#!">Trang chủ</a> 
-                    <span>/</span>
-                    <a href="#!">Đặt món</a>
+                <div class="left">
+                    <div class="link">
+                        <a href="#!">Trang chủ</a> 
+                        <span>/</span>
+                        <a href="#!">Đặt món</a>
+                    </div>
+                    <h1 class="title">Menu</h1>
                 </div>
-                <div class="search">
+                <div class="right">
 
                 </div>
             </div>
@@ -105,5 +115,13 @@
                 
             </div>
         </div>
+
+
+
+
+
+        <!-- <script src="https://code.jquery.com/jquery-3.7.1.js"></script> -->
+        <script src="menu.js"></script>
+
     </main>
 </body>

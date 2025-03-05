@@ -126,7 +126,7 @@ a {
 }
 
 /* gạch chân */
-.nav li.active a::after {
+.nav >ul > li.active a::after {
     position: absolute;
     left: 26.5px;
     bottom: 21px;
@@ -136,6 +136,7 @@ a {
     height: 2px;
     border-radius: 1px;
     background: #000;
+
 
 }
 /* btn login */
@@ -162,7 +163,50 @@ a {
     margin: 0;
 }
 
+.header .sub-menu {
+    position: absolute;
+    list-style: none;
+    background-color: rgb(204, 204, 204, 1);
+    padding-left: 00px;
+    margin-left: 10px;
+    margin-top: 20px;
+    display: none;
+    color: #505F64;
+}
 
+.header .sub-menu a{
+    font-size: 17px;
+    color: #505F64;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 13.5px;
+    display: block;
+    width: auto;
+    background:none;
+    width: 100%;
+}
+.header li:hover>ul.sub-menu{
+    display: block;
+}
+.nav .sub-menu a::after {
+    
+    display: none !important;
+    content: none !important;
+
+}
+.sub-menu .li{
+    width: 100%;
+}
+.header .sub-menu a{
+    display: block;
+    color: #505F64;
+}
+.header .sub-menu a:hover {
+    /* color: #000000;
+    border: 2px solid #000000; */
+    /* background:none; */
+    background: #ffffff;
+}
 /* =========================left========================= */
 
 
@@ -179,7 +223,8 @@ a {
 }
 .left {
     /* position: relative; */
-    background: #a21717;
+    /* background: #a21717; */
+    background: #ffffff;
     text-align: left;
     height: 100vh;
     width: 320px;
@@ -197,7 +242,9 @@ a {
     /* position: absolute; */
     color: #000000;
     font-size: 19.688px;
-    background-color: rgb(115, 176, 104);
+    /* background-color: rgb(115, 176, 104); */
+    background-color: rgb(255, 255, 255);
+
     /* margin-right: 30px; */
     padding-top: 20px;
     padding-bottom: 10px;
@@ -208,10 +255,12 @@ a {
 .left .nav li.active2 a {
     color: #F89520;
     font-weight: 600;
-    border-bottom: 5px solid #F89520;
+    border-bottom: 4px solid #F89520;
 }
+
 .left .nav a:hover {
     color: #F89520;
+    border-bottom: 2px solid #F89520;;
 }
 
 
@@ -242,7 +291,42 @@ a {
     margin: 0;
 }
 
-/* =========================right========================= */
+
+ul.sub-menu {
+    position: absolute;
+    list-style: none;
+    /* background: #bc357b; */
+
+    background: #ffffff;
+    padding-left: 20px;
+    display: none;
+}
+
+#main-menu ul.sub-menu a{
+    font-size: 17px;
+    padding-bottom: 3px;
+    padding-right: 3px;
+    display: inline-block;
+    width: auto;
+    
+}
+#main-menu li:hover>ul.sub-menu{
+    display: block;
+}
+.left .nav li.active3 a {
+    color: #F89520;
+    font-weight: normal;
+    border-bottom: 1px solid #F89520;
+}
+
+/* mũi tên */
+
+
+
+
+
+
+  /* =========================right========================= */
 
 
 .right {
@@ -257,26 +341,32 @@ a {
 }
 
 .right .top {
+    display: flex;
     width: 1215px;
     height: 165px;
     background: #a6a5d4;
     padding: 0;
+    justify-content: space-between;
+    align-items: center; /* Canh giữa theo chiều dọc */
+    width: 100%; /* Đảm bảo không bị co lại */
+    overflow: hidden;
 }
-.right .top .title {
+.right .top .left {
+    background: #b08715;
+    flex: 1;     
+    height: 165px;
+    max-width: 50%;
+}
+.right .top .right {
+    background: #12aa2e;
+    height: 165px;
+    max-width: 50%;
+    border: 0 !important;
+}
+.right .top .link {
     display: flex;
     font-size: 20px;
 }
 .li {
     position: relative;
-}
-ul.sub-menu {
-    position: absolute;
-    list-style: none;
-    background: #bc357b;
-    padding-left: 20px;
-    
-}
-
-#main-menu ul.sub-menu a{
-    font-size: 15px;
 }
