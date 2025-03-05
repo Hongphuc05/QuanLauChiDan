@@ -38,11 +38,11 @@ html, body {
 }
 
 .right {
-    width: 1215px;
+    width: 1515px;
     height: 1703px;
     flex-shrink: 0;
-    border-radius: 123px 0px 0px 0px;
-    background: #EFEFEF;
+    border-radius: 0px 0px 0px 0px;
+    /* background: #720404; */
 }
 a {
     text-decoration: none;
@@ -335,7 +335,7 @@ ul.sub-menu {
     height: 1703px;
     /* flex-shrink: 0;
     border-radius: 123px 0px 0px 0px; */
-    background: #050000;
+    /* background: #976161; */
     margin-left: 0px;
     margin-top: 0px;
 }
@@ -343,30 +343,211 @@ ul.sub-menu {
 .right .top {
     display: flex;
     width: 1215px;
-    height: 165px;
-    background: #a6a5d4;
+    height: 135px;
+    /* background: #a6a5d4; */
     padding: 0;
     justify-content: space-between;
     align-items: center; /* Canh giữa theo chiều dọc */
     width: 100%; /* Đảm bảo không bị co lại */
     overflow: hidden;
+    padding: 50px;
 }
 .right .top .left {
-    background: #b08715;
+    /* background: #b08715; */
     flex: 1;     
-    height: 165px;
+    height: 105px;
     max-width: 50%;
+    margin-top: 0px;
+    border-bottom: 1px solid #000000;
+
 }
 .right .top .right {
-    background: #12aa2e;
-    height: 165px;
+    /* background: #12aa2e; */
+    height: 105px;
     max-width: 50%;
-    border: 0 !important;
+    border-radius: 0;
+    border-bottom: 1px solid #000000;
+
 }
 .right .top .link {
     display: flex;
-    font-size: 20px;
+    font-size: 15px;
+    /* background: #000; */
+}
+.right .top .title {
+    margin-top: 0px;
+    color: #000;
+    font-family: "Rammetto One";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 .li {
     position: relative;
+}
+
+/* tìm kiếm */
+.top .right {
+    position: relative;
+}
+.search-bar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    overflow: hidden;
+    background: transparent; /* Nền trong suốt */
+    bottom:20px;
+    right: 0;
+}
+
+.search {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background: #0056b3;
+}
+
+/* các thẻ đồ ăn */
+.right .all {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Chia cột tự động */
+    column-gap: 0px;
+    row-gap: 50px;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+.buffet, .combo, .monle {
+    display: contents; /* Xóa ràng buộc nhóm, giúp ảnh sắp xếp chung */
+}
+.the {
+    width: 342.819px;
+    height: 376px;
+    flex-shrink: 0;
+    border-radius: 29px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+/* chỉnh chiều rộng cao cho ảnh */
+.img-the {
+    width: 300.471px;
+    height: 237px;
+    border-radius: 29px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* dưới (thẻ info-mon chứa left và right */
+.info-mon {
+    width: 300px;
+    height: 120px;
+    display: flex;
+    background: #ffffff;
+    margin: auto;
+    border-top: 1px solid #000;
+
+}
+.info-mon .left {
+    height: 100%;
+    width: 65%;
+    /* background: #F89520; */
+}
+.info-mon .left>h1{
+    width: 170px;
+    height: 29px;
+    flex-shrink: 0;
+    color: #000;
+    /* background: #0056b3; */
+    font-family: "Poppins", "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.info-mon .left>p {
+    width: 105.821px;
+    color: rgba(231, 64, 67, 0.88);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.info-mon .right {
+    /* background: #0056b3; */
+    height: auto;
+    width: 35%;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-left: 15px;
+    text-align: center;
+}
+.quantity {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 20px;
+}
+.quantity button {
+    width: 20px;
+    height: 25px;
+    border-radius: 7px;
+    border: none;
+    background-color: #d9d9d9;
+    /* font-size: 20px; */
+    font-weight: bold;
+    cursor: pointer;
+}
+.quantity .number {
+    width: 20px;
+    height: 25px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    line-height: 1.6; /* Giảm xuống để đẩy số xuống dưới */
+
+}
+
+.btn-cf {
+    margin-left: -15px;
+    width: 68.564px;
+    height: 25px;
+    /* flex-shrink: 0; */
+    border-radius: 35px;
+    background: #D9D9D9;
+    font-weight: bold;
+    border: 3px #000;
+    cursor: pointer;
+    
+    color: #000;
+    font-family: "Poppins", "Inter", sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.btn-cf:hover {
+    background: #4c4c4c;
+    font-weight: 500;
 }

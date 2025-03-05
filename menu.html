@@ -9,14 +9,19 @@
     <!-- thư viện font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <!-- Nhúng phông -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Qwigley&family=Salsa&family=Sarpanch:wght@400;500;600;700;800;900&family=Sen:wght@400..800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Qwigley&family=Rammetto+One&family=Salsa&family=Sarpanch:wght@400;500;600;700;800;900&family=Sen:wght@400..800&display=swap&subset=vietnamese"
         rel="stylesheet">
-        <!-- style -->
-        <link rel="stylesheet" href="/css/style_menu.css">
-        <!-- <link rel="stylesheet" href="<?php echo '/frontend/css/style.css'; ?>"> -->
+
+
+
+
+    <!-- style -->
+    <link rel="stylesheet" href="/css/style_menu.css">
+    <!-- <link rel="stylesheet" href="<?php echo '/frontend/css/style.css'; ?>"> -->
     <title>Quán Lẩu Chi Dân</title>
 </head>
 
@@ -31,8 +36,7 @@
         <div class="content">
             <div class="body">
                 <!-- Logo -->
-                <img src="/assets/img/trangbia/Logo_chidan_chữ đen 1.svg" alt="" class="logo"
-                    style="height: 80px;">
+                <img src="/assets/img/trangbia/Logo_chidan_chữ đen 1.svg" alt="" class="logo" style="height: 80px;">
                 <!-- nav(thongtin) -->
                 <nav class="nav">
                     <ul class="ul">
@@ -72,6 +76,9 @@
             <nav class="nav">
                 <ul class="ul" id="main-menu">
                     <li class="active2">
+                        <a href="#!">All</a>
+                    </li>
+                    <li>
                         <a href="#!">Buffet</a>
                     </li>
                     <li>
@@ -94,25 +101,611 @@
                 </ul>
             </nav>
         </div>
-        
+
 
         <!-- Phải chứa menu đồ ăn -->
         <div class="right">
             <div class="top">
                 <div class="left">
                     <div class="link">
-                        <a href="#!">Trang chủ</a> 
+                        <a href="#!">Trang chủ</a>
                         <span>/</span>
                         <a href="#!">Đặt món</a>
                     </div>
                     <h1 class="title">Menu</h1>
                 </div>
                 <div class="right">
+                    <div class="search-bar">
+                        <input type="text" class="search" placeholder="Tìm kiếm...">
+                        <button class="search-button">🔎</button>
+                    </div>
 
                 </div>
             </div>
             <div class="bot">
-                
+                <div class="all">
+                    <!-- Buffet -->
+                    <div class="buffet">
+                        <div class="the">
+                            <img class="img-the" src="/assets/img/menu/Buffet/Buffet Bách Giai Vị 419K.jpg"
+                                alt="Buffet 1">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Buffet Bách Giai Vị</h1>
+                                    <p>419.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the">
+                            <img class="img-the" src="/assets/img/menu/Buffet/Buffet Linh Vân Các 229K.jpg"
+                                alt="Buffet 2">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Buffet Linh Vân Các</h1>
+                                    <p>229.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the">
+                            <img class="img-the" src="/assets/img/menu/Buffet/Buffet Phúc Khả Vương 329K.jpg"
+                                alt="Buffet 3">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Buffet Phúc Khả Vương</h1>
+                                    <p>329.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">1</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the">
+                            <img class="img-the" src="/assets/img/menu/Buffet/Buffet Phúc Mãn Đường 619K.jpg"
+                                alt="Buffet 4">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Buffet Phúc Mãn Đường</h1>
+                                    <p>519.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">1</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the">
+                            <img class="img-the" src="/assets/img/menu/Buffet/Buffet Vạn Giai Kỳ 499K.jpg"
+                                alt="Buffet 5">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Buffet Vạn Giai Kỳ</h1>
+                                    <p>499.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">1</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Combo -->
+                    <div class="combo">
+                        <div class="the">
+                            <img class="img-the" src="/assets/img/menu/Combo/Set Phúc Dĩ An.jpg"
+                                alt="Combo 1">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Set Phúc Dĩ An</h1>
+                                    <p>919.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the">
+                            <img class="img-the" src="/assets/img/menu/Combo/Set Phúc Dĩ Tường.jpg"
+                                alt="Combo 2">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Set Phúc Dĩ Tường</h1>
+                                    <p>899.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the">
+                            <img class="img-the" src="/assets/img/menu/Combo/Set Song Vũ.png"
+                                alt="Combo 3">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Set Song Vũ</h1>
+                                    <p>419.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the">
+                            <img class="img-the" src="/assets/img/menu/Combo/Set Uyên Ương.png"
+                                alt="Combo 4">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Set Uyên Ương</h1>
+                                    <p>599.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Món lẻ -->
+                    <div class="monle">
+                        <!-- Lẩu -->
+                        <div class="the lau">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/loại lẩu/Lẩu Cà chua.jpg"
+                                alt="Lau 1">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Lẩu Cà chua</h1>
+                                    <p>89.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the lau">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/loại lẩu/Lẩu Đài Bắc Ngọc Thạch 12 nồi.jpg"
+                                alt="Lau 2">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Lẩu Đài Bắc Ngọc Thạch</h1>
+                                    <p>99.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the lau">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/loại lẩu/Lẩu Đài Bắc.jpg"
+                                alt="Lau 3">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Lẩu Đài Bắc</h1>
+                                    <p>89.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the lau">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/loại lẩu/Lẩu Kim chi.jpg"
+                                alt="Lau 4">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Lẩu Kim Chi</h1>
+                                    <p>89.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the lau">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/loại lẩu/Lẩu Mala Hồng Ngọc.jpg"
+                                alt="Lau 5">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Lẩu Mala Hồng Ngọc</h1>
+                                    <p>169.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the lau">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/loại lẩu/Lẩu Mala.jpg"
+                                alt="Lau 6">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Lẩu Mala</h1>
+                                    <p>109.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the lau">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/loại lẩu/Lẩu Nấm.jpg"
+                                alt="Lau 7">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Lẩu Nấm</h1>
+                                    <p>89.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the lau">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/loại lẩu/Lẩu Thái.jpg"
+                                alt="Lau 8">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Lẩu Thái</h1>
+                                    <p>89.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bò -->
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Ba chỉ bò Mỹ.jpg"
+                                alt="Bo 1">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Ba chỉ Bò Mỹ</h1>
+                                    <p>99.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Bắp bò Úc.jpg"
+                                alt="Bo 2">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Bắp bó Úc</h1>
+                                    <p>109.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Dạ Thiên ý.png"
+                                alt="Bo 3">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Dạ Thiên Ý</h1>
+                                    <p>249.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Bê thượng hạng.jpg"
+                                alt="Bo 4">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Bê Thượng Hạng</h1>
+                                    <p>99.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Dẻ sườn ướp mè thái tay.jpg"
+                                alt="Bo 5">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Dẻ sườn ướp Thái</h1>
+                                    <p>129.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Gầu bò Mỹ.jpg"
+                                alt="Bo 6">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Gầu Bò Mỹ</h1>
+                                    <p>59.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Lõi vai Wagyu.jpg"
+                                alt="Bo 7">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Lõi vai Wagyu</h1>
+                                    <p>329.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Sườn non bò Wagyu.jpg"
+                                alt="Bo 8">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Sườn non bò Wagyu</h1>
+                                    <p>469.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Sườn Wagyu thượng hạng.jpeg"
+                                alt="Bo 9">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Sườn Wagyu Thượng Hạng</h1>
+                                    <p>649.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Thịt bò bông tuyết.jpg"
+                                alt="Bo 10">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Bò bông tuyết</h1>
+                                    <p>179.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Thịt bò Như Ý.png"
+                                alt="Bo 11">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Bò Như Ý</h1>
+                                    <p>179.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Thịt bò tuyết liên hoa.jpg"
+                                alt="Bo 12">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Bò Tuyết liên hoa</h1>
+                                    <p>299.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Thịt bò vân mây.jpg"
+                                alt="Bo 13">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Bò vân mây</h1>
+                                    <p>179.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="the bo">
+                            <img class="img-the" src="/assets/img/menu/Món lẻ/bò/Thịt bò Wagyu thượng hạng.jpg"
+                                alt="Bo 14">
+                            <div class="info-mon">
+                                <div class="left">
+                                    <h1>Bò Wagyu Thượng Hạng</h1>
+                                    <p>179.000 VND</p>
+                                </div>
+                                <div class="right">
+                                    <div class="quantity">
+                                        <button class="minus">−</button>
+                                        <span class="number">0</span>
+                                        <button class="plus">+</button>
+                                    </div>
+                                    <button class="btn-cf">xác nhận</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 
+                        <div class="heo-cuu"></div>
+                        <div class="haisan"></div>
+                        <div class="noitang"></div>
+                        <div class="ha-cao"></div>
+                        <div class="dauhu"></div>
+                        <div class="mytom"></div>
+                        <div class="rau"></div> -->
+                    </div>
+                </div>
+
             </div>
         </div>
 
