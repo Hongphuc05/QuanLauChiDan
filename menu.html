@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- reset css -->
+    <link rel="stylesheet" href="/frontend/assets/css/reset.css">
+
+    <!-- Nhúng phông -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Qwigley&family=Salsa&family=Sarpanch:wght@400;500;600;700;800;900&family=Sen:wght@400..800&display=swap"
+        rel="stylesheet">
+        <!-- style -->
+        <link rel="stylesheet" href="/css/style_menu.css">
+        <!-- <link rel="stylesheet" href="<?php echo '/frontend/css/style.css'; ?>"> -->
+    <title>Quán Lẩu Chi Dân</title>
+</head>
+
+
+
+
+
+<body style="height: 3000px">
+
+    <!-- Header -->
+    <header class="header fixed">
+        <div class="content">
+            <div class="body">
+                <!-- Logo -->
+                <img src="/assets/img/trangbia/Logo_chidan_chữ đen 1.svg" alt="" class="logo"
+                    style="height: 80px;">
+                <!-- nav(thongtin) -->
+                <nav class="nav">
+                    <ul class="ul">
+                        <li>
+                            <a href="#!">Trang chủ</a>
+                        </li>
+                        <li class="active">
+                            <a href="menu.html">Đặt món</a>
+                        </li>
+                        <li>
+                            <a href="#!">Về chúng tôi</a>
+                        </li>
+                        <li>
+                            <a href="#!">Đánh giá</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- btn action(dang nhap) -->
+                <div class="action">
+                    <a href="menu.php" class="btn btn-login">Đăng nhập / Đăng kí</a>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ main =============== -->
+    <main>
+        <!-- Trái chứa category -->
+        <div class="left fixed">
+            <nav class="nav">
+                <ul class="ul" id="main-menu">
+                    <li class="active2">
+                        <a href="#!">Buffet</a>
+                    </li>
+                    <li>
+                        <a href="#!">Combo</a>
+                    </li>
+                    <li>
+                        <a href="#!">Món lẻ</a>
+                        <ul class="sub-menu">
+                            <li><a href="#!">Loại lẩu</a></li>
+                            <li><a href="#!">Bò</a></li>
+                            <li><a href="#!">Heo - Cừu</a></li>
+                            <li><a href="#!">Hải sản</a></li>
+                            <li><a href="#!">Nội tạng</a></li>
+                            <li><a href="#!">Há cảo & Sủi cảo</a></li>
+                            <li><a href="#!">Đậu hũ & Đồ viên</a></li>
+                            <li><a href="#!">Mỳ</a></li>
+                            <li><a href="#!">Rau & Nấm</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+
+        <!-- Phải chứa menu đồ ăn -->
+        <div class="right">
+            <div class="top">
+                <div class="title">
+                    <a href="#!">Trang chủ</a> 
+                    <span>/</span>
+                    <a href="#!">Đặt món</a>
+                </div>
+                <div class="search">
+
+                </div>
+            </div>
+            <div class="bot">
+                
+            </div>
+        </div>
+    </main>
+</body>

@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Prata&family=Poppins:wght@300;400;500;700&family=Salsa&family=Sarpanch:wght@400;700&family=Qwigley&family=Quicksand:wght@300;400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* khôi phục lại cỡ chữ */
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    background: #ffffff;
+}
+
+.main-content {
+    width: 1390px;
+    max-width: calc(100%-30px);
+
+    /* background-color: #d9abab;  */
+}
+main {
+    display: flex;
+    align-items: stretch; /* Kéo hai thẻ dài bằng nhau theo chiều cao */
+    background: #ffffff;
+}
+/* =========================chung========================= */
+html, body {
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.right {
+    width: 1215px;
+    height: 1703px;
+    flex-shrink: 0;
+    border-radius: 123px 0px 0px 0px;
+    background: #EFEFEF;
+}
+a {
+    text-decoration: none;
+}
+
+.main-content {
+    width: 1390px;
+    max-width: calc(100%-30px);
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: #d9abab;  */
+}
+
+.btn {
+    display: inline-block;
+    min-width: 240px;
+    padding: 0px 16px;
+    line-height: 45px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 19.688px;
+    /* font-style: normal; */
+    border: 1px #000000;
+    border-radius: 35px;
+    font-weight: 600;
+    background: #a91f10;
+}
+
+/* =========================header========================= */
+.header {
+    background-color: rgb(204, 204, 204, 1);
+    margin-bottom: 30px;
+}
+.header.fixed {
+    position: sticky;
+    top: -22px;
+    z-index: 1000;
+}
+.header .body {
+    display: flex;
+    align-items: center;
+    /* background-color: rgb(304, 204, 204, 1); */
+    padding-top: 30px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 1000;
+    box-shadow: #000 10px;
+}
+
+.nav {
+    /* margin: auto; */
+    margin-right: 200px;
+    margin-left: auto;
+    /* background-color: aqua; */
+    white-space: nowrap;
+}
+
+.nav .ul {
+    display: flex;
+
+}
+
+.nav a {
+    position: relative;
+    color: #505F64;
+    font-size: 19.688px;
+    /* background-color: rgb(0, 255, 166); */
+    /* margin-right: 30px; */
+    padding-top: 21px;
+    padding-bottom: 21px;
+    padding-right: 25px;
+    padding-left: 25px;
+    
+}
+
+.nav li.active a,
+.nav a:hover {
+    color: #000;
+    /* font-weight: 400; */
+}
+
+/* gạch chân */
+.nav li.active a::after {
+    position: absolute;
+    left: 26.5px;
+    bottom: 21px;
+    display: block;
+    content: "";
+    width: 20px;
+    height: 2px;
+    border-radius: 1px;
+    background: #000;
+
+}
+/* btn login */
+.header .btn-login {
+    min-width: 144px;
+    white-space: nowrap;
+}
+
+.header .btn-login:hover {
+    color: #000;
+}
+
+.header .action {
+    margin-left: 20px;
+}
+.ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* =========================left========================= */
+
+
+.left.fixed {
+    /* position: fixed; */
+    left: 00px;
+    top: 185px;
+    /* z-index: 1000; */
+    /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
+    
+    display: flex; /* Thiếu cái này nên không căn giữa được */
+    flex-direction: column;
+    align-items: center; /* Căn giữa theo chiều ngang */
+}
+.left {
+    /* position: relative; */
+    background: #a21717;
+    text-align: left;
+    height: 100vh;
+    width: 320px;
+}
+.left .nav {
+    /* margin: auto; */
+    
+    /* background-color: aqua; */
+    white-space: nowrap;
+    
+}
+
+
+.left .nav a {
+    /* position: absolute; */
+    color: #000000;
+    font-size: 19.688px;
+    background-color: rgb(115, 176, 104);
+    /* margin-right: 30px; */
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-right: 25px;
+    padding-left: 5px;
+}
+
+.left .nav li.active2 a {
+    color: #F89520;
+    font-weight: 600;
+    border-bottom: 5px solid #F89520;
+}
+.left .nav a:hover {
+    color: #F89520;
+}
+
+
+.left .ul li {
+    margin-bottom: 0px; /* Tăng khoảng cách giữa các mục */
+    width: 100%;
+}
+.left .ul li a {
+    display: block; /* Biến thẻ <a> thành block để fill chiều ngang */
+    width: 100%; /* Fill toàn bộ chiều ngang của li */
+}
+
+.left .ul {
+    position: absolute;
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-direction: column; /* Xếp các thẻ con theo chiều dọc */
+    background: #ffffff;
+    position: relative;
+    width: 170px;
+    left: 120px;
+    top: 0px;
+}
+.left .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* =========================right========================= */
+
+
+.right {
+    /* position: relative; */
+    width: 1215px;
+    height: 1703px;
+    /* flex-shrink: 0;
+    border-radius: 123px 0px 0px 0px; */
+    background: #050000;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.right .top {
+    width: 1215px;
+    height: 165px;
+    background: #a6a5d4;
+    padding: 0;
+}
+.right .top .title {
+    display: flex;
+    font-size: 20px;
+}
+.li {
+    position: relative;
+}
+ul.sub-menu {
+    position: absolute;
+    list-style: none;
+    background: #bc357b;
+    padding-left: 20px;
+    
+}
+
+#main-menu ul.sub-menu a{
+    font-size: 15px;
+}

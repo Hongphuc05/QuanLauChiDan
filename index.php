@@ -1,4 +1,7 @@
 <?php include('partials/header.php'); ?>
+    <!-- style -->
+    <!-- <link rel="stylesheet" href="/frontend/css/style.css"> -->
+    <link rel="stylesheet" href="<?php echo '/frontend/css/style.css'; ?>">
     <!-- Main -->
     <main>
 
@@ -16,7 +19,7 @@
             </div>
         </div>
 
-        <!-- in4_1 -->
+        <!-- in4 -->
         <div class="popular">
             <div class="main-content">
 
