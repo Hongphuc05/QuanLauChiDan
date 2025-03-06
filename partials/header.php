@@ -42,8 +42,14 @@
                         <li class="active">
                             <a href="index.php">Trang chủ</a>
                         </li>
-                        <li>
-                            <a href="menu.php">Đặt món</a>
+                        <li class="has-child">
+                            <a href="#!">Đặt món</a>
+                            <ul class="sub-menu">
+                                <li class="1"><a href="#!">Đặt bàn</a>
+                                </li>
+                                <li class="1"><a href="menu.php">Đặt mang về</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#!">Về chúng tôi</a>
@@ -55,7 +61,7 @@
                 </nav>
                 <!-- btn action(dang nhap) -->
                 <div class="action">
-                    <a href="menu.php" class="btn btn-login">Đăng nhập / Đăng kí</a>
+                    <a href="#!" class="btn btn-login">Đăng nhập / Đăng kí</a>
 
                 </div>
             </div>

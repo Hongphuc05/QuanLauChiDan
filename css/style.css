@@ -138,6 +138,51 @@ a {
     padding: 0;
     margin: 0;
 }
+
+.header .sub-menu {
+    position: absolute;
+    list-style: none;
+    background-color: rgb(204, 204, 204, 1);
+    padding-left: 00px;
+    margin-left: 10px;
+    margin-top: 20px;
+    display: none;
+    color: #505F64;
+}
+
+.header .sub-menu a{
+    font-size: 17px;
+    color: #505F64;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 13.5px;
+    display: block;
+    width: auto;
+    background:none;
+    width: 100%;
+}
+.header li:hover>ul.sub-menu{
+    display: block;
+}
+.nav .sub-menu a::after {
+    
+    display: none !important;
+    content: none !important;
+
+}
+.sub-menu .li{
+    width: 100%;
+}
+.header .sub-menu a{
+    display: block;
+    color: #000000;
+}
+.header .sub-menu a:hover {
+    /* color: #000000;
+    border: 2px solid #000000; */
+    /* background:none; */
+    background: #ffffff;
+}
 /* =========================banner========================= */
 
 
