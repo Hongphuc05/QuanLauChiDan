@@ -42,7 +42,7 @@
                             <a href="index.php">Trang chủ</a>
                         </li>
                         <li class="active has-child">
-                            <a href="menu.html">Đặt món</a>
+                            <a href="#!">Đặt món</a>
                             <ul class="sub-menu">
                                 <li class="1"><a href="#!">Đặt bàn</a>
                                 </li>
@@ -76,7 +76,7 @@
         <div class="left fixed">
             <nav class="nav">
                 <ul class="ul" id="main-menu">
-                    <li onclick="filterMenu('all'); addActive2(event)">
+                    <li class="active2" onclick="filterMenu('all'); addActive2(event)">
                         <a href="#!">All</a>
                     </li>
                     <li onclick="filterMenu('buffet1'); addActive2(event)">
@@ -109,7 +109,7 @@
             <div class="top">
                 <div class="left">
                     <div class="link">
-                        <a href="#!">Trang chủ</a>
+                        <a href="index.php">Trang chủ</a>
                         <span>/</span>
                         <a href="#!">Đặt món</a>
                     </div>
