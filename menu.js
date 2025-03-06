@@ -1,16 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let menuItem = document.querySelector(".has-child");
-    let subMenu = document.querySelector(".sub-menu");
+// ================= xem chi tiết hình ảnh món ăn khi bấm vào ===================
+// Khi bấm vào ảnh, hiển thị ảnh phóng to
+function openModal(imgElement) {
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImg");
 
-    menuItem.addEventListener("click", function (event) {
-        event.stopPropagation(); // Ngăn sự kiện lan ra ngoài
-        this.classList.toggle("active"); // Toggle trạng thái menu
-    });
+    modal.style.display = "flex"; // Hiện modal
+    modalImg.src = imgElement.src; // Gán ảnh vào modal
+}
 
-    // Đóng menu khi bấm ra ngoài phần menu
-    document.addEventListener("click", function (event) {
-        if (!menuItem.contains(event.target) && !subMenu.contains(event.target)) {
-            menuItem.classList.remove("active");
-        }
-    });
+// Đóng modal khi bấm vào bất cứ đâu ngoài ảnh
+document.getElementById("imageModal").addEventListener("click", function(event) {
+    // Kiểm tra nếu người dùng click vào vùng ngoài ảnh (modal, không phải ảnh)
+    if (event.target.id === "imageModal") {
+        this.style.display = "none"; // Ẩn modal
+    }
 });
