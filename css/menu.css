@@ -15,6 +15,7 @@ body {
     font-family: "Poppins", sans-serif;
     width: 100%;
     background: #ffffff;
+    height: auto;
 }
 
 .main-content {
@@ -32,7 +33,7 @@ main {
 html, body {
 
     width: 100%;
-    height: 100%;
+    height: auto;
     margin: 0;
     padding: 0;
 }
@@ -43,7 +44,7 @@ html, body {
     flex-shrink: 0;
     border-radius: 0px 0px 0px 0px;
     /* background: #720404; */
-}
+} 
 a {
     text-decoration: none;
 }
@@ -252,12 +253,14 @@ a {
     padding-left: 5px;
 }
 
-.left .nav li.active2 a {
+.left .nav li.active2>a {
     color: #F89520;
-    font-weight: 600;
-    border-bottom: 4px solid #F89520;
+    font-weight: 500;
+    border-bottom: 3px solid #F89520;
 }
-
+.left .nav li.active2 > ul.sub-menu {
+    display: none !important; /* Ngăn chặn submenu bị ảnh hưởng */
+}
 .left .nav a:hover {
     color: #F89520;
     border-bottom: 2px solid #F89520;;
@@ -298,7 +301,7 @@ ul.sub-menu {
     /* background: #bc357b; */
 
     background: #ffffff;
-    padding-left: 20px;
+    padding-left: 10px;
     display: none;
 }
 
@@ -310,13 +313,20 @@ ul.sub-menu {
     width: auto;
     
 }
-#main-menu li:hover>ul.sub-menu{
-    display: block;
+/* Khi có class open thì submenu luôn hiện */
+#main-menu li.open > ul.sub-menu {
+    display: block !important;
 }
+
+/* #main-menu li:hover>ul.sub-menu{
+    display: block;
+} */
+
+
 .left .nav li.active3 a {
     color: #F89520;
     font-weight: normal;
-    border-bottom: 1px solid #F89520;
+    border-bottom: 2px solid #F89520;
 }
 
 /* mũi tên */
@@ -332,7 +342,7 @@ ul.sub-menu {
 .right {
     /* position: relative; */
     width: 1215px;
-    height: 14803px;
+    height: auto;
     /* flex-shrink: 0;
     border-radius: 123px 0px 0px 0px; */
     /* background: #976161; */
@@ -575,7 +585,25 @@ ul.sub-menu {
     max-height: 80%;
     border-radius: 10px;
 }
+/* nút trở về đầu trang */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: none; /* Ẩn ban đầu */
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
 
+#backToTop:hover {
+    background-color: #d84315;
+}
 
 
 /* =========================footer========================= */
@@ -586,6 +614,7 @@ footer {
     padding: 50px 50px;
     padding-bottom: 35px;
     bottom: 0;
+    margin-top: 200px;
 }
 .footer .row {
     display: flex;
