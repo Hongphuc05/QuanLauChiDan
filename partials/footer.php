@@ -30,7 +30,7 @@
         <div class="column">
             <h3 class="title">Truy cập nhanh</h3>
             <ul class="list">
-                <li><a href="#!">Home</a></li>
+                <li><a href="#!" id="scroll-to-top">Home</a></li>
                 <li><a href="#!">About</a></li>
                 <li><a href="#!">Youtube</a></li>
                 <li><a href="#!">Support</a></li>

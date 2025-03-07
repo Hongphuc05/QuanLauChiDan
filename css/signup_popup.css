@@ -7,7 +7,10 @@
 body {
     background: #000;
 }
-.body {
+
+.body_2 {
+    
+
     display: flex;
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
@@ -17,7 +20,7 @@ body {
     border-radius: 35px;
     background: #ffffff;
 }
-.left {
+.left_2 {
     position: relative;
     width: 567px; 
     height: 655px; 
@@ -25,19 +28,19 @@ body {
     border-bottom-right-radius: 35px;
     background: #ffffff;
 }
-.dvi {
+.dvi_2 {
     
     margin: auto;
     margin-bottom: 20px;
     
 }
-.dvi2 {
+.dvi2_2 {
     
     margin: auto;
     margin-bottom: 40px;
     
 }
-.right {
+.right_2 {
     position: relative;
     width: 567px; 
     height: 655px; 
@@ -46,7 +49,7 @@ body {
     border-radius: 35px 200px 200px 35px;
     background: linear-gradient(91deg, #7F3229 0.88%, #892F4A 98.82%);
 }
-.right .top {
+.right_2 .top_2 {
     width: 380px;
     height: 50px;
     display: flex;
@@ -60,7 +63,7 @@ body {
     line-height: normal;
     text-align: center;
 }
-.right .center {
+.right_2 .center_2 {
     width: 270px;
     height: 53px;
     /* background: #D9D9D9; */
@@ -72,7 +75,7 @@ body {
     font-weight: 600;
     line-height: normal;
 }
-.right .bot {
+.right_2 .bot_2 {
     width: 188px;
     height: 37.578px;
     border-radius: 10px;
@@ -87,13 +90,14 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    text-decoration: none;
 }
-.right .bot:hover {
+.right_2 .bot_2:hover {
     cursor: pointer;
     color: #000;
     border: 2px solid #000000;
 }
-.left .top {
+.left_2 .top_2 {
     width: 300px;
     height: 50px;
     display: flex;
@@ -106,7 +110,7 @@ body {
     font-weight: 700;
     line-height: normal;
 }
-.left .center {
+.left_2 .center_2 {
     position: relative;
     width: 254px;
     height: 220px;
@@ -115,7 +119,7 @@ body {
     display: flex;
     justify-content: center;
 }
-.left .bot {
+.left_2 .bot_2 {
     width: 250px;
     height: 15px;
     display: flex;
@@ -123,21 +127,22 @@ body {
 }
 
 /* ================== left =============== */
-.left .top {
+.left_2 .top_2 {
     background: #ffffff;
 }
-.left .center {
+.left_2 .center_2 {
     background: #ffffff;
 }
-.left .bot {
+.left_2 .bot_2 {
     background: #ffffff;
+
 }
 
-.form {
+.form_2 {
     position: absolute;
 
 }
-.input {
+.input_2 {
     /* position: absolute; */
     width: 254px;
     height: 34px;
@@ -149,14 +154,14 @@ body {
 
 
 
-.name {
+.name_2 {
     padding-left: 10px;
     color: #000;
     font-family: Quicksand;
     font-size: 11px;
     font-weight: 400;
 }
-.sdt {
+.sdt_2 {
     padding-left: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -165,7 +170,7 @@ body {
     font-size: 11px;
     font-weight: 400;
 }
-.mk {
+.mk_2 {
     padding-left: 10px;
     top: 80px;
     color: #000;
@@ -173,7 +178,7 @@ body {
     font-size: 11px;
     font-weight: 400;
 }
-.btn {
+.btn_2 {
     display: inline-block;
     position: absolute;
     margin-bottom: 0px;
@@ -188,11 +193,11 @@ body {
     font-weight: 600;
     line-height: normal;
 }
-.left .btn:hover {
+.left_2 .btn_2:hover {
     color: #000;
     cursor: pointer;
 }
-.bot {
+.bot_2 {
     position: relative;
     width: 230px;
     height: 30px;
@@ -235,6 +240,13 @@ input[type="checkbox"] {
 }
 
 
+body {
+    display: flex;
+    justify-content: center;  /* Căn giữa theo chiều ngang */
+    align-items: center;  /* Căn giữa theo chiều dọc */
+    height: 100vh;  /* Chiều cao full màn hình */
+    margin: 0;  /* Xóa margin mặc định */
+}
 
 
 

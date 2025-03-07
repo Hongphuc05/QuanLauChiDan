@@ -52,7 +52,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#!">Về chúng tôi</a>
+                            <a href="#!" id="scroll-to-bottom">Về chúng tôi</a>
                         </li>
                         <li>
                             <a href="#!">Đánh giá</a>
@@ -60,10 +60,12 @@
                     </ul>
                 </nav>
                 <!-- btn action(dang nhap) -->
-                <div class="action">
-                    <a href="#!" class="btn btn-login">Đăng nhập / Đăng kí</a>
+                    <div class="action">
+                        <a href="#!" class="btn btn-login" id="open-login">Đăng nhập / Đăng kí</a>
 
-                </div>
+                    </div>
+
+                <!-- popup chứa login và signup -->
             </div>
         </div>
     </header>

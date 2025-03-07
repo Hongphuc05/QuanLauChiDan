@@ -1989,6 +1989,7 @@
                         </div>
                         
                     </div>
+                    
                     <!-- model phóng to ảnh  -->
                     <div id="imageModal" class="modal">
                         <img class="modal-content" id="modalImg">
@@ -2003,7 +2004,7 @@
 
 
         <!-- <script src="https://code.jquery.com/jquery-3.7.1.js"></script> -->
-        <script src="menu.js"></script>
+        <script src="/frontend/js/menu.js"></script>
         <!-- nút trở về đầu trang -->
         <button id="backToTop" onclick="scrollToTop()">▲ Lên đầu</button>
 

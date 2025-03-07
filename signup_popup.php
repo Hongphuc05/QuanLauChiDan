@@ -16,7 +16,9 @@
         rel="stylesheet">
 
     
-    <link rel="stylesheet" href="signup_popup.css">
+    <!-- <link rel="stylesheet" href="/css/signup_popup.css"> -->
+    <link rel="stylesheet" href="<?php echo '/frontend/css/signup_popup.css'; ?>">
+
     <title>signup</title>
 </head>
 
@@ -24,39 +26,40 @@
 
 
 
-<body >
-    <div class="body">
+<body class="fade-in">
+    <div class="body_2">
         <!-- Nửa phải -->
-        <div class="right">
-            <h1 class="top dvi2">Chào mừng quý khách trở lại!</h1>
-            <p class="center dvi2">
+        <div class="right_2">
+            <h1 class="top_2 dvi2_2">Chào mừng quý khách trở lại!</h1>
+            <p class="center_2 dvi2_2">
                 Hãy đăng nhập để tích điểm và 
                 gọi món thôi nào
             </p>
             <form >
-                <button onclick="" class="bot dvi2">Đăng nhập</button>
+                <a href="login_popup.php" class="bot_2 dvi2_2">Đăng nhập</a>
             </form>
         </div>
 
         <!-- Nửa trái -->
-        <div class="left">
-            <h1 class="top dvi">Đăng kí</h1>
-            <div class="center dvi">
+        <div class="left_2">
+            <h1 class="top_2 dvi_2">Đăng kí</h1>
+            <div class="center_2 dvi_2">
                 <!-- Ô nhập số điện thoại -->
-                <form class="form" action="!#">
-                    <input type="name" class="input name" id="name" name="name" placeholder="Họ và Tên" required>
+                <form class="form_2" action="!#">
+                    <input type="name" class="input_2 name_2" id="name" name="name" placeholder="Họ và Tên" required>
                     <br>
-                    <input type="tel" class="input sdt" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+                    <input type="tel" class="input_2 sdt_2" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
                     <br>
                     <!-- Ô nhập mật khẩu -->
                     
-                    <input type="password" class="input mk" id="password" name="password" placeholder="Nhập mật khẩu" required>
+                    <input type="password" class="input_2 mk_2" id="password" name="password" placeholder="Nhập mật khẩu" required>
                     <br>
-                    <button type="submit" class="input btn">Đăng kí</button>
+                    <button type="submit" class="input_2 btn_2">Đăng kí</button>
                 </form>
             </div>
         </div>
     </div>
-    
+    <script defer src="/frontend/js/login.js"></script>
+
 </body>
 </html> 

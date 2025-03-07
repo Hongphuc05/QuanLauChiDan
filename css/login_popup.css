@@ -7,7 +7,7 @@
 body {
     background: #000;
 }
-.body {
+.body_1 {
     display: flex;
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
@@ -17,7 +17,7 @@ body {
     border-radius: 35px;
     background: #ffffff;
 }
-.left {
+.left_1 {
     position: relative;
     width: 567px; 
     height: 655px; 
@@ -25,19 +25,19 @@ body {
     border-bottom-left-radius: 35px;
     background: #ffffff;
 }
-.dvi {
+.dvi_1 {
     
     margin: auto;
     margin-bottom: 20px;
     
 }
-.dvi2 {
+.dvi2_1 {
     
     margin: auto;
     margin-bottom: 40px;
     
 }
-.right {
+.right_1 {
     position: relative;
     width: 567px; 
     height: 655px; 
@@ -46,7 +46,7 @@ body {
     border-radius: 200px 35px 35px 200px;
     background: linear-gradient(91deg, #7F3229 0.88%, #892F4A 98.82%);
 }
-.right .top {
+.right_1 .top_1 {
     width: 400px;
     height: 50px;
     display: flex;
@@ -59,7 +59,7 @@ body {
     font-weight: 700;
     line-height: normal;
 }
-.right .center {
+.right_1 .center_1 {
     width: 393px;
     height: 53px;
     /* background: #D9D9D9; */
@@ -71,7 +71,7 @@ body {
     font-weight: 600;
     line-height: normal;
 }
-.right .bot {
+.right_1 .bot_1 {
     width: 188px;
     height: 37.578px;
     border-radius: 10px;
@@ -86,13 +86,14 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    text-decoration: none;
 }
-.right .bot:hover {
+.right_1 .bot_1:hover {
     cursor: pointer;
     color: #000;
     border: 2px solid #000000;
 }
-.left .top {
+.left_1 .top_1 {
     width: 300px;
     height: 50px;
     display: flex;
@@ -105,7 +106,7 @@ body {
     font-weight: 700;
     line-height: normal;
 }
-.left .center {
+.left_1 .center_1 {
     position: relative;
     width: 254px;
     height: 190px;
@@ -115,7 +116,7 @@ body {
     display: flex;
     justify-content: center;
 }
-.left .bot {
+.left_1 .bot_1 {
     width: 250px;
     height: 15px;
     display: flex;
@@ -123,21 +124,21 @@ body {
 }
 
 /* ================== left =============== */
-.left .top {
+.left_1 .top_1 {
     background: #ffffff;
 }
-.left .center {
+.left_1 .center_1 {
     background: #ffffff;
 }
-.left .bot {
+.left_1 .bot_1 {
     background: #ffffff;
 }
 
-.form {
+.form_1 {
     position: absolute;
 
 }
-.input {
+.input_1 {
     /* position: absolute; */
     width: 254px;
     height: 34px;
@@ -150,7 +151,7 @@ body {
 
 
 
-.sdt {
+.sdt_1 {
     padding-left: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -159,7 +160,7 @@ body {
     font-size: 11px;
     font-weight: 400;
 }
-.mk {
+.mk_1 {
     padding-left: 10px;
     top: 80px;
     color: #000;
@@ -167,7 +168,7 @@ body {
     font-size: 11px;
     font-weight: 400;
 }
-.btn {
+.btn_1 {
     display: inline-block;
     top: 130px;
     position: absolute;
@@ -181,17 +182,17 @@ body {
     font-weight: 600;
     line-height: normal;
 }
-.left .btn:hover {
+.left_1 .btn_1:hover {
     color: #000;
     cursor: pointer;
 }
-.bot {
+.bot_1 {
     position: relative;
     width: 230px;
     height: 30px;
 }
 
-.bot-text1 {
+.bot-text1_1 {
     position: absolute;
     display: flex;
     left: 0;
@@ -203,7 +204,7 @@ body {
     line-height: normal;
     background-color: #ffffff;
 }
-.bot-text2 {
+.bot-text2_1 {
     position: absolute;
     right: 0;
     color: #5C5858;
@@ -225,6 +226,14 @@ input[type="checkbox"] {
     flex-shrink: 0;
     border-radius: 2px;
     background: #FFF;
+}
+
+body {
+    display: flex;
+    justify-content: center;  /* Căn giữa theo chiều ngang */
+    align-items: center;  /* Căn giữa theo chiều dọc */
+    height: 100vh;  /* Chiều cao full màn hình */
+    margin: 0;  /* Xóa margin mặc định */
 }
 
 

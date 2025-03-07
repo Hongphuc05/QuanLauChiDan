@@ -191,6 +191,15 @@ a {
     position: relative;
     width: 100%;
 }
+.banner .media-block {
+    opacity: 80%;
+    filter: brightness(50%);
+}
+.media-block2 {
+    position: absolute;
+    right: 120px;
+    top: 70px;
+}
 .text-banner {
     position: absolute;
     width: 685.125px;
@@ -381,6 +390,27 @@ hr {
     line-height: normal;
 }
 
+/* ==== xem chi tiết hình ảnh món ăn ======= */
+/* Ẩn modal ban đầu */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Làm mờ nền */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ảnh trong modal */
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
 
 /* =========================footer========================= */
 
@@ -451,4 +481,508 @@ a strong {
     text-align: center;
     font-size: 13px;
     font-weight: 100;
+}
+
+/* =======popup chứa login và signup============== */
+.hidden {
+    display: none;
+}
+
+#popup-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+#popup-content {
+    min-width: 300px;
+}
+
+
+
+/* =========================style của login===================== */
+
+
+
+.hidden_1 {
+    display: none;
+}
+#popup-overlay_1 {
+    background: rgba(0, 0, 0, 0.5);    /* display: none; */
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.body_1 {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    width: 1134px;
+    height: 655px;
+    flex-shrink: 0;
+    border-radius: 35px;
+    background: #ffffff;
+}
+.left_1 {
+    position: relative;
+    width: 567px; 
+    height: 655px; 
+    border-top-left-radius: 35px; 
+    border-bottom-left-radius: 35px;
+    background: #ffffff;
+}
+.dvi_1 {
+    
+    margin: auto;
+    margin-bottom: 20px;
+    
+}
+.dvi2_1 {
+    
+    margin: auto;
+    margin-bottom: 40px;
+    
+}
+.right_1 {
+    position: relative;
+    width: 567px; 
+    height: 655px; 
+    border-top-left-radius: 35px; 
+    border-bottom-left-radius: 35px;
+    border-radius: 200px 35px 35px 200px;
+    background: linear-gradient(91deg, #7F3229 0.88%, #892F4A 98.82%);
+}
+.right_1 .top_1 {
+    width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 195px;
+    color: #ffffff;
+    font-family: Quicksand;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.right_1 .center_1 {
+    width: 393px;
+    height: 53px;
+    /* background: #D9D9D9; */
+    color: #FFF;
+    text-align: center;
+    font-family: Quicksand;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.right_1 .bot_1 {
+    width: 188px;
+    height: 37.578px;
+    border-radius: 10px;
+    background: linear-gradient(91deg, #7F3229 0.88%, #892F4A 98.82%);;
+    border: 2px solid #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #D9D9D9;
+    font-family: Quicksand;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+.right_1 .bot_1:hover {
+    cursor: pointer;
+    color: #000;
+    border: 2px solid #000000;
+}
+.left_1 .top_1 {
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 195px;
+    color: #000;
+    font-family: Quicksand;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.left_1 .center_1 {
+    position: relative;
+    width: 254px;
+    height: 190px;
+    /* width: 1000px;
+    height: 1000px; */
+    border-bottom: solid 1px  #000;
+    display: flex;
+    justify-content: center;
+}
+.left_1 .bot_1 {
+    width: 250px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ================== left =============== */
+.left_1 .top_1 {
+    background: #ffffff;
+}
+.left_1 .center_1 {
+    background: #ffffff;
+}
+.left_1 .bot_1 {
+    background: #ffffff;
+}
+
+.form_1 {
+    position: absolute;
+
+}
+.input_1 {
+    /* position: absolute; */
+    width: 254px;
+    height: 34px;
+    /* text-align: left; */
+    border-radius: 10px;
+    border: 1.5px solid #D9D9D9;
+    background: #D9D9D9;
+}
+
+
+
+
+.sdt_1 {
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #000;
+    font-family: Quicksand;
+    font-size: 11px;
+    font-weight: 400;
+}
+.mk_1 {
+    padding-left: 10px;
+    top: 80px;
+    color: #000;
+    font-family: Quicksand;
+    font-size: 11px;
+    font-weight: 400;
+}
+.btn_1 {
+    display: inline-block;
+    top: 130px;
+    position: absolute;
+    border-radius: 10px;
+    border: 1.5px solid #D9D9D9;
+    background: #A6372D;
+    color: #FFF;
+    font-family: Quicksand;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.left_1 .btn_1:hover {
+    color: #000;
+    cursor: pointer;
+}
+.bot_1 {
+    position: relative;
+    width: 230px;
+    height: 30px;
+}
+
+.bot-text1_1 {
+    position: absolute;
+    display: flex;
+    left: 0;
+    color: #5C5858;
+    font-family: Quicksand;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: #ffffff;
+}
+.bot-text2_1 {
+    position: absolute;
+    right: 0;
+    color: #5C5858;
+    font-family: Quicksand;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: #ffffff;
+    text-decoration: none;
+}
+
+
+
+input[type="checkbox"] {
+    margin-top: 1px;
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    background: #FFF;
+}
+
+
+
+
+/* ==============style của signup================== */
+
+
+.body_2 {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    width: 1134px;
+    height: 655px;
+    flex-shrink: 0;
+    border-radius: 35px;
+    background: #ffffff;
+}
+.left_2 {
+    position: relative;
+    width: 567px; 
+    height: 655px; 
+    border-top-right-radius: 35px; 
+    border-bottom-right-radius: 35px;
+    background: #ffffff;
+}
+.dvi_2 {
+    
+    margin: auto;
+    margin-bottom: 20px;
+    
+}
+.dvi2_2 {
+    
+    margin: auto;
+    margin-bottom: 40px;
+    
+}
+.right_2 {
+    position: relative;
+    width: 567px; 
+    height: 655px; 
+    border-top-right-radius: 35px; 
+    border-bottom-right-radius: 35px;
+    border-radius: 35px 200px 200px 35px;
+    background: linear-gradient(91deg, #7F3229 0.88%, #892F4A 98.82%);
+}
+.right_2 .top_2 {
+    width: 380px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 195px;
+    color: #ffffff;
+    font-family: Quicksand;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}
+.right_2 .center_2 {
+    width: 270px;
+    height: 53px;
+    /* background: #D9D9D9; */
+    color: #FFF;
+    text-align: center;
+    font-family: Quicksand;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.right_2 .bot_2 {
+    width: 188px;
+    height: 37.578px;
+    border-radius: 10px;
+    background: linear-gradient(91deg, #7F3229 0.88%, #892F4A 98.82%);;
+    border: 2px solid #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #D9D9D9;
+    font-family: Quicksand;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+.right_2 .bot_2:hover {
+    cursor: pointer;
+    color: #000;
+    border: 2px solid #000000;
+}
+.left_2 .top_2 {
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 195px;
+    color: #000;
+    font-family: Quicksand;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.left_2 .center_2 {
+    position: relative;
+    width: 254px;
+    height: 220px;
+    /* width: 1000px;
+    height: 1000px; */
+    display: flex;
+    justify-content: center;
+}
+.left_2 .bot_2 {
+    width: 250px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ================== left =============== */
+.left_2 .top_2 {
+    background: #ffffff;
+}
+.left_2 .center_2 {
+    background: #ffffff;
+}
+.left_2 .bot_2 {
+    background: #ffffff;
+
+}
+
+.form_2 {
+    position: absolute;
+
+}
+.input_2 {
+    /* position: absolute; */
+    width: 254px;
+    height: 34px;
+    /* text-align: left; */
+    border-radius: 10px;
+    border: 1.5px solid #D9D9D9;
+    background: #D9D9D9;
+}
+
+
+
+.name_2 {
+    padding-left: 10px;
+    color: #000;
+    font-family: Quicksand;
+    font-size: 11px;
+    font-weight: 400;
+}
+.sdt_2 {
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #000;
+    font-family: Quicksand;
+    font-size: 11px;
+    font-weight: 400;
+}
+.mk_2 {
+    padding-left: 10px;
+    top: 80px;
+    color: #000;
+    font-family: Quicksand;
+    font-size: 11px;
+    font-weight: 400;
+}
+.btn_2 {
+    display: inline-block;
+    position: absolute;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1.5px solid #D9D9D9;
+    background: #A6372D;
+    color: #FFF;
+    font-family: Quicksand;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.left_2 .btn_2:hover {
+    color: #000;
+    cursor: pointer;
+}
+.bot_2 {
+    position: relative;
+    width: 230px;
+    height: 30px;
+}
+
+.bot-text1 {
+    position: absolute;
+    display: flex;
+    left: 0;
+    color: #5C5858;
+    font-family: Quicksand;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: #ffffff;
+}
+.bot-text2 {
+    position: absolute;
+    right: 0;
+    color: #5C5858;
+    font-family: Quicksand;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: #ffffff;
+    text-decoration: none;
+}
+
+
+
+input[type="checkbox"] {
+    margin-top: 1px;
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    background: #FFF;
 }
