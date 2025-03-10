@@ -28,6 +28,7 @@
 
 
 <body>
+    <div id="toast-message" class="hd"></div>
 
     <!-- Header -->
     <header class="header fixed">
@@ -72,6 +73,25 @@
     <link rel="stylesheet" href="<?php echo '/frontend/css/menu.css'; ?>">
     <!-- ============ main =============== -->
     <main>
+        
+    
+        <!-- Nút mở giỏ hàng -->
+        <button id="btn-gio-hang">🛒 Giỏ hàng (<span id="so-luong-gio-hang">0</span>)</button>
+
+        <!-- Popup giỏ hàng -->
+        <div id="ovl" class="hidden">
+            <div id="popup-gio-hang" >
+                <div class="popup-content">
+                    <h2 class="title-giohang">Giỏ hàng</h2>
+                    <ul id="danh-sach-gio-hang"></ul>
+                    <p><strong>Tổng tiền:</strong> <span id="tong-tien">0</span> VND</p>
+                    <button id="btn-thanh-toan">Thanh toán</button>
+                    <button id="btn-dong-popup">Đóng</button>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Trái chứa category -->
         <div class="left fixed">
             <nav class="nav">
@@ -109,9 +129,9 @@
             <div class="top">
                 <div class="left">
                     <div class="link">
-                        <a href="index.php">Trang chủ</a>
-                        <span>/</span>
-                        <a href="#!">Đặt món</a>
+                        <a href="index.php" style="color: #555353;">Trang chủ</a>
+                        <span> / </span>
+                        <a href="#!" style="color: #000; font-weight: 500;">Đặt món</a>
                     </div>
                     <h1 class="title">Menu</h1>
                 </div>

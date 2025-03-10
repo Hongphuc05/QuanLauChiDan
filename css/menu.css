@@ -30,6 +30,24 @@ main {
     background: #ffffff;
 }
 /* =========================chung========================= */
+#toast-message {
+    position: fixed;
+    top: 130px; /* Căn sát trên */
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa theo chiều ngang */
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#toast-message.show {
+    opacity: 1;
+}
+
 html, body {
 
     width: 100%;
@@ -69,7 +87,7 @@ a {
     border: 1px #000000;
     border-radius: 35px;
     font-weight: 600;
-    background: #a91f10;
+    background: #e22b16;
 }
 
 /* =========================header========================= */
@@ -384,9 +402,10 @@ ul.sub-menu {
     font-size: 15px;
     /* background: #000; */
 }
+
 .right .top .title {
     margin-top: 0px;
-    color: #000;
+    color: #e3502f;
     font-family: "Rammetto One";
     font-size: 50px;
     font-style: normal;
@@ -605,6 +624,140 @@ ul.sub-menu {
     background-color: #d84315;
 }
 
+/* giỏ hàng */
+/* Ẩn popup ban đầu */
+.hidden {
+    display: none;
+}
+#ovl {
+    /* background: rgba(0, 0, 0, 0.5);    display: none; */
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+/* Kiểu dáng popup giỏ hàng */
+#popup-gio-hang {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 500px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Nút mở giỏ hàng */
+#btn-gio-hang {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff9800;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup-content button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* css cho giỏ hàng */
+/* Định dạng danh sách món trong giỏ hàng */
+#danh-sach-gio-hang {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.title-giohang {
+    font-family: "Poppins";
+}
+
+#danh-sach-gio-hang li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* Định dạng container chứa tên món + số lượng + nút */
+.gio-hang-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Định dạng phần tên món */
+.ten-mon {
+    flex: 1;
+    text-align: left;
+}
+
+/* Định dạng cụm nút điều chỉnh số lượng */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Định dạng các nút trong giỏ hàng */
+.btn-giam, .btn-tang, .btn-xoa {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-giam {
+    margin-right: 10px;
+}
+.btn-tang {
+    margin-left: 10px;
+}
+.so-luong {
+    margin-bottom: 0px;
+}
+
+.btn-giam:hover, .btn-tang:hover {
+    background-color: #ddd;
+}
+
+/* Nút xóa món */
+.btn-xoa {
+    background-color: red;
+    color: white;
+}
+
+.btn-xoa:hover {
+    background-color: darkred;
+}
+
+/* Định dạng tổng tiền */
+#tong-tien {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d9534f;
+}
 
 /* =========================footer========================= */
 

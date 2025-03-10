@@ -117,3 +117,141 @@ document.querySelector(".search").addEventListener("input", function () {
 function removeDiacritics(str) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
+
+
+/* =========================thêm bớt món ăn========================= */
+function showToast(message) {
+    let toast = document.getElementById("toast-message");
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000); // 3 giây sau tự động ẩn
+}
+// ======================KHởi tạo giỏ hàng====================
+// Khởi tạo giỏ hàng
+// Khởi tạo giỏ hàng
+let gioHang = [];
+
+document.addEventListener("DOMContentLoaded", function () {
+    let btnGioHang = document.getElementById("btn-gio-hang");
+    let popupGioHang = document.getElementById("ovl"); // Sử dụng #ovl để mở giỏ hàng
+    let btnDongPopup = document.getElementById("btn-dong-popup");
+    let danhSachGioHang = document.getElementById("danh-sach-gio-hang");
+    let tongTienEl = document.getElementById("tong-tien");
+    let soLuongGioHang = document.getElementById("so-luong-gio-hang");
+
+    // Xử lý thêm món vào giỏ hàng khi bấm "Xác nhận"
+    document.querySelectorAll(".the").forEach(function (item) {
+        let minusBtn = item.querySelector(".minus");
+        let plusBtn = item.querySelector(".plus");
+        let numberSpan = item.querySelector(".number");
+        let confirmBtn = item.querySelector(".btn-cf");
+        let tenMon = item.querySelector("h1").textContent;
+        let giaMon = parseInt(item.querySelector("p").textContent.replace(/\D/g, ""));
+
+        // Xử lý tăng số lượng
+        plusBtn.addEventListener("click", function () {
+            let currentValue = parseInt(numberSpan.textContent);
+            numberSpan.textContent = currentValue + 1;
+        });
+
+        // Xử lý giảm số lượng
+        minusBtn.addEventListener("click", function () {
+            let currentValue = parseInt(numberSpan.textContent);
+            if (currentValue > 0) {
+                numberSpan.textContent = currentValue - 1;
+            }
+        });
+
+        // Khi bấm "Xác nhận"
+        confirmBtn.addEventListener("click", function () {
+            let soLuong = parseInt(numberSpan.textContent);
+            if (soLuong > 0) {
+                let index = gioHang.findIndex(item => item.ten === tenMon);
+                if (index !== -1) {
+                    gioHang[index].soLuong += soLuong;
+                } else {
+                    gioHang.push({ ten: tenMon, gia: giaMon, soLuong: soLuong });
+                }
+
+                showToast(`Bạn đã đặt món "${tenMon}" với số lượng ${soLuong}.`);
+
+                capNhatGioHang();
+                numberSpan.textContent = 0; // Reset số lượng về 0
+            } else {
+                alert("Vui lòng chọn số lượng trước khi xác nhận!");
+            }
+        });
+    });
+
+    // Cập nhật hiển thị giỏ hàng
+    function capNhatGioHang() {
+        danhSachGioHang.innerHTML = "";
+        let tongTien = 0;
+        let tongSoLuong = 0;
+
+        gioHang.forEach((item, index) => {
+            let li = document.createElement("li");
+            li.innerHTML = `
+                <div class="gio-hang-item">
+                    <span class="ten-mon">${item.ten} - ${item.gia.toLocaleString()} VND</span>
+                    <div class="quantity-control">
+                        <button class="btn-giam" data-index="${index}">−</button>
+                        <span class="so-luong">${item.soLuong}</span>
+                        <button class="btn-tang" data-index="${index}">+</button>
+                        <button class="btn-xoa" data-index="${index}">🗑</button>
+                    </div>
+                </div>
+            `;
+            danhSachGioHang.appendChild(li);
+            tongTien += item.gia * item.soLuong;
+            tongSoLuong += item.soLuong;
+        });
+        
+
+        tongTienEl.textContent = tongTien.toLocaleString() + " VND";
+        soLuongGioHang.textContent = tongSoLuong;
+
+        // Xử lý tăng/giảm số lượng và xóa món trong giỏ hàng
+        document.querySelectorAll(".btn-tang").forEach(btn => {
+            btn.addEventListener("click", function () {
+                let index = this.dataset.index;
+                gioHang[index].soLuong++;
+                capNhatGioHang();
+            });
+        });
+
+        document.querySelectorAll(".btn-giam").forEach(btn => {
+            btn.addEventListener("click", function () {
+                let index = this.dataset.index;
+                if (gioHang[index].soLuong > 1) {
+                    gioHang[index].soLuong--;
+                } else {
+                    gioHang.splice(index, 1); // Xóa món nếu số lượng về 0
+                }
+                capNhatGioHang();
+            });
+        });
+
+        document.querySelectorAll(".btn-xoa").forEach(btn => {
+            btn.addEventListener("click", function () {
+                let index = this.dataset.index;
+                gioHang.splice(index, 1); // Xóa hẳn món
+                capNhatGioHang();
+            });
+        });
+    }
+
+    // Xử lý mở popup giỏ hàng
+    btnGioHang.addEventListener("click", function () {
+        popupGioHang.classList.remove("hidden");
+    });
+
+    // Xử lý đóng popup giỏ hàng
+    btnDongPopup.addEventListener("click", function () {
+        popupGioHang.classList.add("hidden");
+    });
+});
+
