@@ -1,4 +1,4 @@
-<?php include('partials/header.php'); ?>
+<?php include('partials/header_login.php'); ?>
 <!-- style -->
 <!-- <link rel="stylesheet" href="/frontend/css/style.css"> -->
 <link rel="stylesheet" href="<?php echo '/frontend/css/style.css'; ?>">
@@ -337,7 +337,8 @@
     <div id="imageModal" class="modal">
         <img class="modal-content" id="modalImg">
     </div>
-    <script src="/frontend/js/index.js" defer></script>
+
+    <script src="/frontend/js/index_login.js" defer></script>
 </main>
 
 <?php include('partials/footer.php'); ?>

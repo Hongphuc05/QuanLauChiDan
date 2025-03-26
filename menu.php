@@ -59,11 +59,16 @@
                         </li>
                     </ul>
                 </nav>
-                <!-- btn action(dang nhap) -->
-                <div class="action">
-                    <a href="menu.php" class="btn btn-login">Đăng nhập / Đăng kí</a>
 
+                <!-- Nút Profile -->
+                <div class="login-box">
+                    <div id="avatar" class="avatar"></div> <!-- Avatar -->
+                    <span id="user-name">Nguyễn Hồng Phúc</span>
+                    <div>
+                        <img id="logout-icon" src="./assets/img/icons/log_out.svg" alt="">
+                    </div>
                 </div>
+
             </div>
         </div>
     </header>
@@ -71,6 +76,7 @@
     <!-- style -->
     <!-- <link rel="stylesheet" href="/css/menu.css"> -->
     <link rel="stylesheet" href="<?php echo '/frontend/css/menu.css'; ?>">
+
     <!-- ============ main =============== -->
     <main>
         

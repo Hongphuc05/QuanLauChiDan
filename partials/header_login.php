@@ -34,36 +34,8 @@
         <div class="content">
             <div class="body">
                 <!-- Logo -->
-                <div class="logo1">
-                    <img src="/frontend/assets/img/trangbia/Logo_chidan_chữ đen 1.svg" alt="" class="logo"
-                        style="height: 80px;">
-                    <div>
-                        <span class="logo_text" style="
-                        width: 111px;
-                        height: 40px;
-                        color: #D75F52;
-                        font-family: Salsa;
-                        font-size: 39.375px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: normal;
-                        ">Lẩu
-                        </span>
-                        <br>
-                        <span style="
-                        width: 78.609px;
-                        height: 25.33px;
-                        color: #D75F52;
-                        font-family: Salsa;
-                        font-size: 23.625px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: normal;
-                        ">CHI DÂN</span>
-                    </div>
-                </div>
-
-
+                <img src="/frontend/assets/img/trangbia/Logo_chidan_chữ đen 1.svg" alt="" class="logo"
+                    style="height: 80px;">
                 <!-- nav(thongtin) -->
                 <nav class="nav">
                     <ul class="ul">
@@ -75,7 +47,7 @@
                             <ul class="sub-menu">
                                 <li class="1"><a href="#!">Đặt bàn</a>
                                 </li>
-                                <li class="1"><a href="menu.php">Đặt mang về</a>
+                                <li class="1"><a href="#!">Đặt mang về</a>
                                 </li>
                             </ul>
                         </li>
@@ -87,16 +59,20 @@
                         </li>
                     </ul>
                 </nav>
-
-                <!-- Nút Profile -->
-                <div class="login-box">
-                    <div id="avatar" class="avatar"></div> <!-- Avatar -->
-                    <span id="user-name">Nguyễn Hồng Phúc</span>
-                    <div>
-                        <img id="logout-icon" src="./assets/img/icons/log_out.svg" alt="">
-                    </div>
+                <!-- Nút đăng nhập hoặc Profile -->
+                <div class="action">
+                    <?php if (isset($_SESSION["user"])): ?>
+                        <!-- Nếu đã đăng nhập, hiển thị avatar + tên + nút Đăng xuất -->
+                        <div class="profile-menu">
+                            <img src="<?= $_SESSION["user"]["avatar"] ?>" alt="Avatar" width="40" height="40">
+                            <span><?= $_SESSION["user"]["username"] ?></span>
+                            <a href="logout.php" class="btn btn-logout">Đăng xuất</a>
+                        </div>
+                    <?php else: ?>
+                        <!-- Nếu chưa đăng nhập, hiển thị nút đăng nhập -->
+                        <a href="#!" class="btn btn-login" id="open-login">Đăng nhập / Đăng kí</a>
+                    <?php endif; ?>
                 </div>
-
 
                 <!-- popup chứa login và signup -->
             </div>

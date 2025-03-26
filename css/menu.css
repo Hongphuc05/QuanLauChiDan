@@ -226,6 +226,51 @@ a {
     /* background:none; */
     background: #ffffff;
 }
+
+/* 4 phần chứa profile đăng nhập */
+.login-box {
+    width: 300px;
+    height: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 0px;
+    /* background: #892F4A; */
+    position: relative;
+    right: 40px;
+}
+#user-name {
+    color: #000;
+    font-family: Quicksand;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+#logout-icon {
+    position: relative;
+    top: 4px;
+    width: 20px; 
+    height: 25px;
+    cursor: pointer;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    border: 2px solid white; /* Viền trắng */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Hiệu ứng viền */
+    position: relative;
+    left: 10px;
+}
 /* =========================left========================= */
 
 
@@ -484,6 +529,7 @@ ul.sub-menu {
 }
 .img-the:hover {
     cursor: pointer;
+    transform: scale(0.95);
 }
 /* dưới (thẻ info-mon chứa left và right */
 .info-mon {

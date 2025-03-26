@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&family=Prata&family=Poppins:wght@300;400;500;700&family=Salsa&family=Sarpanch:wght@400;700&family=Qwigley&family=Quicksand:wght@300;400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+/* =========================chung========================= */
+html, body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+main {
+    display: flex;
+}
+/* ===============header================== */
+
+.header {
+    background-color: rgb(222, 222, 222);
+}
+.header .body {
+    display: flex;
+    justify-content: space-between;
+}
+.header .logo {
+    display: flex;
+}
+/* btn-admin */
+.btn-admin {
+    display: flex;
+    /* justify-content: space-evenly; */
+    min-width: 240px;
+    padding: 0px 16px;
+    line-height: 45px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 19.688px;
+    /* font-style: normal; */
+    border: 1px #000000;
+    border-radius: 35px;
+    font-weight: 600;
+    background: #e22b16;
+}
+
+.btn-user {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 30px;
+}
+
+/* ===============main================== */
+/* submenu */
+.sub-menu {
+    /* display: flex; */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    width: 300px;
+    height: 100vh;
+    /* background-color: aqua; */
+    border-right: solid 1px;
+}
+.ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Căn giữa ngang */
+    width: fit-content; /* Đảm bảo ul không bị giãn ra toàn bộ */
+}
+.sub-menu .nav a {
+    /* position: absolute; */
+    color: #000000;
+    font-size: 20px;
+    font-family: Quicksand;
+    font-weight: bold;
+    /* background-color: rgb(115, 176, 104); */
+    background-color: rgb(255, 255, 255);
+
+    /* margin-right: 30px; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 25px;
+    padding-left: 25px;
+    
+}
+
+.sub-menu .ul li {
+    margin-bottom: 0px; /* Tăng khoảng cách giữa các mục */
+    width: 100%;
+}
+.sub-menu .ul li a {
+    display: block; /* Biến thẻ <a> thành block để fill chiều ngang */
+    width: 100%; /* Fill toàn bộ chiều ngang của li */
+    
+}
+
+.sub-menu .ul {
+    position: absolute;
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-direction: column; /* Xếp các thẻ con theo chiều dọc */
+    background: #ffffff;
+    position: relative;
+    width: 170px;
+    top: 70px;
+}
+
+.sub-menu .ul li a {
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background: #F0EFF4;
+    text-align: center;
+    padding: auto;
+}
+.sub-menu li.active a,
+.sub-menu .ul li a:hover {
+    background: #747474;
+    
+}
+/* gạch chân */
+/* =========================main-content===================== */
+.text1 {
+    color: #000;
+    font-family: Quicksand;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.main-content .top {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+.main-content .bot {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.rec {
+    width: 342px;
+    height: 187px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa các phần tử theo chiều ngang */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    text-align: center; /* Căn giữa nội dung văn bản */
+}
+/* Năm selected */
+#year-select {
+    appearance: none; /* Ẩn giao diện mặc định của trình duyệt */
+    background-color: #d6d6d6; /* Màu nền */
+    border: none;
+    padding: 5px 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+}
+
+/* Thêm biểu tượng mũi tên tùy chỉnh */
+#year-select {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><polygon points="0,0 10,0 5,6" fill="black"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 10px;
+    padding-right: 24px; /* Chừa khoảng trống cho mũi tên */
+}

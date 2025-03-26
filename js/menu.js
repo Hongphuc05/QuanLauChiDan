@@ -255,3 +255,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// ============= profile của user =====================
+// tạo avatar và màu avatar cho từng user
+document.addEventListener("DOMContentLoaded", function () {
+    let userName = document.getElementById("user-name").textContent.trim();
+    let avatarText = userName.charAt(0).toUpperCase(); // Lấy chữ cái đầu
+    let avatar = document.getElementById("avatar");
+
+    // Hàm băm tên thành màu cố định
+    function hashColor(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            hash = str.charCodeAt(i) + ((hash << 5) - hash); 
+        }
+        let color = "#";
+        for (let i = 0; i < 3; i++) {
+            color += ("00" + ((hash >> (i * 8)) & 0xFF).toString(16)).slice(-2);
+        }
+        return color;
+    }
+
+    // Gán màu cố định dựa trên tên user
+    let userColor = hashColor(userName);
+    avatar.textContent = avatarText;
+    avatar.style.backgroundColor = userColor;
+});
+
+
+
+
+// nút bấm khi đăng xuất
+document.getElementById("logout-icon").addEventListener("click", function () {
+    alert("Bạn đã đăng xuất!");
+    localStorage.removeItem("username"); // Xóa dữ liệu đăng nhập
+    window.location.href = "index_login.php"; // Chuyển hướng về trang đăng nhập
+});
