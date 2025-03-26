@@ -1,4 +1,7 @@
-<?php include('partials/header_login.php'); ?>
+<?php
+include('partials/header_login.php');
+include('config/constants.php');
+?>
 <!-- style -->
 <!-- <link rel="stylesheet" href="/frontend/css/style.css"> -->
 <link rel="stylesheet" href="<?php echo '/frontend/css/style.css'; ?>">
@@ -208,7 +211,7 @@
         </div>
     </div>
 
-    
+
     <div id="popup-overlay_1" class="hidden_1">
         <!-- popup login -->
         <div class="body_1">
@@ -261,51 +264,16 @@
                 </form>
             </div>
         </div>
-
-        <?php
-
-        // ktra nuts submit co bam k?
-        if (isset($_POST['submit'])) {
-
-            // tien hanh login
-            //1. lay data tu login form
-            $phone = $_POST['phone'];
-            $password = $_POST['password'];
-            // //2. SQL truy van xem co data khong
-            $sql = "SELECT * FROM tbl_customer WHERE phone = '$phone' AND password='$password'";
-
-            // //3 ket noi va truy van
-            $res = mysqli_query($conn, $sql) or die(mysqli_connect_error());
-
-            // //4. dem so dong xem k.hang co ton tai k
-            $count = mysqli_num_rows($res);
-
-            if ($count == 1) {
-                //user avaiable and login success
-                $_SESSION['login'] = "<div>Login successfully</div>";
-                $_SESSION['user'] = $username; // to check whether the user is logged in or not and logout wil be unset it
-                //redirect the admin manager page
-                header('location:' . SITEURL . 'index.php');
-            } else {
-                //user not avaiable and login fail
-                $_SESSION['login'] = "<div>username or password did not match</div>";
-                //redirect the admin manager page
-                header('location:' . SITEURL . 'login_popup.php');
-            }
-        }
-
-        ?>
-
         <!-- popup signup -->
         <div class="body_2">
             <!-- Nửa phải -->
             <div class="right_2">
                 <h1 class="top_2 dvi2_2">Chào mừng quý khách trở lại!</h1>
                 <p class="center_2 dvi2_2">
-                    Hãy đăng nhập để tích điểm và 
+                    Hãy đăng nhập để tích điểm và
                     gọi món thôi nào
                 </p>
-                <form >
+                <form>
                     <a href="#!" class="bot_2 dvi2_2" id="open-login">Đăng nhập</a>
                 </form>
             </div>
@@ -313,26 +281,34 @@
             <!-- Nửa trái -->
             <div class="left_2">
                 <h1 class="top_2 dvi_2">Đăng kí</h1>
+
+                <?php
+                if (isset($_SESSION['add'])) {
+                    echo $_SESSION['add'];
+                    unset($_SESSION['add']); // Xóa thông báo sau khi hiển thị
+                }
+                ?>
+
                 <div class="center_2 dvi_2">
                     <!-- Ô nhập số điện thoại -->
-                    <form class="form_2" action="!#">
+                    <form class="form_2" action="" method="POST">
                         <input type="name" class="input_2 name_2" id="name" name="name" placeholder="Họ và Tên" required>
                         <br>
                         <input type="tel" class="input_2 sdt_2" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
                         <br>
                         <!-- Ô nhập mật khẩu -->
-                        
+
                         <input type="password" class="input_2 mk_2" id="password" name="password" placeholder="Nhập mật khẩu" required>
                         <br>
-                        <button type="submit" class="input_2 btn_2">Đăng kí</button>
+                        <button type="submit" name="submit2" class="input_2 btn_2">Đăng kí</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-    
-    
+
+
     <!-- model phóng to ảnh  -->
     <div id="imageModal" class="modal">
         <img class="modal-content" id="modalImg">
@@ -342,3 +318,95 @@
 </main>
 
 <?php include('partials/footer.php'); ?>
+
+
+
+
+<!-- đăng kí -->
+<?php
+// Kiểm tra nếu nút submit được bấm
+if (isset($_POST['submit2'])) {
+    // 1. Lấy dữ liệu từ form
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $password = $_POST['password'];
+
+    // 2. Kiểm tra xem có ô nào bị trống không
+    if (empty($name) || empty($phone) || empty($password)) {
+        // Nếu có ô trống, tạo session thông báo lỗi và quay lại form
+        $_SESSION['add'] = "<div style='color: red;'>Vui lòng nhập đầy đủ thông tin!</div>";
+        header("location:" . SITEURL . 'index_login.php');
+        exit();
+    }
+
+    // 3. Kiểm tra số điện thoại đã tồn tại chưa
+    $sql_check = "SELECT * FROM tbl_customer WHERE phone = '$phone'";
+    $res_check = mysqli_query($conn, $sql_check);
+
+    if (mysqli_num_rows($res_check) > 0) {
+        // Nếu số điện thoại đã tồn tại
+        $_SESSION['add'] = "<div style='color: red;'>Số điện thoại đã tồn tại. Vui lòng chọn số khác!</div>";
+        header("location:" . SITEURL . 'index_login.php');
+        exit();
+    }
+
+    // 4. Thêm dữ liệu vào cơ sở dữ liệu
+    $sql = "INSERT INTO tbl_customer (full_name, phone, password) VALUES ('$name', '$phone', '$password')";
+    $res = mysqli_query($conn, $sql);
+
+    if ($res == true) {
+        $_SESSION['login'] = "<div style='color: green;'>Đăng nhập thành công!</div>";
+        $_SESSION['user_name'] = $name; // Lưu tên người dùng vào session
+        echo "<script>
+                alert('Đăng ký thành công!');
+                window.location.href='" . SITEURL . "index.php';
+              </script>";
+        exit();
+    } else {
+        echo "<script>
+                alert('Đăng ký không thành công. Vui lòng thử lại!');
+                window.location.href='" . SITEURL . "index_login.php';
+              </script>";
+        exit();
+    }
+}
+?>
+<!-- đăng nhập -->
+<?php
+// Kiểm tra nếu nút submit được bấm
+if (isset($_POST['submit'])) {
+    // 1. Lấy dữ liệu từ form
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+    // 2. Truy vấn SQL kiểm tra thông tin
+    $sql = "SELECT * FROM tbl_customer WHERE phone = '$phone' AND password = '$password'";
+    $res = mysqli_query($conn, $sql);
+
+    // 3. Kiểm tra kết quả
+    if (mysqli_num_rows($res) == 1) {
+        // Lấy thông tin người dùng
+        $row = mysqli_fetch_assoc($res);
+        $full_name = $row['full_name']; // Lấy tên người dùng từ cơ sở dữ liệu
+
+        // Lưu thông tin vào session
+        $_SESSION['login'] = "<div style='color: green;'>Đăng nhập thành công!</div>";
+        $_SESSION['user_name'] = $full_name; // Lưu tên người dùng vào session
+
+        // Chuyển hướng đến trang index.php
+        echo "<script>
+                alert('Đăng nhập thành công!');
+                window.location.href='" . SITEURL . "index.php';
+              </script>";
+        exit();
+    } else {
+        // Đăng nhập thất bại
+        $_SESSION['login'] = "<div style='color: red;'>Số điện thoại hoặc mật khẩu không đúng!</div>";
+        echo "<script>
+                alert('Đăng nhập không thành công. Vui lòng thử lại!');
+                window.location.href='" . SITEURL . "index_login.php';
+              </script>";
+        exit();
+    }
+}
+?>

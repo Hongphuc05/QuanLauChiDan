@@ -111,3 +111,4 @@ document.getElementById("logout-icon").addEventListener("click", function () {
     localStorage.removeItem("username"); // Xóa dữ liệu đăng nhập
     window.location.href = "index_login.php"; // Chuyển hướng về trang đăng nhập
 });
+

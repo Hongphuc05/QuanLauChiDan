@@ -61,6 +61,7 @@
                 </nav>
                 <!-- Nút đăng nhập hoặc Profile -->
                 <div class="action">
+                    
                     <?php if (isset($_SESSION["user"])): ?>
                         <!-- Nếu đã đăng nhập, hiển thị avatar + tên + nút Đăng xuất -->
                         <div class="profile-menu">
@@ -70,7 +71,7 @@
                         </div>
                     <?php else: ?>
                         <!-- Nếu chưa đăng nhập, hiển thị nút đăng nhập -->
-                        <a href="#!" class="btn btn-login" id="open-login">Đăng nhập / Đăng kí</a>
+                        <a href="index_login.php" class="btn btn-login" id="open-login">Đăng nhập / Đăng kí</a>
                     <?php endif; ?>
                 </div>
 

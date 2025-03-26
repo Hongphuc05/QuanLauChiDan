@@ -290,3 +290,22 @@ document.getElementById("logout-icon").addEventListener("click", function () {
     localStorage.removeItem("username"); // Xóa dữ liệu đăng nhập
     window.location.href = "index_login.php"; // Chuyển hướng về trang đăng nhập
 });
+
+
+// ===================== đặt bàn gọi món mang về hoặc hiển thị pop-up ==================
+document.addEventListener("DOMContentLoaded", function () {
+    let btnDatBan = document.getElementById("btn-dat-ban");
+    let btnDatMangVe = document.getElementById("btn-dat-mang-ve");
+
+    // Khi bấm Đặt Bàn => Chuyển hướng sang menu.php?chooseTable=true
+    btnDatBan.addEventListener("click", function (event) {
+        event.preventDefault(); // Ngăn load lại trang
+        window.location.href = "menu.php?chooseTable=true";
+    });
+
+    // Đặt Mang Về vẫn giữ nguyên link (menu.php)
+    btnDatMangVe.addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "menu.php";
+    });
+});

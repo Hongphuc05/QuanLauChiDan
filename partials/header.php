@@ -1,3 +1,4 @@
+<?php include('config/constants.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,9 +74,9 @@
                         <li class="has-child">
                             <a href="#!">Đặt món</a>
                             <ul class="sub-menu">
-                                <li class="1"><a href="#!">Đặt bàn</a>
+                                <li><a href="#!" id="btn-dat-ban">Đặt bàn</a>
                                 </li>
-                                <li class="1"><a href="menu.php">Đặt mang về</a>
+                                <li><a href="menu.php" id="btn-dat-mang-ve">Đặt mang về</a>
                                 </li>
                             </ul>
                         </li>
@@ -90,8 +91,16 @@
 
                 <!-- Nút Profile -->
                 <div class="login-box">
+                    <?php
+                    // Kiểm tra xem người dùng đã đăng nhập hay chưa
+                    if (isset($_SESSION['user_name'])) {
+                        $name = $_SESSION['user_name']; // Lấy tên người dùng từ session
+                    } else {
+                        $name = "Khách"; // Giá trị mặc định nếu chưa đăng nhập
+                    }
+                    ?>
                     <div id="avatar" class="avatar"></div> <!-- Avatar -->
-                    <span id="user-name">Nguyễn Hồng Phúc</span>
+                    <span id="user-name"><?php echo htmlspecialchars($name); ?></span> <!-- Hiển thị tên người dùng -->
                     <div>
                         <img id="logout-icon" src="./assets/img/icons/log_out.svg" alt="">
                     </div>

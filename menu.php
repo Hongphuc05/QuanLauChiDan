@@ -97,6 +97,20 @@
             </div>
         </div>
 
+        <!-- popup sơ đồ bàn -->
+        <div id="table-popup" class="table-popup">
+            <div class="table-content">
+                <div class="top">
+                    <select id="floor-select">
+                        <option value="tang-1" selected>Tầng 1</option>
+                        <option value="tang-2">Tầng 2</option>
+                    </select>
+                </div>
+                <div class="bot">
+
+                </div>
+            </div>
+        </div>
 
         <!-- Trái chứa category -->
         <div class="left fixed">
@@ -2025,7 +2039,7 @@
             </div>
         </div>
 
-
+        
 
 
 
@@ -2044,7 +2058,7 @@
             <div class="row">
                 <!-- cột 1 -->
                 <div class="column">
-                    <img src="/frontend/frontend/assets/img/trangbia/Logo_chidan_chữ trắng 1.svg" alt="ChiDan." class="logo" style="width: 55px; height: 42px;">
+                    <img src="/frontend/assets/img/trangbia/Logo_chidan_chữ trắng 1.svg" alt="ChiDan." class="logo" style="width: 55px; height: 42px;">
                     <p class="desc">
                         Lẩu Chi Dân ra đời với mong muốn mang đến trải nghiệm ẩm thực đậm đà hương vị Đài Loan, kết
                         hợp cùng không gian ấm cúng, hiện đại, phù hợp cho mọi buổi họp mặt. Tại đây, mỗi nồi lẩu
