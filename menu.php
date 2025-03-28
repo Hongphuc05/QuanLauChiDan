@@ -19,7 +19,7 @@
 
 
 
-    
+
     <title>Quán Lẩu Chi Dân</title>
 </head>
 
@@ -29,7 +29,37 @@
 
 <body>
     <div id="toast-message" class="hd"></div>
+    <!-- popup sơ đồ bàn -->
+    <div id="table-popup" class="table-popup">
+        <div class="table-content">
+            <div class="top">
+                <select id="floor-select">
+                    <option value="tang-1" selected>Tầng 1</option>
+                    <option value="tang-2">Tầng 2</option>
+                </select>
+            </div>
+            <div class="bot">
+                <div class="table-layout">
+                    <!-- Hàng trên -->
+                    <div class="table available" data-table="1">Bàn 1</div>
+                    <div class="table occupied" data-table="2">Bàn 2</div>
+                    <div class="table available" data-table="3">Bàn 3</div>
+                    <div class="table available" data-table="4">Bàn 4</div>
 
+                    <!-- Quầy nằm giữa -->
+                    <div class="counter">Quầy live</div>
+
+                    <!-- Hàng dưới -->
+                    <div class="table available" data-table="5">Bàn 5</div>
+                    <div class="table available" data-table="6">Bàn 6</div>
+                    <div class="table available" data-table="7">Bàn 7</div>
+                    <div class="table available" data-table="8">Bàn 8</div>
+                </div>
+            </div>
+
+            <button class="cf-btn" id="cfButton">Xác nhận</button>
+        </div>
+    </div>
     <!-- Header -->
     <header class="header fixed">
         <div class="content">
@@ -45,9 +75,9 @@
                         <li class="active has-child">
                             <a href="#!">Đặt món</a>
                             <ul class="sub-menu">
-                                <li class="1"><a href="#!">Đặt bàn</a>
+                                <li><a href="#!" id="btn-dat-ban">Đặt bàn</a>
                                 </li>
-                                <li class="1"><a href="#!">Đặt mang về</a>
+                                <li class="1"><a href="menu.php">Đặt mang về</a>
                                 </li>
                             </ul>
                         </li>
@@ -72,21 +102,21 @@
             </div>
         </div>
     </header>
-    
+
     <!-- style -->
     <!-- <link rel="stylesheet" href="/css/menu.css"> -->
     <link rel="stylesheet" href="<?php echo '/frontend/css/menu.css'; ?>">
 
     <!-- ============ main =============== -->
     <main>
-        
-    
+
+
         <!-- Nút mở giỏ hàng -->
         <button id="btn-gio-hang">🛒 Giỏ hàng (<span id="so-luong-gio-hang">0</span>)</button>
 
         <!-- Popup giỏ hàng -->
         <div id="ovl" class="hidden">
-            <div id="popup-gio-hang" >
+            <div id="popup-gio-hang">
                 <div class="popup-content">
                     <h2 class="title-giohang">Giỏ hàng</h2>
                     <ul id="danh-sach-gio-hang"></ul>
@@ -96,7 +126,6 @@
                 </div>
             </div>
         </div>
-
 
         <!-- Trái chứa category -->
         <div class="left fixed">
@@ -112,7 +141,7 @@
                         <a href="#!">Combo</a>
                     </li>
                     <li class="has-child">
-                        <a onclick="filterMenu('monle1'); openSubmenu(event)"  href="#!" >Món lẻ</a>
+                        <a onclick="filterMenu('monle1'); openSubmenu(event)" href="#!">Món lẻ</a>
                         <ul class="sub-menu">
                             <li class="active3"><a href="#!" onclick="filterMenu('lau'); addActive3(event)">Loại lẩu</a></li>
                             <li><a href="#!" onclick="filterMenu('bo'); addActive3(event)">Bò</a></li>
@@ -142,9 +171,13 @@
                     <h1 class="title">Menu</h1>
                 </div>
                 <div class="right">
+                    <div class="ban-da-chon">
+                        <p id="danh-sach-ban"></p>
+                    </div>
+
                     <div class="search-bar">
                         <input type="text" class="search" placeholder="Tìm kiếm...">
-                        
+
                     </div>
 
                 </div>
@@ -1232,7 +1265,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Há cảo và sủi cảo -->
                         <div class="the ha-cao monle1">
                             <img class="img-the" src="/frontend/assets/img/menu/Món lẻ/Há cảo và Sủi cảo/Há cảo bò.jpg"
@@ -2013,17 +2046,27 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
-                    
+
                     <!-- model phóng to ảnh  -->
                     <div id="imageModal" class="modal">
                         <img class="modal-content" id="modalImg">
-                    </div>  
+                    </div>
                 </div>
 
             </div>
         </div>
+
+
+        <!-- thông tin bàn user đã đặt -->
+        <?php
+        // Kiểm tra xem có dữ liệu bàn trong URL không
+        $banDaChon = isset($_GET['ban']) ? $_GET['ban'] : '';
+
+        // Chuyển chuỗi "1,2,3" thành mảng [1, 2, 3]
+        $banList = explode(',', $banDaChon);
+        ?>
 
 
 
@@ -2044,7 +2087,7 @@
             <div class="row">
                 <!-- cột 1 -->
                 <div class="column">
-                    <img src="/frontend/frontend/assets/img/trangbia/Logo_chidan_chữ trắng 1.svg" alt="ChiDan." class="logo" style="width: 55px; height: 42px;">
+                    <img src="/frontend/assets/img/trangbia/Logo_chidan_chữ trắng 1.svg" alt="ChiDan." class="logo" style="width: 55px; height: 42px;">
                     <p class="desc">
                         Lẩu Chi Dân ra đời với mong muốn mang đến trải nghiệm ẩm thực đậm đà hương vị Đài Loan, kết
                         hợp cùng không gian ấm cúng, hiện đại, phù hợp cho mọi buổi họp mặt. Tại đây, mỗi nồi lẩu
@@ -2061,7 +2104,7 @@
                         <a href="">
                             <img src="/frontend/assets/img/icons/twt.svg" alt="" class="icon">
                         </a>
-        
+
                     </div>
                 </div>
                 <!-- cột 2 -->
@@ -2085,16 +2128,16 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- phần dưới -->
         <div class="bot-footer">
             <div class="copyright">
                 <p>Copyright @2024 quanlauchidan.com All rights reserved</p>
             </div>
         </div>
-        
-        </footer>
-        </body>
-        
-        </html>
+
+    </footer>
+</body>
+
+</html>
 </body>

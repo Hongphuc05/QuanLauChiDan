@@ -290,3 +290,139 @@ document.getElementById("logout-icon").addEventListener("click", function () {
     localStorage.removeItem("username"); // Xóa dữ liệu đăng nhập
     window.location.href = "index_login.php"; // Chuyển hướng về trang đăng nhập
 });
+
+
+// ===================== đặt bàn gọi món mang về hoặc hiển thị pop-up ==================
+document.addEventListener("DOMContentLoaded", function () {
+    let btnDatBan = document.getElementById("btn-dat-ban");
+    let btnDatMangVe = document.getElementById("btn-dat-mang-ve");
+
+
+    // Đặt Mang Về vẫn giữ nguyên link (menu.php)
+    btnDatMangVe.addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "menu.php";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const tablePopup = document.getElementById("table-popup");
+
+    if (urlParams.get("chonban") === "true" && tablePopup) {
+        tablePopup.style.display = "flex"; // Hiển thị popup
+    }
+});
+
+
+
+
+// ================== xử lí khi chọn bàn=====================
+document.addEventListener("DOMContentLoaded", function () {
+    const btnDatBan = document.getElementById("btn-dat-ban"); 
+    const tables = document.querySelectorAll(".table");
+    const confirmButton = document.getElementById("cfButton");
+    const tablePopup = document.querySelector(".table-popup"); // Overlay
+
+    let selectedTables = []; // Danh sách bàn đã chọn
+
+    // Khi bấm "Đặt bàn", mở popup sơ đồ bàn
+    btnDatBan.addEventListener("click", function (event) {
+        event.preventDefault(); // Ngăn chặn chuyển trang ngay lập tức
+        tablePopup.style.display = "flex"; // Hiển thị popup
+    });
+
+    // Xử lý khi click vào bàn
+    tables.forEach(table => {
+        table.addEventListener("click", function () {
+            const tableId = this.getAttribute("data-table");
+
+            if (this.classList.contains("available")) {
+                this.classList.toggle("selected");
+
+                // Thêm/xóa bàn khỏi danh sách chọn
+                if (this.classList.contains("selected")) {
+                    selectedTables.push(tableId);
+                } else {
+                    selectedTables = selectedTables.filter(id => id !== tableId);
+                }
+            } else if (this.classList.contains("occupied")) {
+                showAlert("Bàn này đã có người đặt!");
+            }
+        });
+    });
+
+    // Xử lý khi bấm nút xác nhận đặt bàn
+    confirmButton.addEventListener("click", function () {
+        if (selectedTables.length === 0) {
+            showAlert("Vui lòng chọn ít nhất một bàn!");
+            return;
+        }
+
+        // Chuyển hướng sang menu.php và truyền danh sách bàn đã chọn qua URL
+        const tableList = selectedTables.join(",");
+        window.location.href = `menu.php?ban=${tableList}`;
+    });
+
+    // Đóng popup khi bấm ra ngoài overlay
+    tablePopup.addEventListener("click", function (event) {
+        if (event.target === tablePopup) {
+            tablePopup.style.display = "none";
+        }
+    });
+});
+
+// Hiển thị alert trong 3 giây
+function showAlert(message) {
+    const alertBox = document.createElement("div");
+    alertBox.classList.add("alert");
+    alertBox.innerText = message;
+    document.body.appendChild(alertBox);
+
+    alertBox.style.display = "block";
+
+    setTimeout(() => {
+        alertBox.style.display = "none";
+        alertBox.remove(); // Xóa alert sau khi ẩn
+    }, 3000);
+}
+
+
+
+// Hiển thị alert trong 3 giây
+function showAlert(message) {
+    const alertBox = document.createElement("div");
+    alertBox.classList.add("alert");
+    alertBox.innerText = message;
+    document.body.appendChild(alertBox);
+
+    alertBox.style.display = "block";
+
+    setTimeout(() => {
+        alertBox.style.display = "none";
+        alertBox.remove(); // Xóa alert sau khi ẩn
+    }, 3000);
+}
+
+
+// ===========================  các bàn mà user đã đặt ở login ======================
+document.addEventListener("DOMContentLoaded", function () {
+    const danhSachBan = document.getElementById("danh-sach-ban");
+
+    // Lấy tham số bàn từ URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const ban = urlParams.get("ban");
+
+    if (ban) {
+        // Chuyển danh sách bàn thành mảng, ép kiểu số, sắp xếp tăng dần rồi ghép lại
+        const banSorted = ban.split(",")
+            .map(b => parseInt(b.trim(), 10)) // Chuyển thành số nguyên
+            .filter(b => !isNaN(b)) // Lọc ra những giá trị hợp lệ
+            .sort((a, b) => a - b) // Sắp xếp tăng dần
+            .join(", ");
+
+        danhSachBan.innerText = `Bàn: ${banSorted}`; // Hiển thị danh sách bàn đã sắp xếp
+    } else {
+        danhSachBan.innerText = "Chưa chọn bàn.";
+    }
+});

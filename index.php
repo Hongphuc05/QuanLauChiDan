@@ -208,7 +208,7 @@
         </div>
     </div>
 
-    
+
     <div id="popup-overlay_1" class="hidden_1">
         <!-- popup login -->
         <div class="body_1">
@@ -262,50 +262,16 @@
             </div>
         </div>
 
-        <?php
-
-        // ktra nuts submit co bam k?
-        if (isset($_POST['submit'])) {
-
-            // tien hanh login
-            //1. lay data tu login form
-            $phone = $_POST['phone'];
-            $password = $_POST['password'];
-            // //2. SQL truy van xem co data khong
-            $sql = "SELECT * FROM tbl_customer WHERE phone = '$phone' AND password='$password'";
-
-            // //3 ket noi va truy van
-            $res = mysqli_query($conn, $sql) or die(mysqli_connect_error());
-
-            // //4. dem so dong xem k.hang co ton tai k
-            $count = mysqli_num_rows($res);
-
-            if ($count == 1) {
-                //user avaiable and login success
-                $_SESSION['login'] = "<div>Login successfully</div>";
-                $_SESSION['user'] = $username; // to check whether the user is logged in or not and logout wil be unset it
-                //redirect the admin manager page
-                header('location:' . SITEURL . 'index.php');
-            } else {
-                //user not avaiable and login fail
-                $_SESSION['login'] = "<div>username or password did not match</div>";
-                //redirect the admin manager page
-                header('location:' . SITEURL . 'login_popup.php');
-            }
-        }
-
-        ?>
-
         <!-- popup signup -->
         <div class="body_2">
             <!-- Nửa phải -->
             <div class="right_2">
                 <h1 class="top_2 dvi2_2">Chào mừng quý khách trở lại!</h1>
                 <p class="center_2 dvi2_2">
-                    Hãy đăng nhập để tích điểm và 
+                    Hãy đăng nhập để tích điểm và
                     gọi món thôi nào
                 </p>
-                <form >
+                <form>
                     <a href="#!" class="bot_2 dvi2_2" id="open-login">Đăng nhập</a>
                 </form>
             </div>
@@ -321,7 +287,7 @@
                         <input type="tel" class="input_2 sdt_2" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
                         <br>
                         <!-- Ô nhập mật khẩu -->
-                        
+
                         <input type="password" class="input_2 mk_2" id="password" name="password" placeholder="Nhập mật khẩu" required>
                         <br>
                         <button type="submit" class="input_2 btn_2">Đăng kí</button>
@@ -329,10 +295,11 @@
                 </div>
             </div>
         </div>
+
     </div>
 
-    
-    
+
+
     <!-- model phóng to ảnh  -->
     <div id="imageModal" class="modal">
         <img class="modal-content" id="modalImg">

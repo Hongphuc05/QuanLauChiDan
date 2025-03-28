@@ -111,3 +111,16 @@ document.getElementById("logout-icon").addEventListener("click", function () {
     localStorage.removeItem("username"); // Xóa dữ liệu đăng nhập
     window.location.href = "index_login.php"; // Chuyển hướng về trang đăng nhập
 });
+
+//=============== khi bấm đặt bàn sẽ chuyển hướng sang menu===============
+document.getElementById("btn-dat-ban").addEventListener("click", function (event) {
+    event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ <a>
+
+    // Chuyển hướng sang menu.php, đồng thời truyền tham số để biết cần bật popup
+    window.location.href = "menu.php?chonban=true";
+});
+
+
+
+
+

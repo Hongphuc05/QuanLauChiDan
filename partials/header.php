@@ -73,9 +73,9 @@
                         <li class="has-child">
                             <a href="#!">Đặt món</a>
                             <ul class="sub-menu">
-                                <li class="1"><a href="#!">Đặt bàn</a>
+                                <li><a href="#!" id="btn-dat-ban">Đặt bàn</a>
                                 </li>
-                                <li class="1"><a href="menu.php">Đặt mang về</a>
+                                <li><a href="menu.php" id="btn-dat-mang-ve">Đặt mang về</a>
                                 </li>
                             </ul>
                         </li>
@@ -92,9 +92,9 @@
                 <div class="login-box">
                     <div id="avatar" class="avatar"></div> <!-- Avatar -->
                     <span id="user-name">Nguyễn Hồng Phúc</span>
-                    <div>
+                    <a href="#!">
                         <img id="logout-icon" src="./assets/img/icons/log_out.svg" alt="">
-                    </div>
+                    </a>
                 </div>
 
 
