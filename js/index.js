@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById("logout-icon").addEventListener("click", function () {
     alert("Bạn đã đăng xuất!");
     localStorage.removeItem("username"); // Xóa dữ liệu đăng nhập
-    window.location.href = "index_login.php"; // Chuyển hướng về trang đăng nhập
+    sessionStorage.clear(); // Xóa toàn bộ session trên trình duyệt
+    window.location.href = "logout.php"; // Gọi file PHP để xóa session trên máy chủ
 });
 

@@ -398,6 +398,7 @@ if (isset($_POST['submit'])) {
                 alert('Đăng nhập thành công!');
                 window.location.href='" . SITEURL . "index.php';
               </script>";
+        // header("Location: " . SITEURL . "index.php");
         exit();
     } else {
         // Đăng nhập thất bại

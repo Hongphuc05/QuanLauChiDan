@@ -1,6 +1,6 @@
 <?php
 // Chỉ khởi tạo session nếu chưa được khởi tạo
-if (session_status() == PHP_SESSION_NONE) {
+if (session_status() == PHP_SESSION_NONE && !defined('LOGOUT')) {
       session_start();
 }
 

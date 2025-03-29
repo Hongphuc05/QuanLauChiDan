@@ -40,7 +40,7 @@
                 <nav class="nav">
                     <ul class="ul">
                         <li class="active">
-                            <a href="index.php">Trang chủ</a>
+                            <a href="index_login.php">Trang chủ</a>
                         </li>
                         <li class="has-child">
                             <a href="#!">Đặt món</a>
@@ -55,7 +55,7 @@
                             <a href="#!" id="scroll-to-bottom">Về chúng tôi</a>
                         </li>
                         <li>
-                            <a href="#!">Đánh giá</a>
+                            <a href="danhgia.php">Đánh giá</a>
                         </li>
                     </ul>
                 </nav>

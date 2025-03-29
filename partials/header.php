@@ -1,4 +1,5 @@
 <?php include('config/constants.php'); ?>
+<?php include('config/login-check.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,7 +85,7 @@
                             <a href="#!" id="scroll-to-bottom">Về chúng tôi</a>
                         </li>
                         <li>
-                            <a href="#!">Đánh giá</a>
+                            <a href="danhgia.php">Đánh giá</a>
                         </li>
                     </ul>
                 </nav>
@@ -101,9 +102,9 @@
                     ?>
                     <div id="avatar" class="avatar"></div> <!-- Avatar -->
                     <span id="user-name"><?php echo htmlspecialchars($name); ?></span> <!-- Hiển thị tên người dùng -->
-                    <div>
+                    <a href="logout.php" id="logout-icon">
                         <img id="logout-icon" src="./assets/img/icons/log_out.svg" alt="">
-                    </div>
+                    </a>
                 </div>
 
 

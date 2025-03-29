@@ -1,3 +1,4 @@
+<?php include('config/login-check.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +20,7 @@
 
 
 
-    
+
     <title>Quán Lẩu Chi Dân</title>
 </head>
 
@@ -72,21 +73,21 @@
             </div>
         </div>
     </header>
-    
+
     <!-- style -->
     <!-- <link rel="stylesheet" href="/css/menu.css"> -->
     <link rel="stylesheet" href="<?php echo '/frontend/css/menu.css'; ?>">
 
     <!-- ============ main =============== -->
     <main>
-        
-    
+
+
         <!-- Nút mở giỏ hàng -->
         <button id="btn-gio-hang">🛒 Giỏ hàng (<span id="so-luong-gio-hang">0</span>)</button>
 
         <!-- Popup giỏ hàng -->
         <div id="ovl" class="hidden">
-            <div id="popup-gio-hang" >
+            <div id="popup-gio-hang">
                 <div class="popup-content">
                     <h2 class="title-giohang">Giỏ hàng</h2>
                     <ul id="danh-sach-gio-hang"></ul>
@@ -126,7 +127,7 @@
                         <a href="#!">Combo</a>
                     </li>
                     <li class="has-child">
-                        <a onclick="filterMenu('monle1'); openSubmenu(event)"  href="#!" >Món lẻ</a>
+                        <a onclick="filterMenu('monle1'); openSubmenu(event)" href="#!">Món lẻ</a>
                         <ul class="sub-menu">
                             <li class="active3"><a href="#!" onclick="filterMenu('lau'); addActive3(event)">Loại lẩu</a></li>
                             <li><a href="#!" onclick="filterMenu('bo'); addActive3(event)">Bò</a></li>
@@ -158,7 +159,7 @@
                 <div class="right">
                     <div class="search-bar">
                         <input type="text" class="search" placeholder="Tìm kiếm...">
-                        
+
                     </div>
 
                 </div>
@@ -1246,7 +1247,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Há cảo và sủi cảo -->
                         <div class="the ha-cao monle1">
                             <img class="img-the" src="/frontend/assets/img/menu/Món lẻ/Há cảo và Sủi cảo/Há cảo bò.jpg"
@@ -2027,19 +2028,19 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
-                    
+
                     <!-- model phóng to ảnh  -->
                     <div id="imageModal" class="modal">
                         <img class="modal-content" id="modalImg">
-                    </div>  
+                    </div>
                 </div>
 
             </div>
         </div>
 
-        
+
 
 
 
@@ -2075,7 +2076,7 @@
                         <a href="">
                             <img src="/frontend/assets/img/icons/twt.svg" alt="" class="icon">
                         </a>
-        
+
                     </div>
                 </div>
                 <!-- cột 2 -->
@@ -2099,16 +2100,16 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- phần dưới -->
         <div class="bot-footer">
             <div class="copyright">
                 <p>Copyright @2024 quanlauchidan.com All rights reserved</p>
             </div>
         </div>
-        
-        </footer>
-        </body>
-        
-        </html>
+
+    </footer>
+</body>
+
+</html>
 </body>
