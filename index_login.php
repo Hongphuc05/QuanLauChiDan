@@ -327,7 +327,7 @@ if (isset($_POST['submit2'])) {
     if (mysqli_num_rows($res_check) > 0) {
         // Nếu số điện thoại đã tồn tại
         echo "<script>
-        alert('Số điện thoại đã tồn tại. Vui lòng chọn số khác!');
+        alert('Email đã tồn tại. Vui lòng chọn email khác!');
         window.location.href='" . SITEURL . "index_login.php';
       </script>";
         exit();
@@ -390,7 +390,7 @@ if (isset($_POST['submit'])) {
         exit();
     } else {
         // Đăng nhập thất bại
-        $_SESSION['login'] = "<div style='color: red;'>Số điện thoại hoặc mật khẩu không đúng!</div>";
+        $_SESSION['login'] = "<div style='color: red;'>Email hoặc mật khẩu không đúng!</div>";
         echo "<script>
                 alert('Đăng nhập không thành công. Vui lòng thử lại!');
                 window.location.href='" . SITEURL . "index_login.php';
