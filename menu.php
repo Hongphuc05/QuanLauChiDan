@@ -1,3 +1,4 @@
+<?php include('config/login-check.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,11 +93,19 @@
 
                 <!-- Nút Profile -->
                 <div class="login-box">
+                    <?php
+                    // Kiểm tra xem người dùng đã đăng nhập hay chưa
+                    if (isset($_SESSION['user_name'])) {
+                        $name = $_SESSION['user_name']; // Lấy tên người dùng từ session
+                    } else {
+                        $name = "Khách"; // Giá trị mặc định nếu chưa đăng nhập
+                    }
+                    ?>
                     <div id="avatar" class="avatar"></div> <!-- Avatar -->
-                    <span id="user-name">Nguyễn Hồng Phúc</span>
-                    <div>
+                    <span id="user-name"><?php echo htmlspecialchars($name); ?></span>
+                    <a href="logout.php">
                         <img id="logout-icon" src="./assets/img/icons/log_out.svg" alt="">
-                    </div>
+                    </a>
                 </div>
 
             </div>

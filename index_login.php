@@ -208,7 +208,7 @@
         </div>
     </div>
 
-    
+
     <div id="popup-overlay_1" class="hidden_1">
         <!-- popup login -->
         <div class="body_1">
@@ -216,33 +216,22 @@
             <div class="left_1">
                 <h1 class="top_1 dvi_1">Đăng nhập</h1>
                 <!--  -->
-                <br><br>
-                <?php
-                if (isset($_SESSION['login'])) {
-                    echo $_SESSION['login'];
-                    unset($_SESSION['login']);
-                }
-
-                ?>
-                <!--  -->
                 <div class="center_1 dvi_1">
                     <!-- Ô nhập số điện thoại -->
                     <form class="form_1" action="" method="POST">
-                        <!-- Ô nhập sđt -->
-                        <input type="tel" class="input_1 sdt_1" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+                        <input type="text" class="input_1 sdt_1" id="mail" name="mail" placeholder="Nhập email"
+                            value="<?php echo isset($_COOKIE['mail']) ? $_COOKIE['mail'] : ''; ?>" required>
                         <br>
-                        <!-- Ô nhập mật khẩu -->
-                        <input type="password" class="input_1 mk_1" id="password" name="password" placeholder="Nhập mật khẩu" required>
+                        <input type="password" class="input_1 mk_1" id="password" name="password" placeholder="Nhập mật khẩu"
+                            value="<?php echo isset($_COOKIE['password']) ? $_COOKIE['password'] : ''; ?>" required>
                         <br>
-                        <!-- nút đăng nhập -->
                         <input type="submit" name="submit" value="Đăng nhập" class="input_1 btn_1">
-                        <!-- <input type="submit" class="input_1 btn_1">Đăng nhập</a> -->
                     </form>
                 </div>
                 <div class="bot_1 dvi_1">
                     <nav>
                         <div class="bot-text1_1">
-                            <label> <input type="checkbox"> </label>
+                            <label> <input type="checkbox" name="remember" <?php echo isset($_COOKIE['mail']) ? 'checked' : ''; ?>> </label>
                             <a href="#!" style="color: #5C5858; text-decoration: none;">Ghi nhớ mật khẩu</a>
                         </div>
                         <a class="bot-text2_1" href="#!">Quên mật khẩu?</a>
@@ -269,10 +258,10 @@
             <div class="right_2">
                 <h1 class="top_2 dvi2_2">Chào mừng quý khách trở lại!</h1>
                 <p class="center_2 dvi2_2">
-                    Hãy đăng nhập để tích điểm và 
+                    Hãy đăng nhập để tích điểm và
                     gọi món thôi nào
                 </p>
-                <form >
+                <form>
                     <a href="#!" class="bot_2 dvi2_2" id="open-login">Đăng nhập</a>
                 </form>
             </div>
@@ -282,24 +271,24 @@
                 <h1 class="top_2 dvi_2">Đăng kí</h1>
                 <div class="center_2 dvi_2">
                     <!-- Ô nhập số điện thoại -->
-                    <form class="form_2" action="!#">
+                    <form class="form_2" action="" method="POST">
                         <input type="name" class="input_2 name_2" id="name" name="name" placeholder="Họ và Tên" required>
                         <br>
-                        <input type="tel" class="input_2 sdt_2" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+                        <input type="text" class="input_2 sdt_2" id="mail" name="mail" placeholder="Nhập email" required>
                         <br>
                         <!-- Ô nhập mật khẩu -->
-                        
+
                         <input type="password" class="input_2 mk_2" id="password" name="password" placeholder="Nhập mật khẩu" required>
                         <br>
-                        <button type="submit" class="input_2 btn_2">Đăng kí</button>
+                        <button type="submit" name="submit2" class="input_2 btn_2">Đăng kí</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-    
-    
+
+
     <!-- model phóng to ảnh  -->
     <div id="imageModal" class="modal">
         <img class="modal-content" id="modalImg">
@@ -309,3 +298,104 @@
 </main>
 
 <?php include('partials/footer.php'); ?>
+
+
+
+
+
+<!-- đăng kí -->
+<?php
+// Kiểm tra nếu nút submit được bấm
+if (isset($_POST['submit2'])) {
+    // 1. Lấy dữ liệu từ form
+    $name = $_POST['name'];
+    $mail = $_POST['mail'];
+    $password = $_POST['password'];
+
+    // 2. Kiểm tra xem có ô nào bị trống không
+    if (empty($name) || empty($mail) || empty($password)) {
+        // Nếu có ô trống, tạo session thông báo lỗi và quay lại form
+        $_SESSION['add'] = "<div style='color: red;'>Vui lòng nhập đầy đủ thông tin!</div>";
+        header("location:" . SITEURL . 'index_login.php');
+        exit();
+    }
+
+    // 3. Kiểm tra số điện thoại đã tồn tại chưa
+    $sql_check = "SELECT * FROM tbl_customer WHERE mail = '$mail'";
+    $res_check = mysqli_query($conn, $sql_check);
+
+    if (mysqli_num_rows($res_check) > 0) {
+        // Nếu số điện thoại đã tồn tại
+        echo "<script>
+        alert('Số điện thoại đã tồn tại. Vui lòng chọn số khác!');
+        window.location.href='" . SITEURL . "index_login.php';
+      </script>";
+        exit();
+    }
+
+    // 4. Thêm dữ liệu vào cơ sở dữ liệu
+    $sql = "INSERT INTO tbl_customer (full_name, mail, password) VALUES ('$name', '$mail', '$password')";
+    $res = mysqli_query($conn, $sql);
+
+    if ($res == true) {
+        $_SESSION['login'] = "<div style='color: green;'>Đăng nhập thành công!</div>";
+        $_SESSION['user_name'] = $name; // Lưu tên người dùng vào session
+        echo "<script>
+                alert('Đăng ký thành công!');
+                window.location.href='" . SITEURL . "index.php';
+              </script>";
+        exit();
+    } else {
+        echo "<script>
+                alert('Đăng ký không thành công. Vui lòng thử lại!');
+                window.location.href='" . SITEURL . "index_login.php';
+              </script>";
+        exit();
+    }
+}
+?>
+<!-- đăng nhập -->
+<?php
+if (isset($_POST['submit'])) {
+    
+    // 1. Lấy dữ liệu từ form
+    $mail = mysqli_real_escape_string($conn, $_POST['mail']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+    // 2. Truy vấn SQL kiểm tra thông tin
+    $sql = "SELECT * FROM tbl_customer WHERE mail = '$mail' AND password = '$password'";
+    $res = mysqli_query($conn, $sql);
+
+    // 3. Kiểm tra kết quả
+    if (mysqli_num_rows($res) == 1) {
+        // Lấy thông tin người dùng
+        $row = mysqli_fetch_assoc($res);
+        $full_name = $row['full_name']; // Lấy tên người dùng từ cơ sở dữ liệu
+
+        // Lưu thông tin vào session
+        $_SESSION['login'] = "<div style='color: green;'>Đăng nhập thành công!</div>";
+        $_SESSION['user_name'] = $full_name; // Lưu tên người dùng vào session
+        // Lưu cookie nếu người dùng chọn "Ghi nhớ đăng nhập"
+        if (isset($_POST['remember'])) {
+            setcookie('mail', $mail, time() + (86400 * 30), "/"); // Lưu trong 30 ngày
+            setcookie('password', $password, time() + (86400 * 30), "/"); // Không nên lưu mật khẩu, chỉ lưu token hoặc ID
+        }
+        
+
+        // Chuyển hướng đến trang index.php
+        echo "<script>
+                alert('Đăng nhập thành công!');
+                window.location.href='" . SITEURL . "index.php';
+              </script>";
+        exit();
+    } else {
+        // Đăng nhập thất bại
+        $_SESSION['login'] = "<div style='color: red;'>Số điện thoại hoặc mật khẩu không đúng!</div>";
+        echo "<script>
+                alert('Đăng nhập không thành công. Vui lòng thử lại!');
+                window.location.href='" . SITEURL . "index_login.php';
+              </script>";
+        exit();
+    }
+}
+?>

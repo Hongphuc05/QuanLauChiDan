@@ -1,4 +1,5 @@
 <?php include('partials/header.php'); ?>
+
 <!-- style -->
 <!-- <link rel="stylesheet" href="/frontend/css/style.css"> -->
 <link rel="stylesheet" href="<?php echo '/frontend/css/style.css'; ?>">
@@ -207,98 +208,6 @@
             </div>
         </div>
     </div>
-
-
-    <div id="popup-overlay_1" class="hidden_1">
-        <!-- popup login -->
-        <div class="body_1">
-            <!-- Nửa trái -->
-            <div class="left_1">
-                <h1 class="top_1 dvi_1">Đăng nhập</h1>
-                <!--  -->
-                <br><br>
-                <?php
-                if (isset($_SESSION['login'])) {
-                    echo $_SESSION['login'];
-                    unset($_SESSION['login']);
-                }
-
-                ?>
-                <!--  -->
-                <div class="center_1 dvi_1">
-                    <!-- Ô nhập số điện thoại -->
-                    <form class="form_1" action="" method="POST">
-                        <!-- Ô nhập sđt -->
-                        <input type="tel" class="input_1 sdt_1" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
-                        <br>
-                        <!-- Ô nhập mật khẩu -->
-                        <input type="password" class="input_1 mk_1" id="password" name="password" placeholder="Nhập mật khẩu" required>
-                        <br>
-                        <!-- nút đăng nhập -->
-                        <input type="submit" name="submit" value="Đăng nhập" class="input_1 btn_1">
-                        <!-- <input type="submit" class="input_1 btn_1">Đăng nhập</a> -->
-                    </form>
-                </div>
-                <div class="bot_1 dvi_1">
-                    <nav>
-                        <div class="bot-text1_1">
-                            <label> <input type="checkbox"> </label>
-                            <a href="#!" style="color: #5C5858; text-decoration: none;">Ghi nhớ mật khẩu</a>
-                        </div>
-                        <a class="bot-text2_1" href="#!">Quên mật khẩu?</a>
-                    </nav>
-                </div>
-            </div>
-            <!-- Nửa phải -->
-            <div class="right_1">
-                <h1 class="top_1 dvi2_1">Xin chào quý khách!</h1>
-                <p class="center_1 dvi2_1">
-                    Hãy đăng kí thành viên để nhận nhiều chương trình
-                    khuyến mãi hơn từ Chi Dân chúng tôi
-                </p>
-                <form>
-                    <a href="#!" class="bot_1 dvi2_1" id="open-signup">Đăng kí</a>
-                </form>
-            </div>
-        </div>
-
-        <!-- popup signup -->
-        <div class="body_2">
-            <!-- Nửa phải -->
-            <div class="right_2">
-                <h1 class="top_2 dvi2_2">Chào mừng quý khách trở lại!</h1>
-                <p class="center_2 dvi2_2">
-                    Hãy đăng nhập để tích điểm và
-                    gọi món thôi nào
-                </p>
-                <form>
-                    <a href="#!" class="bot_2 dvi2_2" id="open-login">Đăng nhập</a>
-                </form>
-            </div>
-
-            <!-- Nửa trái -->
-            <div class="left_2">
-                <h1 class="top_2 dvi_2">Đăng kí</h1>
-                <div class="center_2 dvi_2">
-                    <!-- Ô nhập số điện thoại -->
-                    <form class="form_2" action="!#">
-                        <input type="name" class="input_2 name_2" id="name" name="name" placeholder="Họ và Tên" required>
-                        <br>
-                        <input type="tel" class="input_2 sdt_2" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
-                        <br>
-                        <!-- Ô nhập mật khẩu -->
-
-                        <input type="password" class="input_2 mk_2" id="password" name="password" placeholder="Nhập mật khẩu" required>
-                        <br>
-                        <button type="submit" class="input_2 btn_2">Đăng kí</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
 
     <!-- model phóng to ảnh  -->
     <div id="imageModal" class="modal">
